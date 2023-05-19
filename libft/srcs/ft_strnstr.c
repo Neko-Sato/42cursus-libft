@@ -6,27 +6,21 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:46:47 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/18 12:25:46 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 10:10:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// ft_strncmp
-// ft_strlen
 
-char *strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int big_len:
-	int little_len:
+	int little_len;
 
-	char	*_big;
-	char	*_little;
-
-	_big = big;
-	_little = little;
-	while (len-- && (big_len-- - little_len) > len)
+	little_len = ft_strlen(little);
+	while (*big && len >= little_len)
 	{
-		
+		if (!ft_strncmp(big++, little, len--))
+			return (char *)(--big);
 	}
-	return NULL;
+	return (NULL);
 }

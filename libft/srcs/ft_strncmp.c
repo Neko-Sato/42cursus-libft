@@ -6,16 +6,16 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:06:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/17 13:14:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:35:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 {
 	while (n--)
 	{
 		if (*s1 != *s2++)
-			return (*(int *)s1 - *(int *)(s2 - 1));
+			return (*(int *)s1 - *(int *)(--s2));
 		if (!*s1++)
 			break ;
 	}

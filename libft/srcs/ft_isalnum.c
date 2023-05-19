@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:02:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 21:42:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 10:57:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ctype.h"
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {
-	return (isalpha(c) && isalnum(c));
+	return (ft_isalpha(c) && ft_isalnum(c));
 }

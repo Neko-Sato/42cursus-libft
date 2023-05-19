@@ -6,16 +6,16 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:15:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 21:43:14 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:34:03 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+int	ft_strlen(const char *s)
 {
-	int i;
+	int len;
 
-	i = 0;
+	len = 0;
 	while (*s++)
-		i++;
-	return (i)
+		len++;
+	return (len)
 }

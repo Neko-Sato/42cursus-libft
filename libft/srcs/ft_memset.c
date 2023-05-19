@@ -6,16 +6,16 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:22:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 23:58:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:17:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *buf, int ch, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	void	*_buf;
+	void	*_b;
 
-	_buf = buf;
-	while (n--)
-		*(char *)buf++ = ch;
-	return (_buf);
+	_b = b;
+	while (len--)
+		*(unsigned char *)b++ = c;
+	return (_b);
 }

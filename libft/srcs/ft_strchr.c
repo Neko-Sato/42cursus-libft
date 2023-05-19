@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:49:53 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/17 13:05:31 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:19:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (1)
 	{
