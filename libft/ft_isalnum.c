@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 12:42:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/17 12:58:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/16 21:02:26 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/05/19 13:50:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if ('a' <= c && c <= 'z')
-		c -= 20;
-	return (c);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

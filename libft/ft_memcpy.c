@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 20:46:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 21:42:51 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/16 22:22:47 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/05/19 12:08:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include <stddef.h>
+
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
+	void	*_dst;
+
+	_dst = dst;
+	while (n--)
+		*(unsigned char *)dst++ = *(unsigned char *)src++;
+	return (_dst);
 }

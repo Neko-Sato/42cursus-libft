@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 12:49:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/17 12:49:33 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/19 10:38:26 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/05/19 12:22:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+#include <stdlib.h>
+
+char	*ft_strdup(const char *s1)
 {
-	if ('A' <= c && c <= 'Z')
-		c += 20;
-	return (c);
+	char	*s2;
+	char	*_s2;
+	int		size;
+
+	size = ft_strlen(s1) + 1;
+	s2 = (char *)malloc(size * sizeof(char));
+	_s2 = s2;
+	if (s2)
+		while (size--)
+			*s2++ = *s1++;
+	return (_s2);
 }

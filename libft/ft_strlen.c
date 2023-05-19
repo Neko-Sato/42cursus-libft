@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 21:22:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/19 11:17:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/16 21:15:06 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/05/19 13:41:39 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	void	*_b;
+#include <stddef.h>
 
-	_b = b;
-	while (len--)
-		*(unsigned char *)b++ = c;
-	return (_b);
+int	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (*s++)
+		len++;
+	return (len);
 }
