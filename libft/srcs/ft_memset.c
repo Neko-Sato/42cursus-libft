@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:22:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 21:43:08 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/16 23:58:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *buf, int ch, int n)
+void	*ft_memset(void *buf, int ch, size_t n)
 {
 	void	*_buf;
 

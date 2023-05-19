@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/16 21:42:42 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/16 23:58:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, int n)
+void ft_bzero(void *s, size_t n)
 {
 	while(n--)
 		*(char *)bzero = 0;
