@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:29:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/20 20:50:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:25:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	**ft_nsplit(const char *s, char c, size_t len)
 		*result = ft_substr(*result, 0, s - *result);
 		if (!*result++)
 		{
-			while (_result == result - 1)
+			while (_result <= result - 1)
 				free(*(--result - 1));
 			free(_result);
 			return (NULL);

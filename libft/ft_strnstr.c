@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:46:47 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/20 14:39:19 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:42:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,20 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	little_len;
 
-	if (!big && !len)
-		return (NULL);
 	little_len = ft_strlen(little);
-	while (1)
+	while (*big && len-- >= little_len)
 	{
 		if (!ft_strncmp(big++, little, little_len))
 			return ((char *)big - 1);
-		if (!(*big && len-- > little_len))
-			break ;
 	}
 	return (NULL);
+}
+
+#include <string.h>
+#include <stdio.h>
+int	main(void)
+{
+	char *a, *b;
+	a = ft_strnstr("", "", 0);
+	b = strnstr("", "", 0);
 }
