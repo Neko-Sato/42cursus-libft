@@ -2,40 +2,44 @@
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
+SRCDIR = ./
+
 SRCS = \
-	ft_atoi.c \
-	ft_bzero.c \
-	ft_calloc.c \
-	ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_isprint.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_memset.c \
-	ft_strchr.c \
-	ft_strdup.c \
-	ft_strlcat.c \
-	ft_strlcpy.c \
-	ft_strlen.c \
-	ft_strncmp.c \
-	ft_strnstr.c \
-	ft_strrchr.c \
-	ft_tolower.c \
-	ft_toupper.c \
+	$(SRCDIR)ft_atoi.c \
+	$(SRCDIR)ft_bzero.c \
+	$(SRCDIR)ft_calloc.c \
+	$(SRCDIR)ft_isalnum.c \
+	$(SRCDIR)ft_isalpha.c \
+	$(SRCDIR)ft_isascii.c \
+	$(SRCDIR)ft_isdigit.c \
+	$(SRCDIR)ft_isprint.c \
+	$(SRCDIR)ft_memchr.c \
+	$(SRCDIR)ft_memcmp.c \
+	$(SRCDIR)ft_memcpy.c \
+	$(SRCDIR)ft_memmove.c \
+	$(SRCDIR)ft_memset.c \
+	$(SRCDIR)ft_strchr.c \
+	$(SRCDIR)ft_strdup.c \
+	$(SRCDIR)ft_strlcat.c \
+	$(SRCDIR)ft_strlcpy.c \
+	$(SRCDIR)ft_strlen.c \
+	$(SRCDIR)ft_strncmp.c \
+	$(SRCDIR)ft_strnstr.c \
+	$(SRCDIR)ft_strrchr.c \
+	$(SRCDIR)ft_tolower.c \
+	$(SRCDIR)ft_toupper.c \
+	$(SRCDIR)ft_substr.c \
+
 
 OBJECTS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJECTS)
-	$(AR) rc $(NAME) $(OBJECTS)
-	
-.c.o:
+	$(AR) rc $(NAME) $(OBJECTS)	
+
+.o:
 	$(CC) -c $(CFLAGS) $< -o $@
 
-all: make
+all: $(NAME)
 
 clean:
 	$(RM) -f $(OBJECTS)

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/19 13:54:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:00:45 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 
+// part1
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -40,5 +41,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+
+// part2
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

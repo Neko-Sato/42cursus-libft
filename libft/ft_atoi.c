@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:06:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/19 10:54:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:33:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while ((0x08 < *str && *str < 0x0e) || *str == 0x20)
 		str++;
-	while (*str == '+' || *str == '-')
-		if (*(str++) == '-')
+	if (*str == '+' || *str == '-')
+		if (*str++ == '-')
 			sgin *= -1;
 	while ('0' <= *str && *str <= '9')
 	{
