@@ -33,6 +33,7 @@ SRCS = \
 	$(SRCDIR)ft_strtrim.c \
 	$(SRCDIR)ft_split.c \
 	$(SRCDIR)ft_itoa.c \
+	$(SRCDIR)ft_strmapi.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
