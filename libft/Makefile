@@ -32,6 +32,7 @@ SRCS = \
 	$(SRCDIR)ft_strjoin.c \
 	$(SRCDIR)ft_strtrim.c \
 	$(SRCDIR)ft_split.c \
+	$(SRCDIR)ft_itoa.c \
 
 OBJECTS = $(SRCS:.c=.o)
 

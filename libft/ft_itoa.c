@@ -1,40 +1,66 @@
-// /* ************************************************************************** */
-// /*                                                                            */
-// /*                                                        :::      ::::::::   */
-// /*   ft_itoa.c                                          :+:      :+:    :+:   */
-// /*                                                    +:+ +:+         +:+     */
-// /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
-// /*                                                +#+#+#+#+#+   +#+           */
-// /*   Created: 2023/05/20 20:58:22 by hshimizu          #+#    #+#             */
-// /*   Updated: 2023/05/20 21:31:04 by hshimizu         ###   ########.fr       */
-// /*                                                                            */
-// /* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/21 17:08:04 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/05/21 18:21:50 by hshimizu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// static size_t	len(int n)
-// {
-// 	size_t	count;
+#include "libft.h"
+#include <stddef.h>
+#include <stdlib.h>
 
-// 	count = 0;
-// 	while (n)
-// 		n /= 10 + 0 * count++;
-// 	return (count);
-// }
+static unsigned int	ft_abs(int j)
+{
+	if (j < 0)
+		return (-(j + 1) + 1u);
+	else
+		return (j);
+}
 
-// char			*ft_itoa(int n);
-// {
-// 	char *result;
-// 	char *_result;
-// 	size_t len;
+static size_t	ft_itoalen(int n)
+{
+	size_t			len;
+	unsigned int	m;
 
-// 	if (!n)
-// 		return (ft_strdup("0"));
-// 	while (n)
-// 		result = (char *)malloc((ft_abs(nbr) + (nbr < 0) + 1) * sizeof(char));
-// 	_result = result;
-// 	if (n < 0)
-// 		*result++ = '-';
-// 	nbr = ft_abs(nbr);
-// 	if (nbr == 0)
-// 		*(str++) = base[0];
-// 	return (result);
-// }
+	if (!n)
+		return (1);
+	len = 0;
+	if (n < 0)
+		len++;
+	m = ft_abs(n);
+	while (m)
+		m /= 10 + 0 * len++;
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char			*result;
+	size_t			len;
+	unsigned int	m;
+
+	if (!n)
+		return (ft_strdup("0"));
+	len = ft_itoalen(n);
+	result = (char *)malloc((len + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	result += len;
+	*result-- = '\0';
+	m = ft_abs(n);
+	while (1)
+	{
+		*result-- = '0' + m % 10;
+		m /= 10;
+		if (!m)
+			break ;
+	}
+	if (n < 0)
+		*result-- = '-';
+	return (++result);
+}
