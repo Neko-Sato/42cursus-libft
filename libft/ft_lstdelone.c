@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:08:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/21 22:40:35 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/21 22:50:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (del)
+	if (lst && del)
 	{
-		del(lst);
+
+		del(lst->content);
 		free(lst);
 	}	
 }
