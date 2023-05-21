@@ -38,6 +38,7 @@ SRCS = \
 	$(SRCDIR)ft_putchar_fd.c \
 	$(SRCDIR)ft_putstr_fd.c \
 	$(SRCDIR)ft_putendl_fd.c \
+	$(SRCDIR)ft_putnbr_fd.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
