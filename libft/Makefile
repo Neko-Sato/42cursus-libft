@@ -39,6 +39,11 @@ SRCS = \
 	$(SRCDIR)ft_putstr_fd.c \
 	$(SRCDIR)ft_putendl_fd.c \
 	$(SRCDIR)ft_putnbr_fd.c \
+	$(SRCDIR)ft_lstnew.c \
+	$(SRCDIR)ft_lstadd_front.c \
+	$(SRCDIR)ft_lstsize.c \
+	$(SRCDIR)ft_lstlast.c \
+	$(SRCDIR)ft_lstadd_back.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
