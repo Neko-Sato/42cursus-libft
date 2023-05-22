@@ -72,12 +72,12 @@ OBJECTS = \
 
 .PHONY: all clean fclean re
 
-$(NAME): mandatory
+$(NAME): $(NAME) mandatory
 
-mandatory:	$(OBJECTS_MANDATORY_PART)
+mandatory: $(OBJECTS_MANDATORY_PART)
 	$(AR) rc $(NAME) $(OBJECTS_MANDATORY_PART)
 
-bonus:	$(OBJECTS_BONUS_PART)
+bonus: $(OBJECTS_BONUS_PART)
 	$(AR) rc $(NAME) $(OBJECTS_BONUS_PART)
 
 %.o: %.c $(LIBFT_H)
