@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:15:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/21 22:41:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/22 10:52:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		while (1)
 		{
 			next = (*lst)->next;
-			ft_lstdelone(*lst);
+			ft_lstdelone(*lst, del);
 			if (!next)
 				break ;
 			*lst = next;
