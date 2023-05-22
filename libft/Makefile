@@ -1,83 +1,94 @@
 
-CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
 
-SRCDIR = ./
+LIBFT_H = libft.h
 
-LIBFT_H = $(SRCDIR)libft.h
+SRCSDIR = ./
 
 SRCS_MANDATORY_PART_1 = \
-	$(SRCDIR)ft_memset.c \
-	$(SRCDIR)ft_bzero.c \
-	$(SRCDIR)ft_memcpy.c \
-	$(SRCDIR)ft_memmove.c \
-	$(SRCDIR)ft_memchr.c \
-	$(SRCDIR)ft_memcmp.c \
-	$(SRCDIR)ft_strlen.c \
-	$(SRCDIR)ft_isalpha.c \
-	$(SRCDIR)ft_isdigit.c \
-	$(SRCDIR)ft_isalnum.c \
-	$(SRCDIR)ft_isascii.c \
-	$(SRCDIR)ft_isprint.c \
-	$(SRCDIR)ft_toupper.c \
-	$(SRCDIR)ft_tolower.c \
-	$(SRCDIR)ft_strchr.c \
-	$(SRCDIR)ft_strrchr.c \
-	$(SRCDIR)ft_strncmp.c \
-	$(SRCDIR)ft_strlcpy.c \
-	$(SRCDIR)ft_strlcat.c \
-	$(SRCDIR)ft_strnstr.c \
-	$(SRCDIR)ft_atoi.c \
-	$(SRCDIR)ft_calloc.c \
-	$(SRCDIR)ft_strdup.c \
+	$(SRCSDIR)ft_memset.c \
+	$(SRCSDIR)ft_bzero.c \
+	$(SRCSDIR)ft_memcpy.c \
+	$(SRCSDIR)ft_memmove.c \
+	$(SRCSDIR)ft_memchr.c \
+	$(SRCSDIR)ft_memcmp.c \
+	$(SRCSDIR)ft_strlen.c \
+	$(SRCSDIR)ft_isalpha.c \
+	$(SRCSDIR)ft_isdigit.c \
+	$(SRCSDIR)ft_isalnum.c \
+	$(SRCSDIR)ft_isascii.c \
+	$(SRCSDIR)ft_isprint.c \
+	$(SRCSDIR)ft_toupper.c \
+	$(SRCSDIR)ft_tolower.c \
+	$(SRCSDIR)ft_strchr.c \
+	$(SRCSDIR)ft_strrchr.c \
+	$(SRCSDIR)ft_strncmp.c \
+	$(SRCSDIR)ft_strlcpy.c \
+	$(SRCSDIR)ft_strlcat.c \
+	$(SRCSDIR)ft_strnstr.c \
+	$(SRCSDIR)ft_atoi.c \
+	$(SRCSDIR)ft_calloc.c \
+	$(SRCSDIR)ft_strdup.c \
 
 SRCS_MANDATORY_PART_2 = \
-	$(SRCDIR)ft_substr.c \
-	$(SRCDIR)ft_strjoin.c \
-	$(SRCDIR)ft_strtrim.c \
-	$(SRCDIR)ft_split.c \
-	$(SRCDIR)ft_itoa.c \
-	$(SRCDIR)ft_strmapi.c \
-	$(SRCDIR)ft_striteri.c \
-	$(SRCDIR)ft_putchar_fd.c \
-	$(SRCDIR)ft_putstr_fd.c \
-	$(SRCDIR)ft_putendl_fd.c \
-	$(SRCDIR)ft_putnbr_fd.c \
+	$(SRCSDIR)ft_substr.c \
+	$(SRCSDIR)ft_strjoin.c \
+	$(SRCSDIR)ft_strtrim.c \
+	$(SRCSDIR)ft_split.c \
+	$(SRCSDIR)ft_itoa.c \
+	$(SRCSDIR)ft_strmapi.c \
+	$(SRCSDIR)ft_striteri.c \
+	$(SRCSDIR)ft_putchar_fd.c \
+	$(SRCSDIR)ft_putstr_fd.c \
+	$(SRCSDIR)ft_putendl_fd.c \
+	$(SRCSDIR)ft_putnbr_fd.c \
 
-SRCS = \
+SRCS_MANDATORY_PART = \
 	$(SRCS_MANDATORY_PART_1) \
 	$(SRCS_MANDATORY_PART_2) \
 
-OBJECTS = $(SRCS:.c=.o)
-
 SRCS_BONUS_PART = \
-	$(SRCDIR)ft_lstnew.c \
-	$(SRCDIR)ft_lstadd_front.c \
-	$(SRCDIR)ft_lstsize.c \
-	$(SRCDIR)ft_lstlast.c \
-	$(SRCDIR)ft_lstadd_back.c \
-	$(SRCDIR)ft_lstdelone.c \
-	$(SRCDIR)ft_lstclear.c \
-	$(SRCDIR)ft_lstiter.c \
-	$(SRCDIR)ft_lstmap.c \
+	$(SRCSDIR)ft_lstnew.c \
+	$(SRCSDIR)ft_lstadd_front.c \
+	$(SRCSDIR)ft_lstsize.c \
+	$(SRCSDIR)ft_lstlast.c \
+	$(SRCSDIR)ft_lstadd_back.c \
+	$(SRCSDIR)ft_lstdelone.c \
+	$(SRCSDIR)ft_lstclear.c \
+	$(SRCSDIR)ft_lstiter.c \
+	$(SRCSDIR)ft_lstmap.c \
 
-OBJECTS_BONUS = $(SRCS_BONUS_PART:.c=.o)
+SRCS = \
+	$(SRCS_MANDATORY_PART) \
+	$(SRCS_BONUS_PART) \
 
-$(NAME): $(OBJECTS)
-	$(AR) rc $(NAME) $(OBJECTS)	
+OBJECTS_MANDATORY_PART = $(SRCS_MANDATORY_PART:.c=.o)
+OBJECTS_BONUS_PART = $(SRCS_BONUS_PART:.c=.o)
 
-bonus:	$(OBJSBONUS)
-	$(AR) rc $(NAME) $(OBJECTS_BONUS)
+OBJECTS = \
+	$(OBJECTS_MANDATORY_PART) \
+	$(OBJECTS_BONUS_PART) \
+
+.PHONY: all clean fclean re
+
+$(NAME): mandatory
+
+mandatory:	$(OBJECTS_MANDATORY_PART)
+	$(AR) rc $(NAME) $(OBJECTS_MANDATORY_PART)
+
+bonus:	$(OBJECTS_BONUS_PART)
+	$(AR) rc $(NAME) $(OBJECTS_BONUS_PART)
 
 %.o: %.c $(LIBFT_H)
 	$(CC) -c $(CFLAGS) $< -o $@
 
-all: $(NAME) bonus
+all: $(NAME)
 
 clean:
-	$(RM) -f $(OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean: clean
-	$(RM) -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
