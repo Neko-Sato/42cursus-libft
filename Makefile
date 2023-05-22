@@ -72,7 +72,7 @@ OBJECTS = \
 
 .PHONY: all clean fclean re
 
-$(NAME): $(NAME) mandatory
+$(NAME): mandatory
 
 mandatory: $(OBJECTS_MANDATORY_PART)
 	$(AR) rc $(NAME) $(OBJECTS_MANDATORY_PART)
