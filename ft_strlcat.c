@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 23:16:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/20 23:41:42 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:46:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static size_t	ft_strnlen(const char *s, size_t maxlen)
 	return (len);
 }
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len_dst;
 	size_t	len_src;
