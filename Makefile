@@ -1,59 +1,76 @@
-CFLAGS = -Wall -Wextra -Werror
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
+#    Updated: 2023/06/22 22:03:47 by hshimizu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = libft.a
+NAME		= libft.a
+LIBFT_H		= libft.h
+DIR			= .
+OBJS_DIR	= $(DIR)/objs
 
-LIBFT_H = libft.h
+SRCS 		= \
+	$(addprefix $(DIR)/, \
+		ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_strlen.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strncmp.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_strnstr.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+	)
 
-SRCS = \
-	ft_memset.c \
-	ft_bzero.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_strlen.c \
-	ft_isalpha.c \
-	ft_isdigit.c \
-	ft_isalnum.c \
-	ft_isascii.c \
-	ft_isprint.c \
-	ft_toupper.c \
-	ft_tolower.c \
-	ft_strchr.c \
-	ft_strrchr.c \
-	ft_strncmp.c \
-	ft_strlcpy.c \
-	ft_strlcat.c \
-	ft_strnstr.c \
-	ft_atoi.c \
-	ft_calloc.c \
-	ft_strdup.c \
-	ft_substr.c \
-	ft_strjoin.c \
-	ft_strtrim.c \
-	ft_split.c \
-	ft_itoa.c \
-	ft_strmapi.c \
-	ft_striteri.c \
-	ft_putchar_fd.c \
-	ft_putstr_fd.c \
-	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
+OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
-OBJECTS = $(SRCS:.c=.o)
+SRCS_BONUS	= \
+	$(addprefix $(DIR)/, \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+	)
 
-SRCS_BONUS = \
-	ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstclear.c \
-	ft_lstiter.c \
-	ft_lstmap.c \
+OBJECTS_BONUS = $(addprefix $(OBJS_DIR)/, $(SRCS_BONUS:.c=.o))
 
-OBJECTS_BONUS = $(SRCS_BONUS:.c=.o)
+CFLAGS		= -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
 
@@ -63,7 +80,8 @@ $(NAME): $(OBJECTS)
 bonus: $(OBJECTS_BONUS)
 	$(AR) rc $(NAME) $(OBJECTS_BONUS)
 
-%.o: %.c $(LIBFT_H)
+$(OBJS_DIR)/%.o: %.c $(LIBFT_H)
+	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 all: $(NAME)
