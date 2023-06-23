@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/06/22 22:03:47 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/06/23 16:47:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJECTS) $(OBJECTS_BONUS)
+	$(RM) -r $(OBJS_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
