@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/21 18:21:50 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/07/31 18:30:53 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static unsigned int	ft_abs(int j)
-{
-	if (j < 0)
-		return (-(j + 1) + 1u);
-	else
-		return (j);
-}
+// static unsigned int	ft_abs(int j)
+// {
+// 	if (j < 0)
+// 		return (-(j + 1) + 1u);
+// 	else
+// 		return (j);
+// }
 
 static size_t	ft_itoalen(int n)
 {

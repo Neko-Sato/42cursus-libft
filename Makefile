@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/06/23 16:47:04 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/07/31 18:29:29 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,21 +70,31 @@ SRCS_BONUS	= \
 
 OBJECTS_BONUS = $(addprefix $(OBJS_DIR)/, $(SRCS_BONUS:.c=.o))
 
+SRCS_EXTENSION	= \
+	$(addprefix $(DIR)/, \
+		ft_abs.c \
+	)
+
+OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))
+
 CFLAGS		= -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus extension
 
 $(NAME): $(OBJECTS)
-	$(AR) rc $(NAME) $(OBJECTS)
+	$(AR) rc $@ $^
 
 bonus: $(OBJECTS_BONUS)
-	$(AR) rc $(NAME) $(OBJECTS_BONUS)
+	$(AR) rc $@ $^
+
+extension: $(OBJECTS_EXTENSION)
+	$(AR) rc $@ $^
 
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $< -o $@
 
-all: $(NAME)
+all: $(NAME) bonus extension
 
 clean:
 	$(RM) -r $(OBJS_DIR)

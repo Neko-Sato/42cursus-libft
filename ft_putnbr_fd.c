@@ -6,19 +6,19 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:23:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/21 20:01:15 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/07/31 18:31:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_abs(int j)
-{
-	if (j < 0)
-		return (-(j + 1) + 1u);
-	else
-		return (j);
-}
+// static unsigned int	ft_abs(int j)
+// {
+// 	if (j < 0)
+// 		return (-(j + 1) + 1u);
+// 	else
+// 		return (j);
+// }
 
 static size_t	ft_itoalen(int n)
 {
