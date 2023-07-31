@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/07/31 18:29:29 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/07/31 19:28:11 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,28 +73,33 @@ OBJECTS_BONUS = $(addprefix $(OBJS_DIR)/, $(SRCS_BONUS:.c=.o))
 SRCS_EXTENSION	= \
 	$(addprefix $(DIR)/, \
 		ft_abs.c \
+		ft_average.c \
+		ft_sort.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
-.PHONY: all clean fclean re bonus extension
+.PHONY: all clean fclean re bonus extension test
 
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
 
 bonus: $(OBJECTS_BONUS)
-	$(AR) rc $@ $^
+	$(AR) rc $(NAME) $^
 
 extension: $(OBJECTS_EXTENSION)
-	$(AR) rc $@ $^
+	$(AR) rc $(NAME) $^
 
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 all: $(NAME) bonus extension
+
+test: test.c all
+	$(CC) -g $< $(NAME) -o $@
 
 clean:
 	$(RM) -r $(OBJS_DIR)

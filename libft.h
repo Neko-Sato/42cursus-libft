@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/07/31 18:31:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:48:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 // extension
 unsigned int		ft_abs(int n);
+int					ft_average(int array[], size_t len);
+void				ft_sort(int array[], size_t len);
 
 #endif

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_average.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 14:43:57 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/07/31 19:08:54 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/07/31 18:42:21 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/07/31 21:31:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_abs(int n)
+#include <stddef.h>
+
+int	ft_average(int array[], size_t len)
 {
-	if (0 <= n)
-		return ((unsigned int)n);
-	return (~(unsigned int)n + 1u);
+	size_t	i;
+	double	n;
+
+	n = 0;
+	i = 0;
+	while (i < len)
+		n += array[i++] / (double)len;
+	return ((int)n);
 }
