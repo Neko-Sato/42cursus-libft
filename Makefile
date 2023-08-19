@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/08/01 07:27:09 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/08/09 18:20:45 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,10 @@ SRCS_EXTENSION	= \
 		ft_abs.c \
 		ft_average.c \
 		ft_sort.c \
-		ft_issorted.c
+		ft_issorted.c\
+		ft_max.c \
+		ft_min.c \
+		ft_distory.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))

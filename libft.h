@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/08/01 07:27:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:59:03 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,8 @@ unsigned int		ft_abs(int n);
 int					ft_average(int array[], size_t len);
 void				ft_sort(int array[], size_t len);
 int					ft_issorted(int array[], size_t len, int asc);
+int					ft_max(int array[], size_t len);
+int					ft_min(int array[], size_t len);
+void				*ft_distory(void *ptrs[], size_t len);
 
 #endif
