@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/07 22:10:08 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/07 22:31:30 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re bonus extension test
+.PHONY: all clean fclean re bonus extension test norm
 
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
@@ -114,3 +114,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+norm: $(LIBFT_H) $(SRCS) $(SRCS_BONUS) $(SRCS_EXTENSION)
+	@norminette $^
