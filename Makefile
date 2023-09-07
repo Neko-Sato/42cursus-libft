@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/08/09 18:20:45 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/08/19 23:12:06 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRCS_EXTENSION	= \
 		ft_max.c \
 		ft_min.c \
 		ft_distory.c \
+		ft_digit.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))

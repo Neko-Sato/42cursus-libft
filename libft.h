@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/08/09 17:59:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/08/19 23:11:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int					ft_issorted(int array[], size_t len, int asc);
 int					ft_max(int array[], size_t len);
 int					ft_min(int array[], size_t len);
 void				*ft_distory(void *ptrs[], size_t len);
+size_t				ft_digit(unsigned int n);
 
 #endif
