@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	*ft_distory(void *ptrs[], size_t len)
+void	*ft_destroy(void *ptrs[], size_t len)
 {
 	size_t	i;
 
