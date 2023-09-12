@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/07 22:31:30 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/12 16:44:33 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,11 +81,21 @@ SRCS_EXTENSION	= \
 		ft_destroy.c \
 		ft_digit.c \
 		ft_joinpath.c \
+		ft_replace.c \
+		ft_memdup.c \
+		ft_xlstlen.c \
+		ft_xlstat.c \
+		ft_xlstappend.c \
+		ft_xlstinsert.c \
+		ft_xlstpop.c \
+		ft_xlstdel.c \
+		ft_xlstclear.c \
+		ft_xlst2array.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 .PHONY: all clean fclean re bonus extension test norm
 

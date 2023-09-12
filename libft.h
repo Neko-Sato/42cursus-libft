@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/07 22:10:18 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:44:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,17 @@ int					ft_min(int array[], size_t len);
 void				*ft_destroy(void *ptrs[], size_t len);
 size_t				ft_digit(unsigned int n);
 char				*ft_joinpath(char *base, char *path);
+char				*ft_replace(const char *s, const char *before,
+						const char *after);
+void				*ft_memdup(void *src, size_t n);
+size_t				ft_xlstlen(void *lst, size_t size);
+void				*ft_xlstat(void *lst, size_t size, int index);
+int					ft_xlstappend(void *lst_ptr, size_t size, void *new);
+int					ft_xlstinsert(void *lst_ptr, size_t size, void *new,
+						int index);
+void				*ft_xlstpop(void *lst_ptr, size_t size, int index);
+void				ft_xlstdel(void *lst_ptr, size_t size, int index);
+void				ft_xlstclear(void *lst_ptr, size_t size);
+void				*ft_xlst2array(void *lst, size_t size, size_t *__len);
 
 #endif
