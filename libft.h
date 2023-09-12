@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 16:44:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:46:37 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,15 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
 // extension
+# define STRGEN_BUFFSIZE 20
+
+typedef struct s_strgen
+{
+	char			*str;
+	char			buff[STRGEN_BUFFSIZE];
+	size_t			position;
+}					t_strgen;
+
 unsigned int		ft_abs(int n);
 int					ft_average(int array[], size_t len);
 void				ft_sort(int array[], size_t len);
@@ -94,5 +103,12 @@ void				*ft_xlstpop(void *lst_ptr, size_t size, int index);
 void				ft_xlstdel(void *lst_ptr, size_t size, int index);
 void				ft_xlstclear(void *lst_ptr, size_t size);
 void				*ft_xlst2array(void *lst, size_t size, size_t *__len);
+char				*ft_strjoin2(char const *s1, char const *s2);
+t_strgen			*ft_strgennew(void);
+void				ft_strgendel(t_strgen *strgen);
+int					ft_strgenclearbuff(t_strgen *strgen);
+int					ft_strgenchr(t_strgen *strgen, char insert);
+int					ft_strgenstr(t_strgen *strgen, char *insert);
+char				*ft_strgencomp(t_strgen *strgen);
 
 #endif
