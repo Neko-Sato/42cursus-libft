@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/12 18:48:07 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/12 19:33:30 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,7 @@ SRCS_EXTENSION	= \
 		ft_strgenchr.c \
 		ft_strgenstr.c \
 		ft_strgencomp.c \
+		ft_isspace.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))

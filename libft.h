@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 19:08:25 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:33:37 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void				ft_strgenclearbuff(t_strgen *strgen);
 void				ft_strgenchr(t_strgen *strgen, char insert);
 void				ft_strgenstr(t_strgen *strgen, char *insert);
 char				*ft_strgencomp(t_strgen *strgen);
+int					ft_isspace(int c);
 
 #endif
