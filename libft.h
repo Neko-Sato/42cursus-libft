@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/19 23:23:58 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:54:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ char				*ft_replace(const char *s, const char *before,
 						const char *after);
 void				*ft_memdup(void *src, size_t n);
 size_t				ft_xlstlen(void *lst, size_t size);
-void				*ft_xlstat(void *lst, size_t size, int index);
+int					ft_xlstat(void *lst, size_t size, int index, void *dst);
 int					ft_xlstappend(void *lst_ptr, size_t size, void *new);
 int					ft_xlstinsert(void *lst_ptr, size_t size, void *new,
 						int index);

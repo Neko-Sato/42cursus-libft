@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:48:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/19 23:15:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:47:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,12 @@ int	ft_xlstpop(void *lst_ptr, size_t size, int index, void *dst)
 		if (index < 0)
 			return (-1);
 	}
-	if (!index)
-		temp = lst_ptr;
-	else
-	{
-		temp = ft_xlstat(*(void **)lst_ptr, size, index - 1);
-		if (!temp)
-			return (-1);
-		temp += size;
-	}
+	temp = lst_ptr;
+	while (*(void **)temp && index--)
+		temp = *(void **)temp + size;
 	node = *(void **)temp;
+	if (!node)
+		return (-1);
 	*(void **)temp = *(void **)(node + size);
 	if (dst)
 		ft_memcpy(dst, node, size);
