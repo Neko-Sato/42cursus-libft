@@ -6,37 +6,37 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:48:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 16:49:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:15:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_xlstpop(void *lst_ptr, size_t size, int index)
+int	ft_xlstpop(void *lst_ptr, size_t size, int index, void *dst)
 {
-	void	*ret;
-	int		len;
 	void	*node;
 	void	*temp;
 
-	len = ft_xlstlen(*(void **)lst_ptr, size);
-	if (!len)
-		return (NULL);
 	if (index < 0)
-		index += len;
-	if (index < 0 || len < index)
-		return (NULL);
-	ret = malloc(size);
-	if (!ret)
-		return (NULL);
-	if (index == 0)
+	{
+		index += ft_xlstlen(*(void **)lst_ptr, size);
+		if (index < 0)
+			return (-1);
+	}
+	if (!index)
 		temp = lst_ptr;
 	else
-		temp = ft_xlstat(*(void **)lst_ptr, size, index - 1) + size;
+	{
+		temp = ft_xlstat(*(void **)lst_ptr, size, index - 1);
+		if (!temp)
+			return (-1);
+		temp += size;
+	}
 	node = *(void **)temp;
-	ft_memcpy(ret, node, size);
 	*(void **)temp = *(void **)(node + size);
+	if (dst)
+		ft_memcpy(dst, node, size);
 	free(node);
-	return (ret);
+	return (0);
 }

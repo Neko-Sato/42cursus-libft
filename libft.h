@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 19:33:37 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:23:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void				ft_sort(int array[], size_t len);
 int					ft_issorted(int array[], size_t len, int asc);
 int					ft_max(int array[], size_t len);
 int					ft_min(int array[], size_t len);
-void				*ft_destroy(void *ptrs[], size_t len);
 size_t				ft_digit(unsigned int n);
 char				*ft_joinpath(char *base, char *path);
 char				*ft_replace(const char *s, const char *before,
@@ -100,8 +99,8 @@ void				*ft_xlstat(void *lst, size_t size, int index);
 int					ft_xlstappend(void *lst_ptr, size_t size, void *new);
 int					ft_xlstinsert(void *lst_ptr, size_t size, void *new,
 						int index);
-void				*ft_xlstpop(void *lst_ptr, size_t size, int index);
-void				ft_xlstdel(void *lst_ptr, size_t size, int index);
+int					ft_xlstpop(void *lst_ptr, size_t size, int index,
+						void *dst);
 void				ft_xlstclear(void *lst_ptr, size_t size);
 void				*ft_xlst2array(void *lst, size_t size, size_t *__len);
 char				*ft_strjoin2(char const *s1, char const *s2);

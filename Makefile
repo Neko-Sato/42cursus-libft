@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/12 22:22:26 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/19 23:24:41 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,6 @@ SRCS_EXTENSION	= \
 		ft_xlstappend.c \
 		ft_xlstinsert.c \
 		ft_xlstpop.c \
-		ft_xlstdel.c \
 		ft_xlstclear.c \
 		ft_xlst2array.c \
 		ft_strjoin2.c \
