@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/19 23:54:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/22 02:14:55 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <sys/types.h>
 
 //	Mandatory Part 1
 int					ft_isalpha(int c);
@@ -83,6 +84,12 @@ typedef struct s_strgen
 	int				error;
 }					t_strgen;
 
+typedef struct s_bufferio
+{
+	int				fd;
+	t_strgen		*strgen;
+}					t_bufferio;
+
 unsigned int		ft_abs(int n);
 int					ft_average(int array[], size_t len);
 void				ft_sort(int array[], size_t len);
@@ -103,6 +110,7 @@ int					ft_xlstpop(void *lst_ptr, size_t size, int index,
 						void *dst);
 void				ft_xlstclear(void *lst_ptr, size_t size);
 void				*ft_xlst2array(void *lst, size_t size, size_t *__len);
+char				*ft_strdup2(const char *s1);
 char				*ft_strjoin2(char const *s1, char const *s2);
 t_strgen			*ft_strgennew(void);
 void				ft_strgendel(t_strgen *strgen);
@@ -110,6 +118,13 @@ void				ft_strgenclearbuff(t_strgen *strgen);
 void				ft_strgenchr(t_strgen *strgen, char insert);
 void				ft_strgenstr(t_strgen *strgen, char *insert);
 char				*ft_strgencomp(t_strgen *strgen);
+char				*ft_strgenfetch(t_strgen *strgen, size_t len);
 int					ft_isspace(int c);
+t_bufferio			*ft_bufferionew(int fd, int close_on_error);
+void				ft_bufferiodel(t_bufferio *io, int do_close);
+int					ft_bufferioread(t_bufferio *io);
+char				*ft_read(t_bufferio *io, int n);
+char				*ft_readline(t_bufferio *io);
+ssize_t				ft_write(t_bufferio *io, char *str);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/19 23:54:38 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/22 02:02:14 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,7 @@ SRCS_EXTENSION	= \
 		ft_xlstpop.c \
 		ft_xlstclear.c \
 		ft_xlst2array.c \
+		ft_strdup2.c \
 		ft_strjoin2.c \
 		ft_strgennew.c \
 		ft_strgendel.c \
@@ -96,7 +97,14 @@ SRCS_EXTENSION	= \
 		ft_strgenchr.c \
 		ft_strgenstr.c \
 		ft_strgencomp.c \
+		ft_strgenfetch.c \
 		ft_isspace.c \
+		ft_bufferionew.c \
+		ft_bufferiodel.c \
+		ft_bufferioread.c \
+		ft_read.c \
+		ft_readline.c \
+		ft_write.c \
 	)
 
 OBJECTS_EXTENSION = $(addprefix $(OBJS_DIR)/, $(SRCS_EXTENSION:.c=.o))
@@ -121,7 +129,7 @@ $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 all: $(NAME) bonus extension
 
 test: test.c all
-	$(CC) -g $< $(NAME) -o $@
+	$(CC) -g $< -L. -I. -lft -o $@
 
 clean:
 	$(RM) -r $(OBJS_DIR)
