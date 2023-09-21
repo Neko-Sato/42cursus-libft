@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/22 02:14:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/22 02:19:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
-// extension
-# define STRGEN_BUFFSIZE 20
-
-typedef struct s_strgen
-{
-	char			*str;
-	char			buff[STRGEN_BUFFSIZE];
-	size_t			position;
-	int				error;
-}					t_strgen;
-
-typedef struct s_bufferio
-{
-	int				fd;
-	t_strgen		*strgen;
-}					t_bufferio;
-
+//	extension
 unsigned int		ft_abs(int n);
 int					ft_average(int array[], size_t len);
 void				ft_sort(int array[], size_t len);
@@ -101,6 +85,11 @@ char				*ft_joinpath(char *base, char *path);
 char				*ft_replace(const char *s, const char *before,
 						const char *after);
 void				*ft_memdup(void *src, size_t n);
+char				*ft_strdup2(const char *s1);
+char				*ft_strjoin2(char const *s1, char const *s2);
+int					ft_isspace(int c);
+
+//		xlst
 size_t				ft_xlstlen(void *lst, size_t size);
 int					ft_xlstat(void *lst, size_t size, int index, void *dst);
 int					ft_xlstappend(void *lst_ptr, size_t size, void *new);
@@ -110,8 +99,18 @@ int					ft_xlstpop(void *lst_ptr, size_t size, int index,
 						void *dst);
 void				ft_xlstclear(void *lst_ptr, size_t size);
 void				*ft_xlst2array(void *lst, size_t size, size_t *__len);
-char				*ft_strdup2(const char *s1);
-char				*ft_strjoin2(char const *s1, char const *s2);
+
+//		strgen
+# define STRGEN_BUFFSIZE 20
+
+typedef struct s_strgen
+{
+	char			*str;
+	char			buff[STRGEN_BUFFSIZE];
+	size_t			position;
+	int				error;
+}					t_strgen;
+
 t_strgen			*ft_strgennew(void);
 void				ft_strgendel(t_strgen *strgen);
 void				ft_strgenclearbuff(t_strgen *strgen);
@@ -119,7 +118,14 @@ void				ft_strgenchr(t_strgen *strgen, char insert);
 void				ft_strgenstr(t_strgen *strgen, char *insert);
 char				*ft_strgencomp(t_strgen *strgen);
 char				*ft_strgenfetch(t_strgen *strgen, size_t len);
-int					ft_isspace(int c);
+
+//		bufferio
+typedef struct s_bufferio
+{
+	int				fd;
+	t_strgen		*strgen;
+}					t_bufferio;
+
 t_bufferio			*ft_bufferionew(int fd, int close_on_error);
 void				ft_bufferiodel(t_bufferio *io, int do_close);
 int					ft_bufferioread(t_bufferio *io);
