@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/22 08:31:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/23 08:14:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ char				*ft_strdup2(const char *s1);
 char				*ft_strjoin2(char const *s1, char const *s2);
 int					ft_isspace(int c);
 char				*ft_utoa(unsigned int n);
-int					ft_pipe3(int *reader, int *writer);
 
 //		xlst
 size_t				ft_xlstlen(void *lst, size_t size);
