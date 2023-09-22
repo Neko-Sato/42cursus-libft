@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/22 08:14:58 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/22 08:18:39 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,21 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-// static unsigned int	ft_abs(int j)
-// {
-// 	if (j < 0)
-// 		return (-(j + 1) + 1u);
-// 	else
-// 		return (j);
-// }
-
-char	*ft_itoa(int n)
+char	*ft_utoa(unsigned int n)
 {
-	char			buff[12];
-	char			*head;
-	unsigned int	m;
+	char	buf[11];
+	char	*head;
 
 	if (!n)
 		return (ft_strdup("0"));
-	head = &buff[11];
+	head = &buf[10];
 	*head-- = '\0';
-	m = ft_abs(n);
 	while (1)
 	{
-		*head-- = '0' + m % 10;
-		m /= 10;
-		if (!m)
+		*head-- = '0' + n % 10;
+		n /= 10;
+		if (!n)
 			break ;
 	}
-	if (n < 0)
-		*head-- = '-';
 	return (ft_strdup(++head));
 }

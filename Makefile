@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/22 02:02:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/22 08:31:21 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,16 @@ SRCS_EXTENSION	= \
 		ft_joinpath.c \
 		ft_replace.c \
 		ft_memdup.c \
+		ft_strdup2.c \
+		ft_strjoin2.c \
+		ft_isspace.c \
+		ft_utoa.c \
+		ft_pipe3.c \
+	)
+
+#	xlst
+SRCS_EXTENSION	+= \
+	$(addprefix $(DIR)/, \
 		ft_xlstlen.c \
 		ft_xlstat.c \
 		ft_xlstappend.c \
@@ -89,8 +99,11 @@ SRCS_EXTENSION	= \
 		ft_xlstpop.c \
 		ft_xlstclear.c \
 		ft_xlst2array.c \
-		ft_strdup2.c \
-		ft_strjoin2.c \
+	)
+
+#	strgen
+SRCS_EXTENSION	+= \
+	$(addprefix $(DIR)/, \
 		ft_strgennew.c \
 		ft_strgendel.c \
 		ft_strgenclearbuff.c \
@@ -98,7 +111,11 @@ SRCS_EXTENSION	= \
 		ft_strgenstr.c \
 		ft_strgencomp.c \
 		ft_strgenfetch.c \
-		ft_isspace.c \
+	)
+
+#	bufferio
+SRCS_EXTENSION	+= \
+	$(addprefix $(DIR)/, \
 		ft_bufferionew.c \
 		ft_bufferiodel.c \
 		ft_bufferioread.c \

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:25:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/22 02:12:52 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/22 03:28:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ char	*ft_read(t_bufferio *io, int n)
 		if (0 <= n && (size_t)n <= len)
 			return (ft_strgenfetch(io->strgen, n));
 		if (ft_bufferioread(io))
+		{
+			if (!io->strgen->str)
+				return (NULL);
 			return (ft_strgencomp(io->strgen));
+		}
 	}
 }

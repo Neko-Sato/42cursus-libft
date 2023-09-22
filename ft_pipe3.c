@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strgenfetch.c                                   :+:      :+:    :+:   */
+/*   ft_pipe3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 01:30:22 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/22 03:07:05 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/09/22 08:30:21 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/09/22 08:30:48 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strgenfetch(t_strgen *strgen, size_t len)
+int	ft_pipe3(int *reader, int *writer)
 {
-	char	*ret;
-	char	*temp;
+	int	ret;
+	int	fd[2];
 
-	if (!len || !strgen->str)
-		return (ft_strdup(""));
-	temp = ft_substr(strgen->str, len, -1);
-	if (!temp)
-		return (NULL);
-	ret = ft_substr(strgen->str, 0, len);
+	ret = pipe(fd);
 	if (!ret)
-		free(temp);
-	else
 	{
-		if (!ft_strlen(temp))
-		{
-			free(temp);
-			temp = NULL;
-		}
-		strgen->str = temp;
+		*reader = fd[0];
+		*writer = fd[1];
 	}
 	return (ret);
 }
