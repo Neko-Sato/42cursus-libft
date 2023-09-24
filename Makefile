@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/23 08:14:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/24 14:46:35 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,7 @@ SRCS_EXTENSION	= \
 		ft_strjoin2.c \
 		ft_isspace.c \
 		ft_utoa.c \
+		ft_strcmp.c \
 	)
 
 #	xlst
