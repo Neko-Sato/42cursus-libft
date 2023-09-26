@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 18:48:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/26 20:03:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/26 20:08:06 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ double	ft_atof(const char *str)
 	int		sign;
 	size_t	i;
 
-	result = 0.0;
+	result = 0.;
 	sign = 1;
 	i = 0;
 	while (ft_isspace(str[i]))
@@ -37,7 +37,7 @@ double	ft_atof(const char *str)
 	if (str_is_inf(&str[i]))
 		return (sign / 0.);
 	while (ft_isdigit(str[i]))
-		result = result * 10.0 + (str[i++] - '0');
+		result = result * 10. + (str[i++] - '0');
 	i += decimal_portion(&str[i], &result);
 	i += exponent_portion(&str[i], &result);
 	return (result * sign);
@@ -49,13 +49,13 @@ static size_t	decimal_portion(const char *str, double *result)
 	double	fraction;
 
 	i = 0;
-	fraction = 1.0;
+	fraction = 1.;
 	if (str[i] == '.')
 	{
 		i++;
 		while (ft_isdigit(str[i]))
 		{
-			fraction /= 10.0;
+			fraction /= 10.;
 			(*result) += (str[i++] - '0') * fraction;
 		}
 	}
@@ -76,7 +76,7 @@ static size_t	exponent_portion(const char *str, double *result)
 		i++;
 		if (ft_strchr("-+", str[i]))
 			if (str[i++] == '-')
-				sign = 0.1;
+				sign = .1;
 		while (ft_isdigit(str[i]))
 			exponent = exponent * 10 + (str[i++] - '0');
 		while (exponent--)
