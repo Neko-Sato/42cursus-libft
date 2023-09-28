@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/26 19:23:08 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/28 20:31:55 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,8 @@ SRCS_EXTENSION	= \
 		ft_utoa.c \
 		ft_strcmp.c \
 		ft_atof.c \
+		ft_2darraynew.c \
+		ft_2darraydel.c \
 	)
 
 #	xlst

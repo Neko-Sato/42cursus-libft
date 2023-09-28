@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/26 20:02:08 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:31:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int					ft_isspace(int c);
 char				*ft_utoa(unsigned int n);
 int					ft_strcmp(const char *s1, const char *s2);
 double				ft_atof(const char *str);
+void				*ft_2darraynew(size_t size, size_t width, size_t height);
+void				ft_2darraydel(void *array);
 
 //		xlst
 size_t				ft_xlstlen(void *lst, size_t size);
