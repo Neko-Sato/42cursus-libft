@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:15:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 19:33:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:44:54 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isspace(int c)
 {
-	return (!!ft_strchr(" \f\n\r\t\v", c));
+	return (c && ft_strchr(" \f\n\r\t\v", c));
 }

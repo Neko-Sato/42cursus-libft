@@ -6,12 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 18:48:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/26 20:08:06 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:43:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <math.h>
 
 static size_t	decimal_portion(const char *str, double *result);
 static size_t	exponent_portion(const char *str, double *result);
@@ -29,7 +28,7 @@ double	ft_atof(const char *str)
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	if (ft_strchr("-+", str[i]))
+	if (str[i] && ft_strchr("-+", str[i]))
 		if (str[i++] == '-')
 			sign = -1;
 	if (str_is_nan(&str[i]))
@@ -71,10 +70,10 @@ static size_t	exponent_portion(const char *str, double *result)
 	i = 0;
 	exponent = 0;
 	sign = 10;
-	if (ft_strchr("eE", str[i]))
+	if (str[i] && ft_strchr("eE", str[i]))
 	{
 		i++;
-		if (ft_strchr("-+", str[i]))
+		if (str[i] && ft_strchr("-+", str[i]))
 			if (str[i++] == '-')
 				sign = .1;
 		while (ft_isdigit(str[i]))
