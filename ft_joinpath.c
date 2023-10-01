@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 22:11:39 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/07 22:27:52 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/01 20:25:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_joinpath(char *base, char *path)
 		return (NULL);
 	ft_strlcpy(ret, base, size);
 	if (!separate)
-		ft_strlcat(ret, (char []){SEPARATE}, size);
+		ft_strlcat(ret, (char []){SEPARATE, '0'}, size);
 	ft_strlcat(ret, path, size);
 	return (ret);
 }
