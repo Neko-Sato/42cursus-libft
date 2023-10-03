@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_2darraydel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 19:15:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/29 17:44:54 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/09/28 20:30:56 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/09/28 20:41:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_isspace(int c)
+void	ft_2darraydel(void *array)
 {
-	return (c && ft_strchr(" \f\n\r\t\v", c));
+	char	**ptr;
+
+	ptr = array;
+	while (*ptr)
+		free(*ptr++);
+	free(array);
 }
