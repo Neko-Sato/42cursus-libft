@@ -6,17 +6,17 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/23 08:14:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/09/23 09:13:10 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 LIBFT_H		= libft.h
-DIR			= .
+ROOT_DIR	= .
 OBJS_DIR	= $(DIR)/objs
 
 SRCS 		= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -56,7 +56,7 @@ SRCS 		= \
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 SRCS_BONUS	= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
