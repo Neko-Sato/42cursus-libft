@@ -6,14 +6,14 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/04 23:04:04 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/04 23:04:58 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 LIBFT_H		= libft.h
 ROOT_DIR	= .
-OBJS_DIR	= $(DIR)/objs
+OBJS_DIR	= $(ROOT_DIR)/objs
 
 SRCS 		= \
 	$(addprefix $(ROOT_DIR)/, \
