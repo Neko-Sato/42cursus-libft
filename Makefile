@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/09/28 20:31:55 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/04 22:26:17 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,10 +86,12 @@ SRCS_EXTENSION	= \
 		ft_strjoin2.c \
 		ft_isspace.c \
 		ft_utoa.c \
+		ft_strnchr.c \
 		ft_strcmp.c \
 		ft_atof.c \
 		ft_2darraynew.c \
 		ft_2darraydel.c \
+		ft_sign.c \
 	)
 
 #	xlst
@@ -97,6 +99,7 @@ SRCS_EXTENSION	+= \
 	$(addprefix $(DIR)/, \
 		ft_xlstlen.c \
 		ft_xlstat.c \
+		ft_xlstset.c \
 		ft_xlstappend.c \
 		ft_xlstinsert.c \
 		ft_xlstpop.c \
