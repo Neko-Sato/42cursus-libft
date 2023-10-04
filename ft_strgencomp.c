@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:44:55 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/09/12 19:06:52 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/04 22:55:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ char	*ft_strgencomp(t_strgen *strgen)
 	char	*ret;
 
 	ft_strgenclearbuff(strgen);
-	ret = strgen->str;
-	if (!ret)
+	if (!strgen->error)
 	{
-		ret = ft_strdup("");
+		ret = strgen->str;
 		if (!ret)
-			strgen->error = 1;
+		{
+			ret = ft_strdup("");
+			if (!ret)
+				strgen->error = 1;
+		}
 	}
 	if (strgen->error)
 		ret = NULL;

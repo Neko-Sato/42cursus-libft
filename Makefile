@@ -6,17 +6,17 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/04 22:26:17 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/04 23:04:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 LIBFT_H		= libft.h
-DIR			= .
+ROOT_DIR	= .
 OBJS_DIR	= $(DIR)/objs
 
 SRCS 		= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -56,7 +56,7 @@ SRCS 		= \
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 SRCS_BONUS	= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -71,7 +71,7 @@ SRCS_BONUS	= \
 OBJECTS_BONUS = $(addprefix $(OBJS_DIR)/, $(SRCS_BONUS:.c=.o))
 
 SRCS_EXTENSION	= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_abs.c \
 		ft_average.c \
 		ft_sort.c \
@@ -96,7 +96,7 @@ SRCS_EXTENSION	= \
 
 #	xlst
 SRCS_EXTENSION	+= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_xlstlen.c \
 		ft_xlstat.c \
 		ft_xlstset.c \
@@ -109,7 +109,7 @@ SRCS_EXTENSION	+= \
 
 #	strgen
 SRCS_EXTENSION	+= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_strgennew.c \
 		ft_strgendel.c \
 		ft_strgenclearbuff.c \
@@ -121,7 +121,7 @@ SRCS_EXTENSION	+= \
 
 #	bufferio
 SRCS_EXTENSION	+= \
-	$(addprefix $(DIR)/, \
+	$(addprefix $(ROOT_DIR)/, \
 		ft_bufferionew.c \
 		ft_bufferiodel.c \
 		ft_bufferioread.c \
