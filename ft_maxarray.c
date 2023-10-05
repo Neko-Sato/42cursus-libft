@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strgencomp.c                                    :+:      :+:    :+:   */
+/*   ft_maxarray.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 18:44:55 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/05 09:42:12 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/08/02 21:43:36 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/05 09:41:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strgencomp(t_strgen *strgen)
+int	ft_maxarray(int array[], size_t len)
 {
-	char	*ret;
+	size_t	i;
+	int		ret;
 
-	ft_strgenclearbuff(strgen);
-	if (!strgen->error)
-	{
-		ret = strgen->str;
-		if (!ret)
-		{
-			ret = ft_strdup("");
-			if (!ret)
-				strgen->error = 1;
-		}
-	}
-	if (strgen->error)
-	{
-		free(strgen->str);
-		ret = NULL;
-	}
-	strgen->str = NULL;
-	strgen->position = 0;
-	strgen->error = 0;
+	i = 0;
+	ret = array[i++];
+	while (i < len)
+		if (ret < array[i++])
+			ret = array[i - 1];
 	return (ret);
 }

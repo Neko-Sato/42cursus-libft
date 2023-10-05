@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/04 22:26:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/05 09:41:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ unsigned int		ft_abs(int n);
 int					ft_average(int array[], size_t len);
 void				ft_sort(int array[], size_t len);
 int					ft_issorted(int array[], size_t len, int asc);
-int					ft_max(int array[], size_t len);
-int					ft_min(int array[], size_t len);
+int					ft_maxarray(int array[], size_t len);
+int					ft_minarray(int array[], size_t len);
 size_t				ft_digit(unsigned int n);
 char				*ft_joinpath(char *base, char *path);
 char				*ft_replace(const char *s, const char *before,
@@ -95,6 +95,8 @@ double				ft_atof(const char *str);
 void				*ft_2darraynew(size_t size, size_t width, size_t height);
 void				ft_2darraydel(void *array);
 int					ft_sign(int n);
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 
 //		xlst
 size_t				ft_xlstlen(void *lst, size_t size);

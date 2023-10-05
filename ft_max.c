@@ -5,22 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 21:43:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/08/09 17:58:53 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/05 09:39:52 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/05 09:40:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	ft_max(int array[], size_t len)
+int	ft_max(int a, int b)
 {
-	size_t	i;
-	int		ret;
-
-	i = 0;
-	ret = array[i++];
-	while (i < len)
-		if (ret < array[i++])
-			ret = array[i - 1];
-	return (ret);
+	if (a < b)
+		return (b);
+	else
+		return (a);
 }

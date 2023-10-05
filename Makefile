@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/04 23:04:58 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/05 09:41:28 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,8 +76,8 @@ SRCS_EXTENSION	= \
 		ft_average.c \
 		ft_sort.c \
 		ft_issorted.c\
-		ft_max.c \
-		ft_min.c \
+		ft_maxarray.c \
+		ft_minarray.c \
 		ft_digit.c \
 		ft_joinpath.c \
 		ft_replace.c \
@@ -92,6 +92,8 @@ SRCS_EXTENSION	= \
 		ft_2darraynew.c \
 		ft_2darraydel.c \
 		ft_sign.c \
+		ft_max.c \
+		ft_min.c \
 	)
 
 #	xlst
