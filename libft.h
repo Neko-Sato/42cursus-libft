@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/06 06:50:01 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/07 02:52:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int					ft_lt(int a, int b);
 int					ft_le(int a, int b);
 int					ft_gt(int a, int b);
 int					ft_ge(int a, int b);
+int					ft_isnumber(const char *src);
 
 //		xlst
 size_t				ft_xlstlen(void *lst, size_t size);

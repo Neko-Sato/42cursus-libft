@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 06:46:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/06 06:48:34 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/07 02:52:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_lt(int a, int b)
+int	ft_le(int a, int b)
 {
 	return (a <= b);
 }

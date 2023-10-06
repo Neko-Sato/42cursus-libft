@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lt.c                                            :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 06:46:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/07 02:51:41 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/07 02:49:40 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/07 02:50:53 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_lt(int a, int b)
+#include "libft.h"
+
+int	ft_isnumber(const char *src)
 {
-	return (a < b);
+	if (*src && ft_strchr("+-", *src))
+		src++;
+	if (!*src)
+		return (0);
+	while (ft_isdigit(*src))
+		src++;
+	return (!*src);
 }
