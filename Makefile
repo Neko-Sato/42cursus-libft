@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/05 09:41:28 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/06 06:50:22 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,11 @@ SRCS_EXTENSION	= \
 		ft_sign.c \
 		ft_max.c \
 		ft_min.c \
+		ft_eq.c \
+		ft_lt.c \
+		ft_le.c \
+		ft_gt.c \
+		ft_ge.c \
 	)
 
 #	xlst
