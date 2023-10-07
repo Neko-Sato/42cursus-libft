@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 01:30:22 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/04 22:38:42 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/07 19:34:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_strgenfetch(t_strgen *strgen, size_t len)
 			free(temp);
 			temp = NULL;
 		}
+		free(strgen->str);
 		strgen->str = temp;
 	}
 	return (ret);
