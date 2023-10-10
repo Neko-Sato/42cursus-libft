@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/07 20:25:18 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/10 21:21:53 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ SRCS_EXTENSION	= \
 		ft_ge.c \
 		ft_isnumber.c \
 		ft_atol.c \
+		ft_mod.c \
 	)
 
 #	xlst
