@@ -6,10 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:33:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:57:05 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/11 00:45:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_array.h>
 #include <ft_string.h>
 #include <stddef.h>
 

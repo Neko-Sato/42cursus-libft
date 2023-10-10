@@ -6,10 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:23:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:02:34 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/11 00:47:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_put_fd.h>
 #include <ft_stdlib.h>
 
 static size_t	ft_itoalen(int n)
