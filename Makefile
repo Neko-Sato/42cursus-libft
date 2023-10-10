@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/11 00:45:01 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/11 01:22:24 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -142,13 +142,13 @@ IDFLAGS		+= -I$(INCS_DIR)
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
 
-bonus: all
-
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $(IDFLAGS) $< -o $@
 
-all: $(NAME) bonus extension
+all: $(NAME)
+
+bonus: $(NAME)
 
 test: test.c all
 	$(CC) -g $< -L. -I. -lft -o $@
