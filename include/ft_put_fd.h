@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_put_fd.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:54:27 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/10 23:07:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_PUT_FD_H
+# define FT_PUT_FD_H
 
-# include "include/ft_array.h"
-# include "include/ft_bufferio.h"
-# include "include/ft_ctype.h"
-# include "include/ft_lst.h"
-# include "include/ft_operator.h"
-# include "include/ft_pathlib.h"
-# include "include/ft_put_fd.h"
-# include "include/ft_stdlib.h"
-# include "include/ft_strgen.h"
-# include "include/ft_string.h"
-# include "include/ft_utils.h"
-# include "include/ft_xlst.h"
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
