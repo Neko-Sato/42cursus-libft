@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/11 17:15:20 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/11 17:19:21 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,7 +149,7 @@ OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
 # CFLAGS		+= -g
-CFLAGS		+= -O2 -Wno-unused-result
+CFLAGS		+= -O2
 IDFLAGS		+= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus extension test norm
