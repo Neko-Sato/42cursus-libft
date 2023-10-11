@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:54:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:22:46 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 # include "include/ft_string.h"
 # include "include/ft_utils.h"
 # include "include/ft_xlst.h"
+# include "include/ft_complex.h"
 
 #endif

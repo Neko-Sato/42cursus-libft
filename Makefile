@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/11 01:22:24 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/11 15:25:34 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,6 +130,19 @@ SRCS 		= \
 			ft_xlstpop.c \
 			ft_xlstset.c \
 		) \
+		$(addprefix ft_complex/, \
+			ft_cabs.c \
+			ft_carg.c \
+			ft_conj.c \
+			ft_cadd.c \
+			ft_csub.c \
+			ft_cmul.c \
+			ft_cdiv.c \
+			ft_cexp.c \
+			ft_cln.c \
+			ft_cpow.c \
+			ft_clog.c \
+		)\
 	)
 
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
