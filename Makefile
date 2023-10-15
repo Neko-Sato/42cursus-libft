@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/15 17:46:59 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/15 17:49:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,7 +155,7 @@ CFLAGS		= -Wall -Wextra -Werror
 CFLAGS		+= -O2
 IDFLAGS		+= -I$(INCS_DIR)
 
-.PHONY: all clean fclean re bonus extension test norm
+.PHONY: all clean fclean re bonus test norm
 
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
