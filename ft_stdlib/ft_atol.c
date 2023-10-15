@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:06:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:06:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/15 20:36:03 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include <ft_ctype.h>
 #include <limits.h>
-#include <errno.h>
 
 long	ft_atol(const char *str)
 {
@@ -27,7 +27,7 @@ long	ft_atol(const char *str)
 		str++;
 	if (*str == '+' || *str == '-')
 		neg = *str++ == '-';
-	cutoff = neg * (unsigned long)LONG_MIN + !neg * (unsigned long)LONG_MAX;
+	cutoff = (unsigned long []){LONG_MIN, LONG_MAX}[neg];
 	while ('0' <= *str && *str <= '9')
 	{
 		result *= 10;
