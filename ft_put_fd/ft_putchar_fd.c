@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:14:14 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 17:14:34 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/12 11:38:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	int	size;
+
+	size = write(fd, &c, 1);
+	(void)size;
 }
