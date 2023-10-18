@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdlib.h                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/18 19:11:25 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/19 10:10:40 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/18 19:04:39 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
+#include <ft_string.h>
+#include <stddef.h>
+#include <stdlib.h>
 
-# include <stddef.h>
+void	*ft_realloc(void *ptr, size_t size)
+{
+	void	*ret;
 
-unsigned int	ft_abs(int n);
-double			ft_atof(const char *str);
-int				ft_atoi(const char *str);
-long			ft_atol(const char *str);
-void			*ft_calloc(size_t count, size_t size);
-void			*ft_realloc(void *ptr, size_t size);
-char			*ft_itoa(int n);
-char			*ft_utoa(unsigned int n);
-
-#endif
+	ret = malloc(size);
+	if (!ret)
+		return (NULL);
+	ft_memcpy(ret, ptr, size);
+	free(ptr);
+	return (ret);
+}
