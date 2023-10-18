@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:10:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/18 19:35:08 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 00:33:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_srealloc(void *ptr, size_t size)
 	ret = ft_smalloc(size);
 	if (!ret)
 		return (NULL);
+	if (ft_ssizeof(ptr) < size)
+		size = ft_ssizeof(ptr);
 	ft_memcpy(ret, ptr, size);
 	ft_sfree(ptr);
 	return (ret);
