@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_gcd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/19 23:08:28 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/05 09:39:52 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/19 23:06:00 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+int	ft_gcd(int a, int b)
+{
+	int	temp;
 
-# include <stddef.h>
-
-int		ft_sign(int n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
-size_t	ft_digit(unsigned int n);
-int		ft_isnumber(const char *src);
-int		ft_gcd(int a, int b);
-int		ft_lcm(int a, int b);
-
-#endif
+	while (b)
+	{
+		temp = b;
+		b = a % b;
+		a = temp;
+	}
+	return (a);
+}

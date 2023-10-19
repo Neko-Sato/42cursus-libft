@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/19 21:11:04 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/19 23:09:06 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,6 +125,8 @@ SRCS 		= \
 			ft_max.c \
 			ft_min.c \
 			ft_sign.c \
+			ft_gcd.c \
+			ft_lcm.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlst2array.c \
