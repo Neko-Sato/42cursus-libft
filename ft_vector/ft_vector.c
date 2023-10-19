@@ -5,28 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:43:07 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/20 02:02:47 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/19 18:03:08 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/20 02:28:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
-#include <stdlib.h>
+#include <ft_vector.h>
 
-// [capacity, size, ...]
-void	*ft_vector(void *array, size_t size, size_t capacity)
+void	*ft_vector(size_t sizeoftype, void *array, size_t size)
 {
-	void	*vector;
-
-	if (capacity < size)
-		capacity = size;
-	vector = malloc(sizeof(size_t[2]) + capacity);
-	if (!vector)
-		return (NULL);
-	vector = &((size_t *)vector)[2];
-	((size_t *)vector)[-2] = capacity;
-	((size_t *)vector)[-1] = size;
-	if (array)
-		ft_memcpy(vector, array, size);
-	return (vector);
+	return (ft_vector_new(sizeoftype, array, size, size));
 }

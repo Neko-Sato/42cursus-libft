@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:39:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/19 18:48:32 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/20 02:36:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,20 @@
 int	ft_vector_insert(void *vector_ptr, size_t index, void *value, size_t size)
 {
 	void	*vector;
+	size_t	sizeoftype;
 	void	*dst;
 	void	*src;
+	size_t	n;
 
 	if (ft_vector_growth(vector_ptr, size))
 		return (-1);
 	vector = *(void **)vector_ptr;
-	src = vector + index;
-	dst = src + size;
+	sizeoftype = ft_vector_sizeoftype(vector);
+	src = vector + sizeoftype * index;
+	dst = src + sizeoftype * size;
+	n = sizeoftype * (ft_vector_size(vector) - index);
 	((size_t *)vector)[-1] += size;
-	ft_memmove(dst, src, ft_vector_size(vector) - index - size);
-	ft_memcpy(src, value, size);
+	ft_memmove(dst, src, n);
+	ft_memcpy(src, value, sizeoftype * size);
 	return (0);
 }

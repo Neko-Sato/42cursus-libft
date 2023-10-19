@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/19 23:09:06 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/20 02:29:14 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,7 +160,9 @@ SRCS 		= \
 		)\
 		$(addprefix ft_vector/, \
 			ft_vector.c \
+			ft_vector_new.c \
 			ft_vector_del.c \
+			ft_vector_sizeoftype.c \
 			ft_vector_capacity.c \
 			ft_vector_size.c \
 			ft_vector_reserve.c \
