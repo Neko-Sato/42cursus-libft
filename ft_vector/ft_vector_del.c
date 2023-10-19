@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:39:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/18 23:56:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:20:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_vector_del(void *vector)
 {
-	return (free(&((size_t *)vector)[-3]));
+	return (free(&((size_t *)vector)[-2]));
 }

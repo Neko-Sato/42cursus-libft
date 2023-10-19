@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_sizeoftype.c                             :+:      :+:    :+:   */
+/*   ft_vector_push_back.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 23:39:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/19 00:17:05 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/10/19 18:38:34 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/10/19 18:54:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <ft_vector.h>
+#include <stddef.h>
 
-size_t	ft_vector_sizeoftype(void *vector)
+int	ft_vector_push_back(void *vector_ptr, void *value, size_t size)
 {
-	return (((size_t *)vector)[-3]);
+	return (ft_vector_insert(vector_ptr, ft_vector_size(*(void **)vector_ptr),
+			value, size));
 }
