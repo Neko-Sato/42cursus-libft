@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:25:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:46:10 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:24:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_readline(t_bufferio *io)
 	len = 0;
 	while (1)
 	{
-		ft_strgenclearbuff(io->strgen);
+		ft_strgenflush(io->strgen);
 		if (io->strgen->str)
 		{
 			while (!ft_strchr("\n", io->strgen->str[len]))

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 22:37:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:24:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_strgen
 
 t_strgen	*ft_strgennew(void);
 void		ft_strgendel(t_strgen *strgen);
-void		ft_strgenclearbuff(t_strgen *strgen);
+void		ft_strgenflush(t_strgen *strgen);
 void		ft_strgenchr(t_strgen *strgen, char insert);
 void		ft_strgenstr(t_strgen *strgen, char *insert);
 char		*ft_strgencomp(t_strgen *strgen);

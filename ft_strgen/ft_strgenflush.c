@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strgenclearbuff.c                               :+:      :+:    :+:   */
+/*   ft_strgenflush.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:43:08 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:08:52 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:22:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft_string.h>
 #include <stdlib.h>
 
-void	ft_strgenclearbuff(t_strgen *strgen)
+void	ft_strgenflush(t_strgen *strgen)
 {
 	char	*temp;
 

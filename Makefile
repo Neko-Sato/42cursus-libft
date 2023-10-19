@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/19 18:53:56 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/19 19:24:14 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ SRCS 		= \
 		) \
 		$(addprefix ft_strgen/, \
 			ft_strgenchr.c \
-			ft_strgenclearbuff.c \
+			ft_strgenflush.c \
 			ft_strgencomp.c \
 			ft_strgendel.c \
 			ft_strgenfetch.c \

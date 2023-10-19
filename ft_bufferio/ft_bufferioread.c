@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:59:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:23:45 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	ft_bufferioread(t_bufferio *io)
 		return (-1);
 	io->strgen->position += read_size;
 	if (io->strgen->position > STRGEN_BUFFSIZE)
-		ft_strgenclearbuff(io->strgen);
+		ft_strgenflush(io->strgen);
 	return (!read_size);
 }
