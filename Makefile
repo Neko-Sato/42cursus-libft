@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/19 19:24:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/19 21:11:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS 		= \
 		$(addprefix ft_array/, \
 			ft_2darraydel.c \
 			ft_2darraynew.c \
+			ft_ndarraydel.c \
+			ft_ndarraynew.c \
 			ft_average.c \
 			ft_issorted.c \
 			ft_maxarray.c \
@@ -192,7 +194,7 @@ all: $(NAME)
 bonus: $(NAME)
 
 test: test.c all
-	$(CC) -g $< -L. -I. -lft -o $@
+	$(CC) -g -fsanitize=address $< -L. -I. -lft -o $@
 
 clean:
 	$(RM) -r $(OBJS_DIR)
