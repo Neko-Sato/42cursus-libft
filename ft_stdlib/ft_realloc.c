@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:10:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/18 19:04:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/10/21 08:16:42 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*ft_realloc(void *ptr, size_t size)
 	ret = malloc(size);
 	if (!ret)
 		return (NULL);
-	ft_memcpy(ret, ptr, size);
+	if (ptr)
+		ft_memcpy(ret, ptr, size);
 	free(ptr);
 	return (ret);
 }
