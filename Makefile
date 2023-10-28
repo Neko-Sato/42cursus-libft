@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/28 11:48:43 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/28 23:23:56 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -197,6 +197,9 @@ IDFLAGS		+= -I$(INCS_DIR)
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
 
+%.so: %.a 
+	$(CC) -shared -fPIC -o $@ -Wl,--whole-archive $< -Wl,--no-whole-archive 
+
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $(IDFLAGS) $< -o $@
@@ -217,7 +220,4 @@ norm: $(LIBFT_H) $(SRCS) $(INCS_DIR)
 	@norminette $^
 
 test: test.c all
-	$(CC) -g -fsanitize=address $< -L. -I. -lft -o $@
-
-libft.so: $(OBJECTS)
-	$(CC) -shared -fPIC $^ -o $@
+	$(CC) -g -fsanitize=address $< -o $@ -L. -I. -lft
