@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/10/20 02:29:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/10/28 11:48:43 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,14 @@ SRCS 		= \
 			ft_xlstpop.c \
 			ft_xlstset.c \
 		) \
+		$(addprefix ft_operator/, \
+			ft_eq.c \
+			ft_ge.c \
+			ft_gt.c \
+			ft_le.c \
+			ft_lt.c \
+			ft_mod.c \
+		) \
 		$(addprefix ft_complex/, \
 			ft_cabs.c \
 			ft_carg.c \
@@ -184,7 +192,7 @@ CFLAGS		= -Wall -Wextra -Werror
 CFLAGS		+= -O2
 IDFLAGS		+= -I$(INCS_DIR)
 
-.PHONY: all clean fclean re bonus test norm
+.PHONY: all clean fclean re bonus norm test
 
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
@@ -197,9 +205,6 @@ all: $(NAME)
 
 bonus: $(NAME)
 
-test: test.c all
-	$(CC) -g -fsanitize=address $< -L. -I. -lft -o $@
-
 clean:
 	$(RM) -r $(OBJS_DIR)
 
@@ -210,3 +215,9 @@ re: fclean all
 
 norm: $(LIBFT_H) $(SRCS) $(INCS_DIR)
 	@norminette $^
+
+test: test.c all
+	$(CC) -g -fsanitize=address $< -L. -I. -lft -o $@
+
+libft.so: $(OBJECTS)
+	$(CC) -shared -fPIC $^ -o $@
