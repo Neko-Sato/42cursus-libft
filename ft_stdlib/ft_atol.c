@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:06:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/15 20:36:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:47:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ long	ft_atol(const char *str)
 		}
 		result += n;
 	}
-	return ((1 + (-2 * neg)) * result);
+	return ((long []){1l, -1l}[neg] * result);
 }
