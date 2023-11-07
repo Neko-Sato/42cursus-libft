@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/11/04 19:47:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:24:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ size_t	ft_digit(unsigned int n);
 int		ft_isnumber(const char *src, int issigned);
 int		ft_gcd(int a, int b);
 int		ft_lcm(int a, int b);
+int		ft_isprime(int n);
 
 #endif
