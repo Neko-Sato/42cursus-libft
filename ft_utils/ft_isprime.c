@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:17:00 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/11/07 20:23:59 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:35:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_isprime(int n)
 			return (0);
 	return (1);
 }
+
 static double	newtons_method_sqrt(double n, unsigned int precision)
 {
 	double	result;

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/11/07 20:24:25 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/11/22 14:33:49 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS 		= \
 			ft_isdigit.c \
 			ft_isprint.c \
 			ft_isspace.c \
+			ft_isblank.c \
 			ft_tolower.c \
 			ft_toupper.c \
 		) \
