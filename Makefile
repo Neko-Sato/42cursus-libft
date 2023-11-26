@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/11/22 14:33:49 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/11/26 12:53:30 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,7 @@ SRCS 		= \
 		$(addprefix ft_stdlib/, \
 			ft_abs.c \
 			ft_atof.c \
+			ft_strtol.c \
 			ft_atoi.c \
 			ft_atol.c \
 			ft_calloc.c \
