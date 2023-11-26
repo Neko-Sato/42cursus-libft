@@ -6,12 +6,12 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 10:15:45 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/11/26 13:54:51 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:11:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <errno.h>
 #include <ft_ctype.h>
+#include <errno.h>
 
 static int	tonbr(int c);
 static long	core(const char *nptr, int neg, char **endptr, int base);
