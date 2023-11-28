@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/11/26 22:31:37 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/11/28 18:34:03 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -184,12 +184,6 @@ SRCS 		= \
 			ft_vector_insert.c \
 			ft_vector_pop_back.c \
 			ft_vector_push_back.c \
-		)\
-		$(addprefix ft_dict/, \
-			ft_dict_set.c \
-			ft_dict_get.c \
-			ft_dict_del.c \
-			ft_dict_clear.c \
 		)\
 	)
 
