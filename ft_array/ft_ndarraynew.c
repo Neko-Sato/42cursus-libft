@@ -19,7 +19,7 @@ void	*ft_ndarraynew(size_t size, size_t shape[], size_t ndim)
 	size_t	i;
 
 	if (!ndim)
-		return (malloc(0));
+		return (NULL);
 	else if (ndim <= 1)
 		return (malloc(size * shape[0]));
 	array = malloc(sizeof(void *) * (shape[0] + 1));
