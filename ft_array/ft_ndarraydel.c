@@ -18,6 +18,7 @@ void	ft_ndarraydel(void *array, size_t ndim)
 	void	*head;
 	size_t	i;
 
+	head = array;
 	i = 0;
 	if (1 < ndim)
 		while (array && ((void **)array)[i])
