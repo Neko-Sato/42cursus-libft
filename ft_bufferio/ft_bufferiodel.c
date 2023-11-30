@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:14:53 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:58:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:40:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 void	ft_bufferiodel(t_bufferio *io, int do_close)
 {
+	if (!io)
+		return ;
 	ft_strgendel(io->strgen);
 	if (do_close)
 		close(io->fd);
