@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/11/28 18:34:03 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/12/09 03:45:43 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -184,6 +184,15 @@ SRCS 		= \
 			ft_vector_insert.c \
 			ft_vector_pop_back.c \
 			ft_vector_push_back.c \
+		)\
+		$(addprefix ft_search/, \
+			__getnodep.c \
+			__minnodep.c \
+			ft_tsearch.c \
+			ft_tfind.c \
+			ft_twalk.c \
+			ft_tdelete.c \
+			ft_tdestroy.c \
 		)\
 	)
 
