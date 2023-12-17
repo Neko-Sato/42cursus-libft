@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 23:20:39 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/11 23:45:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 08:21:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 	case_fns indicates each case, return -1 for errors and 1 for breaks.
 */
 
-int	ft_switchcase(t_switchcase_args *args, void *expression)
+int	ft_switchcase(t_switchcase *args, void *expression)
 {
 	size_t	i;
 	int		ret;
