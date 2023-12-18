@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/11/26 22:29:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:08:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define FT_STDLIB_H
 
 # include <stddef.h>
+
+typedef int		(*t_compar_fn)(void *, void *);
+typedef void	(*t_free_fn)(void *);
 
 unsigned int	ft_abs(int n);
 double			ft_atof(const char *str);

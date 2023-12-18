@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:36:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/09 03:13:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:09:55 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	case_leaf(t_search_node **nodep);
 static void	case_one_node(t_search_node **nodep);
 static void	case_two_node(t_search_node **nodep);
 
-void	*ft_tdelete(void *key, void **rootp, t_search_compar compar)
+void	*ft_tdelete(void *key, void **rootp, t_compar_fn compar)
 {
 	t_search_node	**nodep;
 
