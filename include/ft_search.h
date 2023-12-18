@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:43:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 09:09:21 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:39:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <ft_stdlib.h>
 # include <search.h>
 
+//	tsearch
 typedef struct s_search_node
 {
 	void					*key;
@@ -37,7 +38,22 @@ void						*ft_tfind(void *key, void **rootp,
 void						*ft_tdelete(void *key, void **rootp,
 								t_compar_fn compar);
 void						ft_twalk(void *root, t_search_action action);
-void						ft_tdestroy(void *root,
-								t_free_fn free_node);
+void						ft_tdestroy(void *root, t_free_fn free_node);
+
+//	lsearch
+/*
+	structure because the number of arguments is limited by norm.
+*/
+typedef struct s_lsearch_args
+{
+	void					*key;
+	void					*base;
+	size_t					*nmemb;
+	size_t					size;
+	t_compar_fn				compar;
+}							t_lsearch_args;
+
+void						*ft_lsearch(t_lsearch_args *args);
+void						*ft_lfind(t_lsearch_args *args);
 
 #endif

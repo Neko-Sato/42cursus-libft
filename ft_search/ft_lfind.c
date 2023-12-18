@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tsearch.c                                       :+:      :+:    :+:   */
+/*   ft_lfind.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 19:40:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 09:10:54 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/12/18 09:21:20 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/12/18 09:38:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_search.h>
-#include <stdlib.h>
 
-void	*ft_tsearch(void *key, void **rootp, t_compar_fn compar)
+/*
+	void		*key;
+	void		*base;
+	size_t		*nmemb;
+	size_t		size;
+	t_compar_fn	compar;
+*/
+void	*ft_lfind(t_lsearch_args *args)
 {
-	t_search_node	**nodep;
+	char	*result;
+	size_t	count;
 
-	if (!rootp)
-		return (NULL);
-	nodep = __ft_search_getnodep(key, rootp, compar);
-	if (!*nodep)
+	result = args->base;
+	count = 0;
+	while (count < *args->nmemb)
 	{
-		*nodep = malloc(sizeof(**nodep));
-		if (!*nodep)
-			return (NULL);
-		(*nodep)->key = key;
-		(*nodep)->left = NULL;
-		(*nodep)->right = NULL;
+		if (!args->compar(key, result))
+			return (result);
+		result += args->size;
+		count++;
 	}
-	return (nodep);
+	return (NULL);
 }
