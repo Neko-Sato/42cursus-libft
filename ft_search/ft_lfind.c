@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 09:21:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 09:38:57 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:10:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_lfind(t_lsearch_args *args)
 	count = 0;
 	while (count < *args->nmemb)
 	{
-		if (!args->compar(key, result))
+		if (!args->compar(args->key, result))
 			return (result);
 		result += args->size;
 		count++;

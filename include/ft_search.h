@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:43:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 09:39:15 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:34:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_SEARCH_H
 # define FT_SEARCH_H
 
-# include <ft_stdlib.h>
+# include "ft_stdlib.h"
 # include <search.h>
 
 //	tsearch

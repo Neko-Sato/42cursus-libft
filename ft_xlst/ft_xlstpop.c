@@ -6,34 +6,32 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:48:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:18:14 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:38:26 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_xlst.h>
 #include <ft_string.h>
+#include <ft_xlst.h>
 #include <stdlib.h>
 
-int	ft_xlstpop(void *lst_ptr, size_t size, int index, void *dst)
+int	ft_xlstpop(t_xlst **lst_ptr, int index, void *dst, size_t size)
 {
-	void	*node;
-	void	*temp;
+	t_xlst	*node;
 
 	if (index < 0)
 	{
-		index += ft_xlstlen(*(void **)lst_ptr, size);
+		index += ft_xlstlen(*lst_ptr);
 		if (index < 0)
 			return (-1);
 	}
-	temp = lst_ptr;
-	while (*(void **)temp && index--)
-		temp = *(void **)temp + size;
-	node = *(void **)temp;
+	while (*lst_ptr && index--)
+		lst_ptr = &(*lst_ptr)->next;
+	node = *lst_ptr;
 	if (!node)
 		return (-1);
-	*(void **)temp = *(void **)(node + size);
+	*lst_ptr = node->next;
 	if (dst)
-		ft_memcpy(dst, node, size);
+		ft_memcpy(dst, node->data, size);
 	free(node);
 	return (0);
 }

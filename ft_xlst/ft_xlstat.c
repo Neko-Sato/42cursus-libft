@@ -5,33 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 14:47:14 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:17:39 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/21 20:58:20 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/12/18 10:07:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_xlst.h>
-#include <ft_string.h>
 #include <stddef.h>
 
-int	ft_xlstat(void *lst, size_t size, int index, void *dst)
+void	*ft_xlstat(t_xlst *lst, int index)
 {
 	int	count;
 
 	count = 0;
 	if (index < 0)
 	{
-		index += ft_xlstlen(lst, size);
+		index += ft_xlstlen(lst);
 		if (index < 0)
-			return (-1);
+			return (NULL);
 	}
 	while (lst && count < index)
 	{
-		lst = *(void **)(lst + size);
+		lst = lst->next;
 		count++;
 	}
 	if (!lst)
-		return (-1);
-	ft_memcpy(dst, lst, size);
-	return (0);
+		return (NULL);
+	return (lst->data);
 }

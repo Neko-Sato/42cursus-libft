@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lsearch.c                                       :+:      :+:    :+:   */
+/*   ft_xlstdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 09:21:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 10:10:03 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/09/12 14:49:14 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/12/18 10:08:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_search.h>
-#include <ft_string.h>
+#include <ft_xlst.h>
+#include <stdlib.h>
 
-/*
-	void		*key;
-	void		*base;
-	size_t		*nmemb;
-	size_t		size;
-	t_compar_fn	compar;
-*/
-void	*ft_lsearch(t_lsearch_args *args)
+int	ft_xlstdel(t_xlst **lst_ptr, int index)
 {
-	void	*result;
-
-	result = ft_lfind(args);
-	if (!result)
-	{
-		result = &((char *)args->base)[*args->nmemb * args->size];
-		ft_memcpy(result, args->key, args->size);
-		(*args->nmemb)++;
-	}
-	return (result);
+	return (ft_xlstpop(lst_ptr, index, NULL, 0));
 }

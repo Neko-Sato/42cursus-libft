@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lsearch.c                                       :+:      :+:    :+:   */
+/*   ft_xlstget.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 09:21:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 10:10:03 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/09/12 14:47:14 by hshimizu          #+#    #+#             */
+/*   Updated: 2023/12/18 08:40:26 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_search.h>
 #include <ft_string.h>
+#include <ft_xlst.h>
 
-/*
-	void		*key;
-	void		*base;
-	size_t		*nmemb;
-	size_t		size;
-	t_compar_fn	compar;
-*/
-void	*ft_lsearch(t_lsearch_args *args)
+int	ft_xlstget(t_xlst *lst, int index, void *dst, size_t size)
 {
-	void	*result;
+	void	*src;
 
-	result = ft_lfind(args);
-	if (!result)
-	{
-		result = &((char *)args->base)[*args->nmemb * args->size];
-		ft_memcpy(result, args->key, args->size);
-		(*args->nmemb)++;
-	}
-	return (result);
+	src = ft_xlstat(lst, index);
+	if (!src)
+		return (-1);
+	ft_memcpy(dst, src, size);
+	return (0);
 }

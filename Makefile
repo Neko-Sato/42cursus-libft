@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/12/18 08:20:12 by hshimizu         ###   ########.fr        #
+#    Updated: 2023/12/18 10:06:32 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,14 +133,16 @@ SRCS 		= \
 			ft_intcmp.c \
 		) \
 		$(addprefix ft_xlst/, \
-			ft_xlst2array.c \
-			ft_xlstappend.c \
-			ft_xlstat.c \
-			ft_xlstclear.c \
-			ft_xlstinsert.c \
 			ft_xlstlen.c \
-			ft_xlstpop.c \
+			ft_xlstat.c \
 			ft_xlstset.c \
+			ft_xlstget.c \
+			ft_xlstappend.c \
+			ft_xlstinsert.c \
+			ft_xlstpop.c \
+			ft_xlstdel.c \
+			ft_xlstclear.c \
+			ft_xlst2array.c \
 		) \
 		$(addprefix ft_operator/, \
 			ft_eq.c \
@@ -195,6 +197,8 @@ SRCS 		= \
 			ft_twalk.c \
 			ft_tdelete.c \
 			ft_tdestroy.c \
+			ft_lsearch.c \
+			ft_lfind.c \
 		)\
 	)
 

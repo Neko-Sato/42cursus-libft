@@ -6,33 +6,31 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:48:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:18:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:50:21 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_xlst.h>
 #include <ft_string.h>
+#include <ft_xlst.h>
 #include <stdlib.h>
 
-int	ft_xlstinsert(void *lst_ptr, size_t size, void *new, int index)
+int	ft_xlstinsert(t_xlst **lst_ptr, int index, void *new, size_t size)
 {
-	void	*node;
-	void	*temp;
+	t_xlst	*node;
 
-	node = malloc(size + sizeof(void *));
+	node = malloc(sizeof(t_xlst) + size);
 	if (!node)
 		return (-1);
-	ft_memcpy(node, new, size);
 	if (index < 0)
 	{
-		index += ft_xlstlen(*(void **)lst_ptr, size);
+		index += ft_xlstlen(*lst_ptr);
 		if (index < 0)
 			index = 0;
 	}
-	temp = lst_ptr;
-	while (*(void **)temp && index--)
-		temp = *(void **)temp + size;
-	*(void **)(node + size) = *(void **)temp;
-	*(void **)temp = node;
+	while (*lst_ptr && index--)
+		lst_ptr = &(*lst_ptr)->next;
+	node->next = *lst_ptr;
+	*lst_ptr = node;
+	ft_memcpy(node->data, new, size);
 	return (0);
 }
