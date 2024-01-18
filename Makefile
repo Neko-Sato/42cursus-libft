@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2023/12/11 23:47:46 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/01/18 17:27:17 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,7 +129,6 @@ SRCS 		= \
 			ft_gcd.c \
 			ft_lcm.c \
 			ft_isprime.c \
-			ft_switchcase.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlst2array.c \
