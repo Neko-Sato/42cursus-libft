@@ -6,29 +6,28 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:43:07 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/20 02:47:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:49:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
+#include <ft_vector.h>
 #include <stdlib.h>
 
-// [sizeoftype, capacity, size, ...]
 void	*ft_vector_new(size_t sizeoftype, void *array, size_t size,
 		size_t capacity)
 {
-	void	*vector;
+	t_vector	*vector;
 
 	if (capacity < size)
 		capacity = size;
-	vector = malloc(sizeof(size_t[3]) + sizeoftype * capacity);
+	vector = malloc(sizeof(t_vector) + sizeoftype * capacity);
 	if (!vector)
 		return (NULL);
-	vector = &((size_t *)vector)[3];
-	((size_t *)vector)[-3] = sizeoftype;
-	((size_t *)vector)[-2] = capacity;
-	((size_t *)vector)[-1] = size;
+	vector->sizeoftype = sizeoftype;
+	vector->capacity = capacity;
+	vector->size = size;
 	if (array)
-		ft_memcpy(vector, array, sizeoftype * size);
-	return (vector);
+		ft_memcpy(vector->data, array, sizeoftype * size);
+	return (vector->data);
 }
