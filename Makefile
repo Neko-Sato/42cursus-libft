@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/01/18 19:45:44 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/01/28 21:02:26 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,6 +130,7 @@ SRCS 		= \
 			ft_lcm.c \
 			ft_isprime.c \
 			ft_intcmp.c \
+			ft_noop.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
