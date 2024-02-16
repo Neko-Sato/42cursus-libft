@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:14:53 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/10 23:58:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:54:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-t_bufferio	*ft_bufferionew(int fd, int close_on_error)
+t_bufferio	*ft_bufferionew(int fd, size_t buffsize, int close_on_error)
 {
 	t_bufferio	*ret;
 
@@ -28,7 +28,7 @@ t_bufferio	*ft_bufferionew(int fd, int close_on_error)
 			close(fd);
 		return (NULL);
 	}
-	ret->strgen = ft_strgennew();
+	ret->strgen = ft_strgennew(buffsize);
 	if (!ret->strgen)
 	{
 		free(ret);

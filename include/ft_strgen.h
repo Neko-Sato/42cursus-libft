@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/16 12:51:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:55:48 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_strgen
 	char	*str;
 	size_t	position;
 	int		error;
+	size_t	buffsize;
 	char	buff[0];
 }			t_strgen;
 
