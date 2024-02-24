@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/24 14:50:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:57:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 # include <stddef.h>
 
+# ifndef STRGEN_BUUFERSIZE
+#  define STRGEN_BUUFERSIZE 20
+# endif
+
 typedef struct s_strgen
 {
 	char	*str;
 	size_t	pos;
 	size_t	size;
-	char	buf[0];
+	char	buf[1];
 }			t_strgen;
 
 t_strgen	*ft_strgennew(size_t buffsize);
