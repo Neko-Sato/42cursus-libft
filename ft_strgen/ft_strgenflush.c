@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:43:08 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/19 19:22:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/24 13:32:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 #include <ft_string.h>
 #include <stdlib.h>
 
-void	ft_strgenflush(t_strgen *strgen)
+int	ft_strgenflush(t_strgen *strgen)
 {
 	char	*temp;
 
-	if (!strgen->position || strgen->error)
-		return ;
-	strgen->buff[strgen->position] = '\0';
-	temp = ft_strjoin2(strgen->str, strgen->buff);
+	if (!strgen->pos)
+		return (0);
+	strgen->buf[strgen->pos] = '\0';
+	if (strgen->str)
+		temp = ft_strjoin(strgen->str, strgen->buf);
+	else
+		temp = ft_strdup(strgen->buf);
 	if (!temp)
-	{
-		strgen->error = 1;
-		return ;
-	}
+		return (-1);
 	free(strgen->str);
 	strgen->str = temp;
-	strgen->position = 0;
+	strgen->pos = 0;
+	return (0);
 }

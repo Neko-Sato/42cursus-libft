@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/02/02 14:45:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/02/24 14:50:56 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,6 @@ SRCS 		= \
 			ft_sum.c \
 			ft_all.c \
 			ft_any.c \
-		) \
-		$(addprefix ft_bufferio/, \
-			ft_bufferiodel.c \
-			ft_bufferionew.c \
-			ft_bufferioread.c \
-			ft_read.c \
-			ft_readline.c \
-			ft_write.c \
 		) \
 		$(addprefix ft_ctype/, \
 			ft_isalnum.c \
@@ -82,12 +74,11 @@ SRCS 		= \
 			ft_utoa.c \
 		) \
 		$(addprefix ft_strgen/, \
-			ft_strgenchr.c \
-			ft_strgenflush.c \
-			ft_strgencomp.c \
-			ft_strgendel.c \
-			ft_strgenfetch.c \
 			ft_strgennew.c \
+			ft_strgendel.c \
+			ft_strgencomp.c \
+			ft_strgenflush.c \
+			ft_strgenchr.c \
 			ft_strgenstr.c \
 		) \
 		$(addprefix ft_string/, \
@@ -119,6 +110,7 @@ SRCS 		= \
 			ft_strrchr.c \
 			ft_strtrim.c \
 			ft_substr.c \
+			ft_strndup.c \
 		) \
 		$(addprefix ft_utils/, \
 			ft_digit.c \

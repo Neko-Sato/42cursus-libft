@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/09 03:22:53 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:41:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include "include/ft_array.h"
-# include "include/ft_bufferio.h"
 # include "include/ft_ctype.h"
 # include "include/ft_lst.h"
 # include "include/ft_operator.h"

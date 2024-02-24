@@ -6,14 +6,18 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:09:50 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/24 13:35:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_strgen.h>
 
-void	ft_strgenstr(t_strgen *strgen, char *insert)
+int	ft_strgenstr(t_strgen *strgen, char *s)
 {
-	while (!strgen->error && *insert)
-		ft_strgenchr(strgen, *insert++);
+	int	ret;
+
+	ret = 0;
+	while (!ret && *s)
+		ret = ft_strgenchr(strgen, *s++);
+	return (ret);
 }
