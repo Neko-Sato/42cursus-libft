@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/28 23:23:46 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 07:53:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int		ft_intcmp(int a, int b);
 int		ft_intptrcmp(void *a, void *b);
 int		ft_strptrcmp(void *a, void *b);
 int		ft_noop(void);
-void	ft_putstrarr_fd(char *ss[], char *delimiter, int fd);
+void	ft_putstrarry_fd(char *ss[], char *delimiter, int fd);
 
 #endif

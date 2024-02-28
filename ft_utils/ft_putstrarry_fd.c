@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrarr_fd.c                                  :+:      :+:    :+:   */
+/*   ft_putstrarry_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <ft_put_fd.h>
 
-void	ft_putstrarr_fd(char *ss[], char *delimiter, int fd)
+void	ft_putstrarry_fd(char *ss[], char *delimiter, int fd)
 {
 	if (!ss || !*ss)
 		return ;
