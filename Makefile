@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/02/27 19:39:28 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/02/28 23:25:22 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ SRCS 		= \
 			ft_calloc.c \
 			ft_itoa.c \
 			ft_utoa.c \
+			ft_qsort.c \
 		) \
 		$(addprefix ft_strgen/, \
 			ft_strgennew.c \
@@ -123,7 +124,9 @@ SRCS 		= \
 			ft_isprime.c \
 			ft_intcmp.c \
 			ft_intptrcmp.c \
+			ft_strptrcmp.c \
 			ft_noop.c \
+			ft_putstrarr_fd.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
