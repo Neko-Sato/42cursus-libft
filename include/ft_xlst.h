@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 10:08:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 07:50:59 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int					ft_xlstpop(t_xlst **lst_ptr, int index, void *dst,
 int					ft_xlstdel(t_xlst **lst_ptr, int index);
 void				ft_xlstclear(t_xlst **lst_ptr);
 void				*ft_xlst2array(t_xlst *lst, size_t size, size_t *__len);
+int					ft_xlstappendarry(t_xlst **lst_ptr, void **arry,
+						size_t size);
 
 #endif
