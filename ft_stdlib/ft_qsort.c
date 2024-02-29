@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 20:27:25 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/28 23:26:04 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:26:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static size_t	partition(void *base, size_t nmemb, size_t size,
 		if (pivot != i[0] && compar(obj[1], obj[0]) > 0)
 		{
 			ft_memswap(obj[1], obj[2], size);
+			if (pivot == i[1])
+				pivot = i[0];
 			i[1]--;
 		}
 		else
