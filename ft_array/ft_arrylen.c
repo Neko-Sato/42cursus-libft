@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:30:15 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/29 20:34:59 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:40:43 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_arrylen(void *array[])
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (array[i])
