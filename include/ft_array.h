@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/19 21:06:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:35:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int		ft_minarray(int array[], size_t len);
 int		ft_sum(int array[], size_t len);
 int		ft_all(int array[], size_t len);
 int		ft_any(int array[], size_t len);
+
+size_t	ft_arrylen(void *array[]);
 
 #endif
