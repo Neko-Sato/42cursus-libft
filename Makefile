@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/02/29 07:57:22 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/02/29 20:37:13 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS 		= \
 			ft_sum.c \
 			ft_all.c \
 			ft_any.c \
+			ft_arrylen.c \
 		) \
 		$(addprefix ft_ctype/, \
 			ft_isalnum.c \
@@ -62,6 +63,7 @@ SRCS 		= \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 			ft_putstr_fd.c \
+			ft_putstrarry_fd.c \
 		) \
 		$(addprefix ft_stdlib/, \
 			ft_abs.c \
@@ -126,7 +128,7 @@ SRCS 		= \
 			ft_intptrcmp.c \
 			ft_strptrcmp.c \
 			ft_noop.c \
-			ft_putstrarry_fd.c \
+			ft_sortstrarry.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
