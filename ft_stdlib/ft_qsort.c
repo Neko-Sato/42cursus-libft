@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 20:27:25 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/29 20:26:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:46:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_qsort(void *base, size_t nmemb, size_t size, t_compar_fn compar)
 {
 	size_t	pi;
 
+	if (!nmemb)
+		return ;
 	if (nmemb < 3)
 		return (case_pair(base, nmemb, size, compar));
 	pi = partition(base, nmemb, size, compar);
