@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/28 21:20:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/10 06:47:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ char			*ft_itoa(int n);
 char			*ft_utoa(unsigned int n);
 void			ft_qsort(void *base, size_t nmemb, size_t size,
 					t_compar_fn compar);
+long			ft_random(void);
+char			*ft_mktemp(char *template);
+int				ft_mkstemp(char *template);
 
 #endif

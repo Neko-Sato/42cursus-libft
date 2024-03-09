@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/02/29 20:37:13 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/03/10 06:46:11 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,9 @@ SRCS 		= \
 			ft_itoa.c \
 			ft_utoa.c \
 			ft_qsort.c \
+			ft_random.c \
+			ft_mktemp.c \
+			ft_mkstemp.c \
 		) \
 		$(addprefix ft_strgen/, \
 			ft_strgennew.c \
