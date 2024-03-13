@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/24 13:56:31 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/13 18:38:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 void	ft_memswap(void *a, void *b, size_t n);
 size_t	ft_strnlen(const char *s, size_t maxlen);
 char	*ft_strndup(const char *s1, size_t n);
+char	*ft_strcpy(char *dst, const char *src);
 
 #endif
