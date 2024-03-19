@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/10 06:47:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:33:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void			ft_qsort(void *base, size_t nmemb, size_t size,
 long			ft_random(void);
 char			*ft_mktemp(char *template);
 int				ft_mkstemp(char *template);
+char			*ft_realpath(const char *path, char *resolved_path);
 
 #endif
