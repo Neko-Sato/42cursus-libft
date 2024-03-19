@@ -6,11 +6,12 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/03/13 21:05:00 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/03/19 16:16:46 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
+NAME_SO		= libft.so
 LIBFT_H		= libft.h
 ROOT_DIR	= .
 INCS_DIR	= $(ROOT_DIR)/include
@@ -138,6 +139,7 @@ SRCS 		= \
 			ft_strptrcmp.c \
 			ft_noop.c \
 			ft_sortstrarry.c \
+			ft_strarrydup.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
@@ -215,8 +217,8 @@ IDFLAGS		+= -I$(INCS_DIR)
 $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
 
-%.so: %.a 
-	$(CC) -shared -fPIC -o $@ -Wl,--whole-archive $< -Wl,--no-whole-archive 
+$(NAME_SO): $(OBJECTS)
+	$(CC) -shared -fPIC -o $@ $<
 
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)

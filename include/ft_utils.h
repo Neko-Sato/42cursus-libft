@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/29 20:39:29 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:14:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_intptrcmp(void *a, void *b);
 int		ft_strptrcmp(void *a, void *b);
 int		ft_noop(void);
 void	ft_sortstrarry(char *arry[]);
+char	**ft_strarrydup(char *array[]);
 
 #endif
