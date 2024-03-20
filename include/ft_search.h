@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:43:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/21 07:53:43 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/21 07:57:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_search_node
 	struct s_search_node	*right;
 }							t_search_node;
 
-typedef void				(*t_search_action)(void *nodep, VISIT which,
+typedef void				(*t_tsearch_action)(void *nodep, VISIT which,
 					int depth);
-typedef void				(*t_search_action_r)(void *nodep, VISIT which,
+typedef void				(*t_tsearch_action_r)(void *nodep, VISIT which,
 					void *closure);
 
 t_search_node				**__ft_search_getnodep(void *key, void **rootp,
@@ -39,8 +39,8 @@ void						*ft_tfind(void *key, void **rootp,
 								t_compar_fn compar);
 void						*ft_tdelete(void *key, void **rootp,
 								t_compar_fn compar);
-void						ft_twalk(void *root, t_search_action action);
-void						ft_twalk_r(void *root, t_search_action_r action,
+void						ft_twalk(void *root, t_tsearch_action action);
+void						ft_twalk_r(void *root, t_tsearch_action_r action,
 								void *closure);
 void						ft_tdestroy(void *root, t_free_fn free_node);
 
