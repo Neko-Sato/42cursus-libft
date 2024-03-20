@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/03/19 16:16:46 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/03/21 07:55:27 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRCS 		= \
 			ft_random.c \
 			ft_mktemp.c \
 			ft_mkstemp.c \
+			ft_realpath.c \
 		) \
 		$(addprefix ft_strgen/, \
 			ft_strgennew.c \
@@ -198,6 +199,7 @@ SRCS 		= \
 			ft_tsearch.c \
 			ft_tfind.c \
 			ft_twalk.c \
+			ft_twalk_r.c \
 			ft_tdelete.c \
 			ft_tdestroy.c \
 			ft_lsearch.c \
@@ -208,8 +210,8 @@ SRCS 		= \
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
-# CFLAGS		+= -g
-CFLAGS		+= -O2
+CFLAGS		+= -g
+# CFLAGS		+= -O2
 IDFLAGS		+= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus norm test
