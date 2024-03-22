@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/03/21 07:55:27 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/03/23 01:25:38 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -210,8 +210,8 @@ SRCS 		= \
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
-CFLAGS		+= -g
-# CFLAGS		+= -O2
+# CFLAGS		+= -g
+CFLAGS		+= -O2
 IDFLAGS		+= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus norm test
@@ -220,7 +220,7 @@ $(NAME): $(OBJECTS)
 	$(AR) rc $@ $^
 
 $(NAME_SO): $(OBJECTS)
-	$(CC) -shared -fPIC -o $@ $<
+	$(CC) -shared -fPIC -o $@ $^
 
 $(OBJS_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
