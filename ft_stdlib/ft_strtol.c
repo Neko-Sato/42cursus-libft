@@ -6,12 +6,12 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 10:15:45 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/11/26 14:11:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:56:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
 #include <errno.h>
+#include <ft_ctype.h>
 
 static int	tonbr(int c);
 static long	core(const char *nptr, int neg, char **endptr, int base);
@@ -21,6 +21,11 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	int	neg;
 
 	neg = 0;
+	if (base < 1 || 36 < base)
+	{
+		errno = EINVAL;
+		return (0);
+	}
 	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '+' || *nptr == '-')
