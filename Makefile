@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/03/23 01:25:38 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/04/21 18:27:34 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,6 +115,7 @@ SRCS 		= \
 			ft_strncmp.c \
 			ft_strnlen.c \
 			ft_strnstr.c \
+			ft_strstr.c \
 			ft_strrchr.c \
 			ft_strtrim.c \
 			ft_substr.c \
