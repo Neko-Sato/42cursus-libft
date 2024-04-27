@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/27 19:39:14 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/27 08:36:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
 # include "include/ft_complex.h"
 # include "include/ft_vector.h"
 # include "include/ft_search.h"
+# include "include/ft_bufferio.h"
 
 #endif

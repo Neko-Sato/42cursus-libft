@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/24 23:57:15 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/27 05:36:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define FT_STRGEN_H
 
 # include <stddef.h>
-
-# ifndef STRGEN_BUUFERSIZE
-#  define STRGEN_BUUFERSIZE 20
-# endif
 
 typedef struct s_strgen
 {

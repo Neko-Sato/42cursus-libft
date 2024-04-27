@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/04/21 18:27:34 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/04/27 09:06:00 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -206,6 +206,14 @@ SRCS 		= \
 			ft_lsearch.c \
 			ft_lfind.c \
 		)\
+		$(addprefix ft_bufferio/, \
+			ft_bufferio_read.c \
+			ft_bufferio_resize.c \
+			ft_open.c \
+			ft_close.c \
+			ft_read.c \
+			ft_write.c \
+		) \
 	)
 
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
@@ -242,5 +250,5 @@ re: fclean all
 norm: $(LIBFT_H) $(SRCS) $(INCS_DIR)
 	@norminette $^
 
-test: test.c all
-	$(CC) -g -fsanitize=address $< -o $@ -L. -I. -lft
+test: test.c $(OBJECTS)
+	$(CC) -g -fsanitize=address $^ -o $@ -I. -lm
