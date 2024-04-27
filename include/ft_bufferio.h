@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 09:06:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/27 09:36:02 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ t_bufferio	*ft_open(int fd, int close_on_close);
 void		ft_close(t_bufferio *io, int do_close);
 ssize_t		ft_read(t_bufferio *io, char *buf, size_t size);
 ssize_t		ft_write(t_bufferio *io, char *buf, size_t size);
+
+char		*ft_readline(t_bufferio *io);
 
 #endif

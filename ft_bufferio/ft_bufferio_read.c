@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 07:42:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 08:41:18 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/27 09:56:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 int	ft_bufferio_read(t_bufferio *io, size_t size)
 {
-	ssize_t	len;
+	size_t	read_size;
+	ssize_t	read_ret;
 
 	if (io->_len < size)
 	{
@@ -30,11 +31,13 @@ int	ft_bufferio_read(t_bufferio *io, size_t size)
 			ft_memcpy(io->_buf, &io->_buf[io->_pos], io->_len);
 			io->_pos = 0;
 		}
-		len = read(io->_fd, &io->_buf[io->_pos + io->_len], io->_capacity
-				- (io->_pos + io->_len));
-		if (len == -1)
+		read_size = io->_capacity - (io->_pos + io->_len);
+		read_ret = read(io->_fd, &io->_buf[io->_pos + io->_len], read_size);
+		if (read_ret == -1)
 			return (-1);
-		io->_len += len;
+		io->_len += read_ret;
+		if ((size_t)read_ret < read_size)
+			return (1);
 	}
 	return (0);
 }

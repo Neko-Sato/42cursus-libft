@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 05:08:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 08:51:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/27 09:16:41 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ssize_t	ft_read(t_bufferio *io, char *buf, size_t size)
 {
-	if (ft_bufferio_read(io, size))
+	if (ft_bufferio_read(io, size) == -1)
 		return (-1);
 	if (io->_len < size)
 		size = io->_len;
