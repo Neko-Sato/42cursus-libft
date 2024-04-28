@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/19 23:33:32 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/28 23:31:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef void	(*t_free_fn)(void *);
 unsigned int	ft_abs(int n);
 double			ft_atof(const char *str);
 long			ft_strtol(const char *nptr, char **endptr, int base);
+double			ft_strtod(const char *nptr, char **endptr);
 int				ft_atoi(const char *str);
 long			ft_atol(const char *str);
 void			*ft_calloc(size_t count, size_t size);
