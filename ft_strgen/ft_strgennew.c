@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:49:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/02/24 13:29:29 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:30:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_strgen	*ft_strgennew(size_t size)
 
 	if (!size)
 		return (NULL);
-	strgen = (t_strgen *)malloc(sizeof(t_strgen) + size);
+	strgen = (t_strgen *)malloc(sizeof(t_strgen) + 1 + size);
 	if (!strgen)
 		return (NULL);
 	strgen->str = NULL;

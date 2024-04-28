@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:37:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 18:46:10 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:30:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_vector
 	size_t	sizeoftype;
 	size_t	capacity;
 	size_t	size;
-	char	data[0];
+	char	data[];
 }			t_vector;
 
 void		*ft_vector(size_t sizeoftype, void *array, size_t size);

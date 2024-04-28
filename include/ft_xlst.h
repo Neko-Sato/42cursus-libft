@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/01 02:01:47 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:29:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct s_xlst
 {
 	struct s_xlst	*next;
-	char			data[0];
+	char			data[];
 }					t_xlst;
 
 size_t				ft_xlstlen(t_xlst *lst);
