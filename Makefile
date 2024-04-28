@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/04/28 14:42:48 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/04/28 15:40:07 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -142,6 +142,7 @@ SRCS 		= \
 			ft_intptrcmp.c \
 			ft_strptrcmp.c \
 			ft_noop.c \
+			ft_ctoi.c \
 			ft_sortstrarry.c \
 			ft_strarrydup.c \
 		) \

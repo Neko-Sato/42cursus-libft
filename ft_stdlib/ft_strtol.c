@@ -6,17 +6,18 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 10:15:45 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/22 03:50:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:42:10 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
 #include <ft_ctype.h>
+#include <ft_string.h>
+#include <ft_utils.h>
 #include <stddef.h>
 
 static int	pre(const char **nptr, int *base, int *neg);
 static int	internal(const char **nptr, int neg, int base, unsigned long *acc);
-static int	tonbr(int c);
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
 {
@@ -44,10 +45,9 @@ static int	pre(const char **nptr, int *base, int *neg)
 	*neg = 0;
 	while (ft_isspace(**nptr))
 		(*nptr)++;
-	if (**nptr == '+' || **nptr == '-')
+	if (ft_strnchr("+-", **nptr, 2))
 		*neg = *(*nptr)++ == '-';
-	if ((*base == 0 || *base == 16) && (*nptr)[0] == '0'
-		&& ft_tolower((*nptr)[1]) == 'x')
+	if ((*base == 0 || *base == 16) && ft_strncasecmp("0x", *nptr, 2))
 	{
 		*base = 16;
 		*nptr += 2;
@@ -71,8 +71,8 @@ static int	internal(const char **nptr, int neg, int base, unsigned long *acc)
 	*acc = 0;
 	while (**nptr)
 	{
-		n = tonbr(**nptr);
-		if (n < 0 || base <= n)
+		n = ft_ctoi(**nptr, base);
+		if (n < 0)
 			break ;
 		if (overflow || *acc > cutoff || (*acc == cutoff && n > cutlim))
 			overflow = 1;
@@ -83,16 +83,4 @@ static int	internal(const char **nptr, int neg, int base, unsigned long *acc)
 	if (!overflow && neg)
 		*acc = -*acc;
 	return (overflow);
-}
-
-static int	tonbr(int c)
-{
-	c = ft_tolower(c);
-	if (ft_isdigit(c))
-		c -= '0';
-	else if (ft_isalpha(c))
-		c -= 'a' - 10;
-	else
-		c = -1;
-	return (c);
 }
