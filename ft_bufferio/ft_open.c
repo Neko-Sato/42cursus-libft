@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 04:49:43 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 08:41:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:45:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_bufferio	*ft_open(int fd, int close_on_error)
 {
 	t_bufferio	*io;
 
+	if (fd < 0)
+		return (NULL);
 	io = malloc(sizeof(t_bufferio));
 	if (!io)
 	{
