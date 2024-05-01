@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/02 04:24:15 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/02 04:59:38 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRCS 		= \
 		) \
 		$(addprefix ft_pathlib/, \
 			ft_joinpath.c \
+			ft_getfilename.c \
 		) \
 		$(addprefix ft_put_fd/, \
 			ft_putchar_fd.c \

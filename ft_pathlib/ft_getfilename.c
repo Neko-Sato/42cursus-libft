@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pathlib.h                                       :+:      :+:    :+:   */
+/*   ft_getfilename.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/02 04:59:48 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/09/07 22:11:39 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/02 05:00:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PATHLIB_H
-# define FT_PATHLIB_H
+#include <ft_pathlib.h>
+#include <ft_string.h>
 
-# define PATH_SEPARATE '/'
+char	*ft_getfilename(char *path)
+{
+	char	*filename;
 
-char	*ft_joinpath(char *base, char *path);
-char	*ft_getfilename(char *path);
-
-#endif
+	filename = ft_strrchr(path, PATH_SEPARATE);
+	if (filename)
+		filename++;
+	else
+		filename = path;
+	return (ft_strdup(filename));
+}
