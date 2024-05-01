@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/02 04:59:38 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/02 05:12:50 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,6 +147,8 @@ SRCS 		= \
 			ft_ctoi.c \
 			ft_sortstrarry.c \
 			ft_strarrydup.c \
+			ft_startwith.c \
+			ft_endwith.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
