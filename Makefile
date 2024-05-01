@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/04/29 00:08:21 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/02 04:24:15 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ SRCS 		= \
 			ft_abs.c \
 			ft_atof.c \
 			ft_strtol.c \
+			ft_strtod.c \
 			ft_atoi.c \
 			ft_atol.c \
 			ft_calloc.c \

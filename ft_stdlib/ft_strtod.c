@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 15:02:17 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/29 00:00:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/02 04:35:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 static int			special(const char **nptr, double *result);
 static const char	*mantissa(const char *nptr, double *result, int hex);
 static const char	*exponent(const char *nptr, double *result, int hex);
+static double		sign_change(double value);
 
 double	ft_strtod(const char *nptr, char **endptr)
 {
@@ -40,7 +41,7 @@ double	ft_strtod(const char *nptr, char **endptr)
 		nptr = exponent(nptr, &result, hex);
 	}
 	if (neg)
-		*(unsigned long long *)&result |= 1ull << 63;
+		result = sign_change(result);
 	if (endptr)
 		*endptr = (char *)nptr;
 	return (result);
@@ -126,4 +127,13 @@ static int	special(const char **nptr, double *result)
 	else
 		return (0);
 	return (1);
+}
+
+static double	sign_change(double value)
+{
+	unsigned long long	*bit;
+
+	bit = (unsigned long long *)&value;
+	*bit |= 1ull << 63;
+	return (value);
 }
