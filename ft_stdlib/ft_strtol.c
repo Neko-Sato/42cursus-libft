@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 10:15:45 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/28 15:42:10 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/02 06:54:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	pre(const char **nptr, int *base, int *neg)
 		(*nptr)++;
 	if (ft_strnchr("+-", **nptr, 2))
 		*neg = *(*nptr)++ == '-';
-	if ((*base == 0 || *base == 16) && ft_strncasecmp("0x", *nptr, 2))
+	if ((*base == 0 || *base == 16) && !ft_strncasecmp("0x", *nptr, 2))
 	{
 		*base = 16;
 		*nptr += 2;
