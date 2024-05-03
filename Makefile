@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/02 05:12:50 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/03 17:16:56 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -162,6 +162,7 @@ SRCS 		= \
 			ft_xlstclear.c \
 			ft_xlst2array.c \
 			ft_xlstappendarry.c \
+			ft_xlst_find.c \
 		) \
 		$(addprefix ft_operator/, \
 			ft_eq.c \
