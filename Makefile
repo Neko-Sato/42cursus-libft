@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/03 17:16:56 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/09 19:37:27 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -222,6 +222,10 @@ SRCS 		= \
 			ft_read.c \
 			ft_write.c \
 			ft_readline.c \
+		) \
+		$(addprefix ft_color/, \
+			ft_rgba.c \
+			ft_hsvt.c \
 		) \
 	)
 
