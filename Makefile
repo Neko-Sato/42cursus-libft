@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/10 14:45:49 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/10 16:34:00 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,6 +149,8 @@ SRCS 		= \
 			ft_strarrydup.c \
 			ft_startwith.c \
 			ft_endwith.c \
+			ft_deg2rad.c \
+			ft_rad2deg.c \
 		) \
 		$(addprefix ft_xlst/, \
 			ft_xlstlen.c \
