@@ -6,14 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/19 12:26:20 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/11 07:04:48 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n--)
-		*(unsigned char *)s++ = 0;
+	ft_memset(s, 0, n);
 }

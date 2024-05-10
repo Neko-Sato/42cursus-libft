@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 06:10:32 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/16 17:50:07 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/11 07:01:53 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long	ft_random(void)
 {
 	static long	temp;
-	char		stack[0];
+	int			stack;
 
 	temp += (long)&stack;
 	temp ^= temp << 13;

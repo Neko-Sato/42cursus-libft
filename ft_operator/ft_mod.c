@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 21:05:45 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/10/11 00:19:42 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/11 01:05:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_mod(int a, int b)
 	int	temp;
 
 	temp = a % b;
-	if ((a < 0) ^ (b < 0))
+	if (temp < 0)
 		temp += b;
 	return (temp);
 }
