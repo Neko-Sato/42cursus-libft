@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 13:24:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/10 14:43:53 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/10 16:20:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_color	ft_color_mul(t_color a, t_color b)
 	color.raw = 0;
 	b_alpha = b._.alpha / 0xffp0;
 	b_alpha_inversion = (0xff - b._.alpha) / 0xffp0;
-	color._.alpha = b._.alpha + a._.alpha * b_alpha_inversion;
+	color._.alpha = b._.alpha * b_alpha + a._.alpha * b_alpha_inversion;
 	color._.red = b._.red * b_alpha + a._.red * b_alpha_inversion;
 	color._.green = b._.green * b_alpha + a._.green * b_alpha_inversion;
 	color._.blue = b._.blue * b_alpha + a._.blue * b_alpha_inversion;
