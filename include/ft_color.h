@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:33:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/10 16:11:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/10 16:56:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 
 typedef struct s_color_detail
 {
-	unsigned int blue	: 8;
-	unsigned int green	: 8;
-	unsigned int red	: 8;
-	unsigned int alpha	: 8;
+	unsigned int	blue	: 8;
+	unsigned int	green	: 8;
+	unsigned int	red		: 8;
+	unsigned int	alpha	: 8;
 }					t_color_detail;
 
 typedef union u_color
