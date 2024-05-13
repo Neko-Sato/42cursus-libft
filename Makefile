@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/10 16:34:00 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/14 01:29:39 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -231,6 +231,10 @@ SRCS 		= \
 			ft_color_add.c \
 			ft_color_sub.c \
 			ft_color_mul.c \
+		) \
+		$(addprefix ft_interval/, \
+			ft_interval.c \
+			ft_intervalf.c \
 		) \
 	)
 
