@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 01:24:50 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/14 01:30:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/14 01:39:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_interval(long a, long b, long c, t_interval type)
 {
-	if (type == I_CLOSED)
+	if (type == I_CC)
 		return (a <= b && b <= c);
-	else if (type == I_OPEN)
+	else if (type == I_OO)
 		return (a < b && b < c);
-	else if (type == I_LOPEN_RCLOSED)
+	else if (type == I_OC)
 		return (a < b && b <= c);
-	else if (type == I_LCLOSED_ROPEN)
+	else if (type == I_CO)
 		return (a <= b && b < c);
 	return (0);
 }
