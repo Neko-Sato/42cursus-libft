@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/14 01:29:39 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/16 01:32:51 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS 		= \
 			ft_abs.c \
 			ft_atof.c \
 			ft_strtol.c \
+			ft_strtold.c \
 			ft_strtod.c \
 			ft_atoi.c \
 			ft_atol.c \
@@ -241,8 +242,11 @@ SRCS 		= \
 OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror
-#CFLAGS		+= -g
-CFLAGS		+= -O2
+ifeq ($(MODE), DEBUG)
+CFLAGS += -g
+else
+CFLAGS += -O2
+endif
 IDFLAGS		+= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus norm test
