@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:45:10 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/13 19:55:05 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/17 20:11:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strspn(const char *s, const char *accept)
 {
-	size_t	i;
+	char	*h;
 
-	i = 0;
-	while (s[i] && ft_strchr(accept, s[i]))
-		i++;
-	return (i);
+	h = (char *)s;
+	while (*s && ft_strchr(accept, *s))
+		s++;
+	return (s - h);
 }

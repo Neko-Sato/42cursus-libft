@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:37:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/17 19:20:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/17 20:21:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,28 @@
 
 char	*ft_strtok_r(char *str, const char *delim, char **saveptr)
 {
-	char	*token;
+	char	*end;
 
 	if (!str)
 		str = *saveptr;
+	if (!*str)
+	{
+		*saveptr = str;
+		return (NULL);
+	}
 	str += ft_strspn(str, delim);
 	if (!*str)
 	{
 		*saveptr = str;
 		return (NULL);
 	}
-	token = str;
-	str = ft_strpbrk(str, delim);
-	if (!str)
-		*saveptr = ft_strchr(token, 0);
-	else
+	end = str + ft_strcspn(str, delim);
+	if (!*end)
 	{
-		if (*str)
-			*str++ = '\0';
-		*saveptr = str;
+		*saveptr = end;
+		return (str);
 	}
-	return (token);
+	*end++ = '\0';
+	*saveptr = end;
+	return (str);
 }
