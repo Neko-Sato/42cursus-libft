@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/28 14:42:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:21:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ size_t	ft_strspn(const char *s, const char *accept);
 size_t	ft_strcspn(const char *s, const char *reject);
 char	*ft_strpbrk(const char *s, const char *accept);
 char	*ft_strtok(char *str, const char *delim);
+char	*ft_strtok_r(char *str, const char *delim, char **saveptr);
 char	*ft_strsep(char **stringp, const char *delim);
 int		ft_strcasecmp(const char *s1, const char *s2);
 int		ft_strncasecmp(const char *s1, const char *s2, size_t n);
