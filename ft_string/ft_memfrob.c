@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_memfrob.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:38:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/17 20:30:22 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/17 21:15:03 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/17 21:17:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
-#include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strndup(const char *s1, size_t n)
+void	*ft_memfrob(void *s, size_t n)
 {
-	char	*s2;
-	size_t	size;
+	char	*p;
 
-	size = ft_strnlen(s1, n) + 1;
-	s2 = (char *)malloc(size * sizeof(char));
-	ft_strncpy(s2, s1, size);
-	return (s2);
+	p = s;
+	while (n--)
+		*p++ ^= 42;
+	return (s);
 }
