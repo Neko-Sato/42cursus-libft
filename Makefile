@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/20 07:34:57 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/20 07:50:35 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -295,9 +295,6 @@ norm-upgrade:
 	@python3 -m pip install --upgrade norminette
 
 test: test.c $(NAME)
-	@if ! readelf -S $(NAME) | grep -q debug; then \
-		$(MAKE) re DEBUG=1; \
-	fi
 	$(CC) -g  $^ -o $@ -I$(INCS_DIR) -lm
 
 -include $(DEPS)
