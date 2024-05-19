@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/10 16:33:22 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/20 07:07:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		ft_startwith(char *str, char *prefix);
 int		ft_endwith(char *str, char *suffix);
 double	ft_deg2rad(double deg);
 double	ft_rad2deg(double rad);
+char	*ft_shlex(char **stringp, int comments, int *error);
 
 #endif
