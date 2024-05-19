@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/20 01:32:15 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/20 01:36:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -265,6 +265,10 @@ IDFLAGS		:= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus norm test
 
+all: $(NAME) $(NAME_SO)
+
+bonus: $(NAME)
+
 $(NAME): $(OBJS)
 	$(AR) rc $@ $^
 
@@ -275,15 +279,11 @@ $(OUT_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) -MMD -MP $(IDFLAGS) $< -o $@
 
-all: $(NAME)
-
-bonus: $(NAME)
-
 clean:
 	$(RM) -r $(OUT_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME_SO)
 
 re: fclean all
 
