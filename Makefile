@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/20 05:49:57 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/20 07:34:57 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -264,7 +264,7 @@ CFLAGS		+= -O2
 endif
 IDFLAGS		:= -I$(INCS_DIR)
 
-.PHONY: all clean fclean re bonus norm test
+.PHONY: all clean fclean re bonus norm norm-upgrade test
 
 all: $(NAME) $(NAME_SO)
 
@@ -291,7 +291,13 @@ re: fclean all
 norm: $(LIBFT_H) $(INCS_DIR) $(SRCS)
 	@norminette $^
 
-test: test.c $(SRCS)
+norm-upgrade:
+	@python3 -m pip install --upgrade norminette
+
+test: test.c $(NAME)
+	@if ! readelf -S $(NAME) | grep -q debug; then \
+		$(MAKE) re DEBUG=1; \
+	fi
 	$(CC) -g  $^ -o $@ -I$(INCS_DIR) -lm
 
 -include $(DEPS)

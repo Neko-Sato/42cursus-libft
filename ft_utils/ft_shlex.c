@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 03:11:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/20 07:13:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/20 07:41:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ static char	*skip_blank(char *s, int comments)
 	while (1)
 	{
 		while (*s && (ft_isblank(*s) || *s == '\n'))
-			*s++ = '\0';
+			s++;
 		if (!comments || *s != '#')
 			return (s);
 		while (*s && *s != '\n')
-			*s++ = '\0';
+			s++;
 	}
 }
 
