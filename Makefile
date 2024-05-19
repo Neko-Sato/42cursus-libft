@@ -6,18 +6,24 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/17 21:20:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/20 01:32:15 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
-NAME_SO		= libft.so
-LIBFT_H		= libft.h
-ROOT_DIR	= .
-INCS_DIR	= $(ROOT_DIR)/include
-OBJS_DIR	= $(ROOT_DIR)/objs
+UNAME_OS	:= $(shell uname -s)
 
-SRCS 		= \
+NAME		:= libft.a
+ifeq ($(UNAME_OS), Darwin)
+NAME_SO		:= libft.dylib
+else
+NAME_SO		:= libft.so
+endif
+LIBFT_H		:= libft.h
+ROOT_DIR	:= .
+INCS_DIR	:= $(ROOT_DIR)/incs
+OUT_DIR		:= $(ROOT_DIR)/out
+
+SRCS 		:= \
 	$(addprefix $(ROOT_DIR)/, \
 		$(addprefix ft_array/, \
 			ft_2darraydel.c \
@@ -136,6 +142,8 @@ SRCS 		= \
 			ft_strcat.c \
 			ft_strncat.c \
 			ft_strncpy.c \
+			ft_strset.c \
+			ft_strnset.c \
 		) \
 		$(addprefix ft_utils/, \
 			ft_digit.c \
@@ -244,42 +252,45 @@ SRCS 		= \
 		) \
 	)
 
-OBJECTS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
+OBJS		:= $(addprefix $(OUT_DIR)/, $(SRCS:.c=.o))
+DEPS		:= $(addprefix $(OUT_DIR)/, $(SRCS:.c=.d))
 
-CFLAGS		= -Wall -Wextra -Werror
-ifeq ($(MODE), DEBUG)
-CFLAGS += -g
+CFLAGS		:= -Wall -Wextra -Werror
+ifeq ($(DEBUG), 1)
+CFLAGS		+= -g
 else
-CFLAGS += -O2
+CFLAGS		+= -O2
 endif
-IDFLAGS		+= -I$(INCS_DIR)
+IDFLAGS		:= -I$(INCS_DIR)
 
 .PHONY: all clean fclean re bonus norm test
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJS)
 	$(AR) rc $@ $^
 
-$(NAME_SO): $(OBJECTS)
-	$(CC) -shared -fPIC -o $@ $^
+$(NAME_SO): $(OBJS)
+	$(CC) -shared -fPIC $^ -o $@
 
-$(OBJS_DIR)/%.o: %.c $(LIBFT_H)
+$(OUT_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
-	$(CC) -c $(CFLAGS) $(IDFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) -MMD -MP $(IDFLAGS) $< -o $@
 
 all: $(NAME)
 
 bonus: $(NAME)
 
 clean:
-	$(RM) -r $(OBJS_DIR)
+	$(RM) -r $(OUT_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-norm: $(LIBFT_H) $(SRCS) $(INCS_DIR)
+norm: $(LIBFT_H) $(INCS_DIR) $(SRCS)
 	@norminette $^
 
-test: test.c $(OBJECTS)
-	$(CC) -g  $^ -o $@ -I. -lm
+test: test.c $(SRCS)
+	$(CC) -g  $^ -o $@ -I$(INCS_DIR) -lm
+
+-include $(DEPS)

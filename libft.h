@@ -6,28 +6,28 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/09 19:36:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/20 01:26:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "include/ft_array.h"
-# include "include/ft_ctype.h"
-# include "include/ft_lst.h"
-# include "include/ft_operator.h"
-# include "include/ft_pathlib.h"
-# include "include/ft_put_fd.h"
-# include "include/ft_stdlib.h"
-# include "include/ft_strgen.h"
-# include "include/ft_string.h"
-# include "include/ft_utils.h"
-# include "include/ft_xlst.h"
-# include "include/ft_complex.h"
-# include "include/ft_vector.h"
-# include "include/ft_search.h"
-# include "include/ft_bufferio.h"
-# include "include/ft_color.h"
+# include "./incs/ft_array.h"
+# include "./incs/ft_ctype.h"
+# include "./incs/ft_lst.h"
+# include "./incs/ft_operator.h"
+# include "./incs/ft_pathlib.h"
+# include "./incs/ft_put_fd.h"
+# include "./incs/ft_stdlib.h"
+# include "./incs/ft_strgen.h"
+# include "./incs/ft_string.h"
+# include "./incs/ft_utils.h"
+# include "./incs/ft_xlst.h"
+# include "./incs/ft_complex.h"
+# include "./incs/ft_vector.h"
+# include "./incs/ft_search.h"
+# include "./incs/ft_bufferio.h"
+# include "./incs/ft_color.h"
 
 #endif

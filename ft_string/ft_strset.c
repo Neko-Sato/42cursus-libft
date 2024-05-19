@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:38:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/20 00:59:10 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/20 00:13:34 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/20 00:29:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
-#include <stdlib.h>
-
-char	*ft_strndup(const char *s1, size_t n)
+char	*ft_strset(char *s, int c)
 {
-	char	*s2;
-	size_t	len;
+	char	*h;
 
-	len = ft_strnlen(s1, n);
-	s2 = (char *)malloc(sizeof(char [len + 1]));
-	if (!s2)
-		return (NULL);
-	s2[len] = '\0';
-	return (ft_memcpy(s2, s1, len));
+	h = s;
+	while (*s)
+		*s++ = c;
+	return (h);
 }

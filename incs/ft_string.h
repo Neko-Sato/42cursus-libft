@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/17 21:15:11 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/20 00:32:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strcat(char *dest, const char *src);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strset(char *s, int c);
 size_t	ft_strspn(const char *s, const char *accept);
 size_t	ft_strcspn(const char *s, const char *reject);
 char	*ft_strpbrk(const char *s, const char *accept);
@@ -40,6 +41,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strnchr(const char *s, int c, size_t n);
+char	*ft_strnset(char *s, int c, size_t n);
 int		ft_strncasecmp(const char *s1, const char *s2, size_t n);
 
 //	===	mem
