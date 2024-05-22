@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/22 16:19:32 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/23 01:36:37 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_bufferio
 {
 	int		_fd;
-	int		_eof;
 	size_t	_len;
 	size_t	_capacity;
 	size_t	_pos;

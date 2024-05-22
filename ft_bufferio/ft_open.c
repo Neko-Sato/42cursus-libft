@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 04:49:43 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/22 16:17:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/23 01:36:51 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_bufferio	*ft_open(int fd, int close_on_error)
 	if (io)
 	{
 		io->_fd = fd;
-		io->_eof = 0;
 		io->_capacity = BUFFERIO_DEFAULT_BUFFERSIZE;
 		io->_len = 0;
 		io->_pos = 0;

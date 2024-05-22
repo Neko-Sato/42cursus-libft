@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 05:08:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/22 16:24:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/23 01:39:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,22 @@ int	ft_getline(char **line, t_bufferio *io)
 
 static int	read_until_line(t_bufferio *io, size_t *size)
 {
+	int		ret;
 	char	*enter;
 	size_t	start;
 
 	start = 0;
-	while (!io->_eof)
+	while (1)
 	{
 		enter = ft_memchr(&io->_buf[io->_pos + start], '\n', io->_len - start);
 		if (enter)
 			break ;
 		start = io->_len;
-		if (ft_bufferio_read(io, io->_capacity * 1.5))
+		ret = ft_bufferio_read(io, io->_capacity * 1.5);
+		if (ret == -1)
 			return (-1);
+		else if (ret == 1)
+			break ;
 	}
 	if (enter)
 		*size = &enter[1] - &io->_buf[io->_pos];
