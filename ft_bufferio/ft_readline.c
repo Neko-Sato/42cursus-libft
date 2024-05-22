@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 05:08:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/02 05:59:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:06:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	read_until_line(t_bufferio *io, size_t *size)
 	start = 0;
 	while (1)
 	{
-		enter = ft_strnchr(&io->_buf[io->_pos + start], '\n', io->_len - start);
+		enter = ft_memchr(&io->_buf[io->_pos + start], '\n', io->_len - start);
 		if (enter || ret == 1)
 			break ;
 		start = io->_len;
