@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/22 02:26:47 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/22 16:34:11 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -239,7 +239,7 @@ SRCS 		:= \
 			ft_close.c \
 			ft_read.c \
 			ft_write.c \
-			ft_readline.c \
+			ft_getline.c \
 		) \
 		$(addprefix ft_color/, \
 			ft_rgba.c \
@@ -296,6 +296,6 @@ norm-upgrade:
 	@python3 -m pip install --upgrade norminette
 
 test: test.c $(NAME)
-	$(CC) -g  $^ -o $@ -I$(INCS_DIR) -lm
+	$(CC) -g  $^ -o $@ -I. -I$(INCS_DIR) -lm
 
 -include $(DEPS)
