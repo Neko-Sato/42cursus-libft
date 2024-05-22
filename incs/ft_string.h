@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/20 00:32:29 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/22 02:25:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 // 			size_t needlelen);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_mempbrk(const void *s, size_t n, const void *accept,
+			size_t accept_size);
 void	*ft_memfrob(void *s, size_t n);
 void	ft_memswap(void *a, void *b, size_t n);
 

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/20 07:50:35 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/22 02:26:47 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -144,6 +144,7 @@ SRCS 		:= \
 			ft_strncpy.c \
 			ft_strset.c \
 			ft_strnset.c \
+			ft_mempbrk.c \
 		) \
 		$(addprefix ft_utils/, \
 			ft_digit.c \
