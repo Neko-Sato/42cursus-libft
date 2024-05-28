@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 04:36:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 05:54:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 06:16:00 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,15 @@ ssize_t	ft_getdelim(char **lineptr, size_t *n, int delim, t_file *stream)
 
 static int	buf_chk(char **lineptr, size_t *n, size_t pos)
 {
-	char	*tmp;
+	static const size_t	default_size = 120;
+	char				*tmp;
 
 	if (!*lineptr || !*n)
 	{
-		*lineptr = malloc(120);
+		*lineptr = malloc(default_size);
 		if (!*lineptr)
 			return (-1);
-		*n = 120;
+		*n = default_size;
 		return (0);
 	}
 	if (pos >= *n)
