@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_fd.h                                        :+:      :+:    :+:   */
+/*   ft_getline.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 04:54:58 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/29 04:30:05 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/29 04:56:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUT_FD_H
-# define FT_PUT_FD_H
+#include <ft_stdio.h>
+#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putbin_fd(int n, int fd);
-
-void	ft_putstrarry_fd(char *ss[], char *delimiter, int fd);
-
-#endif
+ssize_t	ft_getline(char **lineptr, size_t *n, t_file *stream)
+{
+	return (ft_getdelim(lineptr, n, '\n', stream));
+}

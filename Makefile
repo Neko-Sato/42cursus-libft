@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/22 16:34:11 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/29 05:35:55 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS 		:= \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 			ft_putstr_fd.c \
+			ft_putbin_fd.c \
 			ft_putstrarry_fd.c \
 		) \
 		$(addprefix ft_stdlib/, \
@@ -232,15 +233,6 @@ SRCS 		:= \
 			ft_lsearch.c \
 			ft_lfind.c \
 		)\
-		$(addprefix ft_bufferio/, \
-			ft_bufferio_read.c \
-			ft_bufferio_resize.c \
-			ft_open.c \
-			ft_close.c \
-			ft_read.c \
-			ft_write.c \
-			ft_getline.c \
-		) \
 		$(addprefix ft_color/, \
 			ft_rgba.c \
 			ft_hsvt.c \
@@ -251,6 +243,28 @@ SRCS 		:= \
 		$(addprefix ft_interval/, \
 			ft_interval.c \
 			ft_intervalf.c \
+		) \
+		$(addprefix ft_stdio/, \
+			ft_file_new.c \
+			ft_fclose.c \
+			ft_fileno.c \
+			ft_clearerr.c \
+			ft_feof.c \
+			ft_ferror.c \
+			ft_fflush.c \
+			ft_io_read.c \
+			ft_io_write.c \
+			ft_getc.c \
+			ft_putc.c \
+			ft_ungetc.c \
+			ft_fgetc.c \
+			ft_fgets.c \
+			ft_fputc.c \
+			ft_fputs.c \
+			ft_fread.c \
+			ft_fwrite.c \
+			ft_getline.c \
+			ft_getdelim.c \
 		) \
 	)
 
@@ -296,6 +310,6 @@ norm-upgrade:
 	@python3 -m pip install --upgrade norminette
 
 test: test.c $(NAME)
-	$(CC) -g  $^ -o $@ -I. -I$(INCS_DIR) -lm
+	$(CC) -g -fsanitize=address $^ -o $@ -I. -I$(INCS_DIR) -lm
 
 -include $(DEPS)

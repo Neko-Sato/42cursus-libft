@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read.c                                          :+:      :+:    :+:   */
+/*   ft_feof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 05:08:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 09:16:41 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/27 01:26:22 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/28 21:58:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_bufferio.h>
-#include <ft_string.h>
-#include <unistd.h>
+#include <ft_stdio.h>
 
-ssize_t	ft_read(t_bufferio *io, char *buf, size_t size)
+int	ft_feof(t_file *stream)
 {
-	if (ft_bufferio_read(io, size) == -1)
-		return (-1);
-	if (io->_len < size)
-		size = io->_len;
-	ft_memcpy(buf, &io->_buf[io->_pos], size);
-	io->_pos += size;
-	io->_len -= size;
-	return (size);
+	return (!!(stream->flags & _FT_IO_EOF_SEEN));
 }

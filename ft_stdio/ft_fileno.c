@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_fileno.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 05:08:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 08:15:53 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/27 01:30:50 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/27 01:31:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_bufferio.h>
-#include <unistd.h>
+#include <ft_stdio.h>
 
-ssize_t	ft_write(t_bufferio *io, char *buf, size_t size)
+int	ft_fileno(t_file *stream)
 {
-	return (write(io->_fd, buf, size));
+	return (stream->fileno);
 }

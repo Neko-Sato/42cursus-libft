@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_fd.h                                        :+:      :+:    :+:   */
+/*   ft_fclose.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 04:54:58 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/28 18:45:10 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/29 02:44:22 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUT_FD_H
-# define FT_PUT_FD_H
+#include <ft_stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putbin_fd(int n, int fd);
+int	ft_fclose(t_file *stream)
+{
+	int	ret;
 
-void	ft_putstrarry_fd(char *ss[], char *delimiter, int fd);
-
-#endif
+	ft_fflush(stream);
+	if (stream->fileno & _FT_IO_DELETE_DONT_CLOSE)
+		ret = 0;
+	else
+		ret = close(stream->fileno);
+	free(stream->r_base);
+	free(stream->w_base);
+	free(stream);
+	return (ret);
+}

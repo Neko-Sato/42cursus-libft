@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bufferio_resize.c                               :+:      :+:    :+:   */
+/*   ft_getc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 07:42:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 09:44:09 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/27 01:31:54 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/29 02:25:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_bufferio.h>
-#include <ft_string.h>
-#include <stdlib.h>
+#include <ft_stdio.h>
 
-int	ft_bufferio_resize(t_bufferio *io, size_t capacity)
+int	ft_getc(t_file *stream)
 {
-	void	*tmp;
+	unsigned char	c;
 
-	if (capacity < io->_len)
-		capacity = io->_len;
-	tmp = malloc(capacity);
-	if (!tmp)
-		return (-1);
-	ft_memcpy(tmp, &io->_buf[io->_pos], io->_len);
-	free(io->_buf);
-	io->_buf = tmp;
-	io->_pos = 0;
-	io->_capacity = capacity;
-	return (0);
+	if (ft_io_read(&c, 1, stream) == 1)
+		return (c);
+	return (FT_EOF);
 }

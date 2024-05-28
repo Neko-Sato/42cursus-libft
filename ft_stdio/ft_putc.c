@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_fd.h                                        :+:      :+:    :+:   */
+/*   ft_putc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 04:54:58 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/27 01:31:54 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/29 02:25:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUT_FD_H
-# define FT_PUT_FD_H
+#include <ft_stdio.h>
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putbin_fd(int n, int fd);
+int	ft_putc(int c, t_file *stream)
+{
+	unsigned char	ch;
 
-void	ft_putstrarry_fd(char *ss[], char *delimiter, int fd);
-
-#endif
+	ch = c;
+	if (ft_io_write(&ch, 1, stream) == 1)
+		return (ch);
+	return (FT_EOF);
+}

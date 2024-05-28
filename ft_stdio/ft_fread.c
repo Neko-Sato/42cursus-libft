@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close.c                                         :+:      :+:    :+:   */
+/*   ft_fread.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 04:49:43 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/27 08:41:35 by hshimizu         ###   ########.fr       */
+/*   Created: 2024/05/29 04:11:27 by hshimizu          #+#    #+#             */
+/*   Updated: 2024/05/29 04:26:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_bufferio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <ft_stdio.h>
+#include <stddef.h>
 
-void	ft_close(t_bufferio *io, int do_close)
+size_t	ft_fread(void *ptr, size_t size, size_t nmemb, t_file *stream)
 {
-	if (do_close)
-		close(io->_fd);
-	free(io->_buf);
-	free(io);
+	size_t	requested;
+
+	requested = size * nmemb;
+	return (ft_io_read(ptr, requested, stream) / size);
 }
