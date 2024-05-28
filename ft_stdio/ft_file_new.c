@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:45:10 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 03:29:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 06:13:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_file	*ft_file_new(int fd, int rw, int wbuftype, int do_close)
 {
 	t_file	*f;
 
+	if (fd < 0)
+		return (NULL);
 	f = malloc(sizeof(*f));
 	if (!f)
 		return (NULL);
