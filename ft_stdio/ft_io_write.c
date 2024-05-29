@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:56:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 16:22:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/30 05:01:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ static inline size_t	unbuffered_write(const void *buf, size_t len,
 {
 	ssize_t	size;
 
+	if (!len)
+		return (0);
 	size = write(stream->fileno, buf, len);
 	if (size < 0)
 	{
