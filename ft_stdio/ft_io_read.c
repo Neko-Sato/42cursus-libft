@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 02:04:53 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 03:23:07 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:22:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static inline size_t	ft_io_read_internal(void *buf, size_t len,
 
 size_t	ft_io_read(void *buf, size_t len, t_file *stream)
 {
-	if (stream->flags & _FT_IO_NO_READS)
+	if (stream->flags & (_FT_IO_NO_READS | _FT_IO_EOF_SEEN | _FT_IO_ERR_SEEN))
 		return (0);
 	if (!stream->r_base)
 	{

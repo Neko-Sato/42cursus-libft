@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 04:36:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 06:16:00 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:11:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ ssize_t	ft_getdelim(char **lineptr, size_t *n, int delim, t_file *stream)
 				return (-1);
 			break ;
 		}
+		if (c == '\0')
+			break ;
 		if (buf_chk(lineptr, n, pos))
 			return (-1);
-		(*lineptr)[pos] = c;
-		if (!c || c == delim)
+		(*lineptr)[pos++] = c;
+		if (c == delim)
 			break ;
-		pos++;
 	}
-	if ((*lineptr)[pos])
-		if (buf_chk(lineptr, n, ++pos))
-			return (-1);
+	if (buf_chk(lineptr, n, pos))
+		return (-1);
 	(*lineptr)[pos] = '\0';
 	return (pos);
 }

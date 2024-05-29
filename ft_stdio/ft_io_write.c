@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:56:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 05:47:38 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:22:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static inline size_t	buffered_write(const void *buf, size_t len,
 
 size_t	ft_io_write(const void *buf, size_t len, t_file *stream)
 {
-	if (stream->flags & _FT_IO_NO_WRITES)
+	if (stream->flags & (_FT_IO_NO_WRITES | _FT_IO_ERR_SEEN))
 		return (0);
 	if (stream->flags & _FT_IO_UNBUFFERED)
 		return (unbuffered_write(buf, len, stream));
