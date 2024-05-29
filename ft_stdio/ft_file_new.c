@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:45:10 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 06:17:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:51:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <ft_string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 t_file	*ft_file_new(int fd, int rw, int wbuftype, int do_close)
 {
@@ -38,3 +39,25 @@ t_file	*ft_file_new(int fd, int rw, int wbuftype, int do_close)
 		f->flags |= _FT_IO_DELETE_DONT_CLOSE;
 	return (f);
 }
+
+// t_file	*g_ft_stdin = NULL;
+// t_file	*g_ft_stdout = NULL;
+// t_file	*g_ft_stderr = NULL;
+
+// __attribute__((constructor))
+// int	__libft_init_stdio(void)
+// {
+// 	g_ft_stdin = ft_file_new(STDIN_FILENO, 0b10, 0, 0);
+// 	g_ft_stdout = ft_file_new(STDOUT_FILENO, 0b01, _FT_IOLBF, 0);
+// 	g_ft_stderr = ft_file_new(STDERR_FILENO, 0b01, _FT_IONBF, 0);
+// 	return (0);
+// }
+
+// __attribute__((destructor))
+// int	__libft_fini_stdio(void)
+// {
+// 	ft_fclose(g_ft_stderr);
+// 	ft_fclose(g_ft_stdout);
+// 	ft_fclose(g_ft_stdin);
+// 	return (0);
+// }

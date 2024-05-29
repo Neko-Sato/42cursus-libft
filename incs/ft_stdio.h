@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 02:00:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 05:34:53 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:52:02 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,43 +42,48 @@
 
 typedef struct s_file
 {
-	int		fileno;
-	int		flags;
-	char	*r_base;
-	char	*r_ptr;
-	char	*r_end;
-	char	*w_base;
-	char	*w_ptr;
-	char	*w_end;
-}			t_file;
+	int			fileno;
+	int			flags;
+	char		*r_base;
+	char		*r_ptr;
+	char		*r_end;
+	char		*w_base;
+	char		*w_ptr;
+	char		*w_end;
+}				t_file;
 
-t_file		*ft_file_new(int fd, int rw, int wbuftype, int do_close);
-int			ft_fclose(t_file *stream);
+// extern t_file	*g_ft_stdin;
+// extern t_file	*g_ft_stdout;
+// extern t_file	*g_ft_stderr;
 
-void		ft_clearerr(t_file *stream);
-int			ft_feof(t_file *stream);
-int			ft_ferror(t_file *stream);
-int			ft_fileno(t_file *stream);
+t_file			*ft_file_new(int fd, int rw, int wbuftype, int do_close);
+int				ft_fclose(t_file *stream);
 
-size_t		ft_io_read(void *buf, size_t len, t_file *stream);
-size_t		ft_io_write(const void *buf, size_t len, t_file *stream);
+void			ft_clearerr(t_file *stream);
+int				ft_feof(t_file *stream);
+int				ft_ferror(t_file *stream);
+int				ft_fileno(t_file *stream);
 
-int			ft_getc(t_file *stream);
-int			ft_ungetc(int c, t_file *stream);
-int			ft_putc(int c, t_file *stream);
+size_t			ft_io_read(void *buf, size_t len, t_file *stream);
+size_t			ft_io_write(const void *buf, size_t len, t_file *stream);
 
-int			ft_fflush(t_file *stream);
+int				ft_getc(t_file *stream);
+int				ft_ungetc(int c, t_file *stream);
+int				ft_putc(int c, t_file *stream);
 
-int			ft_fgetc(t_file *stream);
-char		*ft_fgets(char *s, int sidze, t_file *stream);
-int			ft_fputc(int c, t_file *stream);
-int			ft_fputs(const char *s, t_file *stream);
+int				ft_fflush(t_file *stream);
 
-size_t		ft_fread(void *ptr, size_t size, size_t nmemb, t_file *stream);
-size_t		ft_fwrite(const void *ptr, size_t size, size_t nmemb,
-				t_file *stream);
+int				ft_fgetc(t_file *stream);
+char			*ft_fgets(char *s, int sidze, t_file *stream);
+int				ft_fputc(int c, t_file *stream);
+int				ft_fputs(const char *s, t_file *stream);
 
-ssize_t		ft_getdelim(char **lineptr, size_t *n, int delim, t_file *stream);
-ssize_t		ft_getline(char **lineptr, size_t *n, t_file *stream);
+size_t			ft_fread(void *ptr, size_t size, size_t nmemb, t_file *stream);
+size_t			ft_fwrite(const void *ptr, size_t size, size_t nmemb,
+					t_file *stream);
+
+ssize_t			ft_getdelim(char **lineptr, size_t *n, int delim,
+					t_file *stream);
+ssize_t			ft_getline(char **lineptr, size_t *n, t_file *stream);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/29 05:35:55 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/05/29 17:00:58 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -289,11 +289,11 @@ $(NAME): $(OBJS)
 	$(AR) rc $@ $^
 
 $(NAME_SO): $(OBJS)
-	$(CC) -shared -fPIC $^ -o $@
+	$(CC) -shared $^ -o $@
 
 $(OUT_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
-	$(CC) -c $(CFLAGS) -MMD -MP $(IDFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) -fPIC -MMD -MP $(IDFLAGS) $< -o $@
 
 clean:
 	$(RM) -r $(OUT_DIR)
