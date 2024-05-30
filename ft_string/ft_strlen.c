@@ -6,18 +6,27 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:15:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/05/19 13:41:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/31 02:47:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_string.h>
 #include <stddef.h>
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	static const size_t	l_magic = 0x0101010101010101;
+	static const size_t	h_magic = 0x8080808080808080;
+	const char			*ptr;
+	const long			*word_ptr;
 
-	len = 0;
-	while (*s++)
-		len++;
-	return (len);
+	ptr = s;
+	while (*ptr && (size_t)ptr % sizeof(*word_ptr))
+		ptr++;
+	if (!*ptr)
+		return (ptr - s);
+	word_ptr = (void *)ptr;
+	while ((*word_ptr - l_magic) & ~*word_ptr & h_magic)
+		word_ptr++;
+	return ((char *)ft_memchr(word_ptr, '\0', sizeof(*word_ptr)) - s);
 }
