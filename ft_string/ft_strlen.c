@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:15:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/31 02:47:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/31 21:12:06 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 size_t	ft_strlen(const char *s)
 {
-	static const size_t	l_magic = 0x0101010101010101;
-	static const size_t	h_magic = 0x8080808080808080;
-	const char			*ptr;
-	const long			*word_ptr;
+	static const unsigned long	l_magic = 0x0101010101010101;
+	static const unsigned long	h_magic = 0x8080808080808080;
+	const char					*ptr;
+	const unsigned long			*word_ptr;
 
 	ptr = s;
-	while (*ptr && (size_t)ptr % sizeof(*word_ptr))
+	while (*ptr && (unsigned long)ptr % sizeof(*word_ptr))
 		ptr++;
 	if (!*ptr)
 		return (ptr - s);
