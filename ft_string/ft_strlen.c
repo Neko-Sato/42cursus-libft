@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:15:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/31 21:12:06 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/05/31 22:12:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlen(const char *s)
 	if (!*ptr)
 		return (ptr - s);
 	word_ptr = (void *)ptr;
-	while ((*word_ptr - l_magic) & ~*word_ptr & h_magic)
+	while (!((*word_ptr - l_magic) & ~*word_ptr & h_magic))
 		word_ptr++;
 	return ((char *)ft_memchr(word_ptr, '\0', sizeof(*word_ptr)) - s);
 }
