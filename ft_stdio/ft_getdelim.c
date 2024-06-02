@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 04:36:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/06/03 05:13:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/03 07:39:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	buf_chk(char **lineptr, size_t *n, size_t pos)
 			return (-1);
 		if (*lineptr)
 			ft_memcpy(tmp, *lineptr, pos - 1);
-		ft_memswap(tmp, *lineptr, sizeof(char *));
+		ft_memswap(&tmp, lineptr, sizeof(char *));
 		*n = new_size;
 		free(tmp);
 	}
