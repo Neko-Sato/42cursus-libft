@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/05/29 17:00:58 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/06/05 04:08:10 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -309,7 +309,7 @@ norm: $(LIBFT_H) $(INCS_DIR) $(SRCS)
 norm-upgrade:
 	@python3 -m pip install --upgrade norminette
 
-test: test.c $(NAME)
-	$(CC) -g -fsanitize=address $^ -o $@ -I. -I$(INCS_DIR) -lm
+test: test.c
+	$(CC) -g -fsanitize=address $< -o $@ -I. -Wl,-rpath . -L. -lft -lm
 
 -include $(DEPS)
