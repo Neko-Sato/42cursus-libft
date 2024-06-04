@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:29:37 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/10 16:32:01 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:23:52 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
-double	ft_rad2deg(double rad)
+long double	ft_rad2deg(long double rad)
 {
-	return (rad * 180. / M_PI);
+	return (rad * 180.l / M_PI);
 }

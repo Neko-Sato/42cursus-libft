@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/20 07:07:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:24:21 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 # include <stddef.h>
 
-int		ft_sign(int n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
-size_t	ft_digit(unsigned int n);
-int		ft_isnumber(const char *src, int issigned);
-int		ft_gcd(int a, int b);
-int		ft_lcm(int a, int b);
-int		ft_isprime(int n);
-int		ft_intcmp(int a, int b);
-int		ft_intptrcmp(void *a, void *b);
-int		ft_strptrcmp(void *a, void *b);
-int		ft_noop(void);
-int		ft_ctoi(int c, int radix);
-void	ft_sortstrarry(char *arry[]);
-char	**ft_strarrydup(char *array[]);
-int		ft_startwith(char *str, char *prefix);
-int		ft_endwith(char *str, char *suffix);
-double	ft_deg2rad(double deg);
-double	ft_rad2deg(double rad);
-char	*ft_shlex(char **stringp, int comments, int *error);
+int			ft_sign(int n);
+int			ft_max(int a, int b);
+int			ft_min(int a, int b);
+size_t		ft_digit(unsigned int n);
+int			ft_isnumber(const char *src, int issigned);
+int			ft_gcd(int a, int b);
+int			ft_lcm(int a, int b);
+int			ft_isprime(int n);
+int			ft_intcmp(int a, int b);
+int			ft_intptrcmp(void *a, void *b);
+int			ft_strptrcmp(void *a, void *b);
+int			ft_noop(void);
+int			ft_ctoi(int c, int radix);
+void		ft_sortstrarry(char *arry[]);
+char		**ft_strarrydup(char *array[]);
+int			ft_startwith(char *str, char *prefix);
+int			ft_endwith(char *str, char *suffix);
+long double	ft_deg2rad(long double deg);
+long double	ft_rad2deg(long double rad);
+char		*ft_shlex(char **stringp, int comments, int *error);
 
 #endif
