@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/03 17:16:43 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/09 22:58:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int					ft_xlstappendarry(t_xlst **lst_ptr, void *arry, size_t len,
 						size_t size);
 int					ft_xlst_find(t_xlst *lst, void *find, size_t size,
 						size_t *index);
+int					ft_xlstappendlist(t_xlst **lst_ptr, t_xlst **lst);
 
 #endif
