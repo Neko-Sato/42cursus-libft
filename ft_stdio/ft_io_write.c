@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:56:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/30 05:01:32 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:38:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
 #include <ft_string.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 static inline size_t	ft_io_write_internal(const void *buf, size_t len,

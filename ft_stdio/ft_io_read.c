@@ -6,12 +6,12 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 02:04:53 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 16:22:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:38:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 static inline size_t	ft_io_read_internal(void *buf, size_t len,
