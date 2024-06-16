@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/06/10 04:56:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/06/16 13:10:11 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -291,7 +291,11 @@ $(NAME): $(OBJS)
 	$(AR) rc $@ $^
 
 $(NAME_SO): $(OBJS)
+ifeq ($(UNAME_OS), Darwin)
+	$(CC) -shared -Wl,-install_name,@rpath/$@ $^ -o $@
+else
 	$(CC) -shared $^ -o $@
+endif
 
 $(OUT_DIR)/%.o: %.c $(LIBFT_H)
 	@mkdir -p $(@D)
