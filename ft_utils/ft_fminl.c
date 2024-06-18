@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:39:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/06/18 23:29:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/18 23:33:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long double	ft_fmaxl(long double a, long double b)
+long double	ft_fminl(long double a, long double b)
 {
 	if (a > b)
 		return (b);

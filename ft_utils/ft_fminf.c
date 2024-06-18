@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:39:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/06/18 23:29:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/18 23:33:55 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-float	ft_fmaxf(float a, float b)
+float	ft_fminf(float a, float b)
 {
 	if (a > b)
 		return (b);
