@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 02:00:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/29 16:52:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/16 18:50:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				ft_putc(int c, t_file *stream);
 int				ft_fflush(t_file *stream);
 
 int				ft_fgetc(t_file *stream);
-char			*ft_fgets(char *s, int sidze, t_file *stream);
+char			*ft_fgets(char *s, int size, t_file *stream);
 int				ft_fputc(int c, t_file *stream);
 int				ft_fputs(const char *s, t_file *stream);
 

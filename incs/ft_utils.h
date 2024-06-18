@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:30:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/06/05 08:24:21 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/18 23:31:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 int			ft_sign(int n);
 int			ft_max(int a, int b);
 int			ft_min(int a, int b);
+double		ft_fmax(double a, double b);
+double		ft_fmin(double a, double b);
+float		ft_fmaxf(float a, float b);
+float		ft_fminf(float a, float b);
+long double	ft_fmaxl(long double a, long double b);
+long double	ft_fminl(long double a, long double b);
 size_t		ft_digit(unsigned int n);
 int			ft_isnumber(const char *src, int issigned);
 int			ft_gcd(int a, int b);

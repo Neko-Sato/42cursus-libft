@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/06/16 13:10:11 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/06/18 23:32:21 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -152,6 +152,12 @@ SRCS 		:= \
 			ft_isnumber.c \
 			ft_max.c \
 			ft_min.c \
+			ft_fmax.c \
+			ft_fmin.c \
+			ft_fmaxf.c \
+			ft_fminf.c \
+			ft_fmaxl.c \
+			ft_fminl.c \
 			ft_sign.c \
 			ft_gcd.c \
 			ft_lcm.c \
