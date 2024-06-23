@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:33:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/05/10 16:56:29 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/06/23 19:27:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_COLOR_H
 # define FT_COLOR_H
 
-# define COLOR_RAW_TRANSPARENT 0xFF000000
+# define COLOR_RAW_TRANSPARENT 0x00000000
 # define COLOR_RAW_WHITE 0xFFFFFFFF
 # define COLOR_RAW_BLACK 0xFF000000
 # define COLOR_RAW_RED 0xFFFF0000
@@ -42,6 +42,5 @@ t_color				ft_hsvt(double h, double s, double v, double t);
 
 t_color				ft_color_add(t_color a, t_color b);
 t_color				ft_color_sub(t_color a, t_color b);
-t_color				ft_color_mul(t_color a, t_color b);
 
 #endif
