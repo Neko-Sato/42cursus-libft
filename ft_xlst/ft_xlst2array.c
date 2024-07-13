@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:47:14 by hshimizu          #+#    #+#             */
-/*   Updated: 2023/12/18 08:58:19 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/07/13 14:04:54 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void	*ft_xlst2array(t_xlst *lst, size_t size, size_t *__len)
 	void	*head;
 
 	len = ft_xlstlen(lst);
-	array = malloc(len * size);
+	if (len)
+		array = malloc(len * size);
+	else
+		array = malloc(1);
 	if (!array)
 		return (NULL);
 	head = array;

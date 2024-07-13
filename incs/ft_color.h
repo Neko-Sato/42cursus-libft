@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:33:58 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/06/23 19:27:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/07/13 17:39:51 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ t_color				ft_hsvt(double h, double s, double v, double t);
 
 t_color				ft_color_add(t_color a, t_color b);
 t_color				ft_color_sub(t_color a, t_color b);
+
+t_color				ft_color_brightness(double brightness, t_color color);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/06/23 19:08:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/07/13 17:40:48 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -246,6 +246,7 @@ SRCS 		:= \
 			ft_hsvt.c \
 			ft_color_add.c \
 			ft_color_sub.c \
+			ft_color_brightness.c \
 		) \
 		$(addprefix ft_interval/, \
 			ft_interval.c \
