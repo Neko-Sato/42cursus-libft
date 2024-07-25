@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 00:40:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/07/26 00:43:54 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/07/26 00:46:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_stack
 {
-	struct s_stack	pre;
+	struct s_stack	*pre;
 	size_t			size;
 	char			data[];
 }					t_stack;
