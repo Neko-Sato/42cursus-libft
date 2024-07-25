@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/07/26 00:44:30 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/07/26 00:46:27 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -191,7 +191,7 @@ SRCS 		:= \
 			ft_xlstcat.c \
 			ft_xlstremove.c \
 		) \
-		$(addprefix ft_xlst/, \
+		$(addprefix ft_stack/, \
 			ft_stack_push.c \
 			ft_stack_pop.c \
 		) \
