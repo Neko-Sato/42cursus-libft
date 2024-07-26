@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 21:58:50 by hshimizu          #+#    #+#              #
-#    Updated: 2024/07/26 00:46:27 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/07/27 07:06:08 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -191,10 +191,6 @@ SRCS 		:= \
 			ft_xlstcat.c \
 			ft_xlstremove.c \
 		) \
-		$(addprefix ft_stack/, \
-			ft_stack_push.c \
-			ft_stack_pop.c \
-		) \
 		$(addprefix ft_operator/, \
 			ft_eq.c \
 			ft_ge.c \
@@ -252,10 +248,6 @@ SRCS 		:= \
 			ft_color_sub.c \
 			ft_color_inverse.c \
 			ft_color_brightness.c \
-		) \
-		$(addprefix ft_interval/, \
-			ft_interval.c \
-			ft_intervalf.c \
 		) \
 		$(addprefix ft_stdio/, \
 			ft_file_new.c \

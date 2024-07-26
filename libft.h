@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:51:21 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/07/26 00:49:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/07/27 07:07:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include "./incs/ft_string.h"
 # include "./incs/ft_utils.h"
 # include "./incs/ft_xlst.h"
-# include "./incs/ft_stack.h"
 # include "./incs/ft_complex.h"
 # include "./incs/ft_vector.h"
 # include "./incs/ft_search.h"
