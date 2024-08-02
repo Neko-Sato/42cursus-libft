@@ -10,12 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib.h>
 #include <ft_ctype.h>
+#include <ft_stdlib.h>
 #include <ft_string.h>
 #include <ft_utils.h>
 #include <math.h>
 
+static void			internal(const char **nptr, long double *result);
 static int			special(const char **nptr, long double *result);
 static const char	*mantissa(const char *nptr, long double *result, int hex);
 static const char	*exponent(const char *nptr, long double *result, int hex);
@@ -24,29 +25,39 @@ static const char	*exponent(const char *nptr, long double *result, int hex);
 long double	ft_strtold(const char *nptr, char **endptr)
 {
 	long double	result;
-	int			hex;
 	int			neg;
+	const char	*save;
 
 	result = 0.l;
+	save = nptr;
 	while (ft_isspace(*nptr))
 		nptr++;
 	neg = 0;
 	if (ft_strnchr("-+", *nptr, 2))
 		if (*nptr++ == '-')
 			neg = 1;
-	if (!special(&nptr, &result))
-	{
-		hex = !ft_strncasecmp("0x", nptr, 2);
-		if (hex)
-			nptr += 2;
-		nptr = mantissa(nptr, &result, hex);
-		nptr = exponent(nptr, &result, hex);
-	}
+	if (ft_isdigit(*nptr))
+		internal(&nptr, &result);
+	else
+		nptr = save;
 	if (neg)
 		result = -result;
 	if (endptr)
 		*endptr = (char *)nptr;
 	return (result);
+}
+
+static void	internal(const char **nptr, long double *result)
+{
+	int	hex;
+
+	if (special(nptr, result))
+		return ;
+	hex = !ft_strncasecmp("0x", *nptr, 2);
+	if (hex)
+		nptr += 2;
+	*nptr = mantissa(*nptr, result, hex);
+	*nptr = exponent(*nptr, result, hex);
 }
 
 static const char	*mantissa(const char *nptr, long double *result, int hex)

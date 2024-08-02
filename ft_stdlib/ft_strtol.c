@@ -23,18 +23,26 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 {
 	int				neg;
 	unsigned long	acc;
+	const char		*save;
 
+	save = nptr;
 	if (pre(&nptr, &base, &neg))
 	{
 		errno = EINVAL;
 		*endptr = NULL;
 		return (0);
 	}
-	if (internal(&nptr, neg, base, &acc))
+	acc = 0;
+	if (ft_isdigit(*nptr))
 	{
-		errno = EINVAL;
-		acc = (~0ul >> 1) ^ -neg;
+		if (internal(&nptr, neg, base, &acc))
+		{
+			errno = EINVAL;
+			acc = (~0ul >> 1) ^ -neg;
+		}
 	}
+	else
+		nptr = save;
 	if (endptr)
 		*endptr = (char *)nptr;
 	return (acc);
