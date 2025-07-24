@@ -1,0 +1,101 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
+#    Updated: 2025/07/24 19:53:31 by hshimizu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+UNAME_S			:= $(shell uname -s)
+
+NAME 			:= libft
+NAME_DEV 		:= $(NAME)_dev
+
+NAME_A			:= $(NAME).a
+NAME_DEV_A		:= $(NAME_DEV).a
+ifneq ($(UNAME_S),Darwin)
+NAME_SO			:= $(NAME).so
+NAME_DEV_SO		:= $(NAME_DEV).so
+else
+NAME_SO			:= $(NAME).dylib
+NAME_DEV_SO		:= $(NAME_DEV).dylib
+else
+$(error Unsupported OS: $(UNAME_S))
+endif
+
+SRCS			:=
+
+OUTDIR			:= .out
+OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
+OBJS_DEV		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=_dev.o))
+DEPS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.d))
+DEPS_DEV		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=_dev.d))
+
+CC				:= cc
+CFLAGS			:= -Wall -Wextra -Werror -pedantic
+CFLAGS			+= -fPIC -MMD -MP
+AR				:= ar
+ARFLAGS			:= rcs
+IDFLAGS			:=
+LDFLAGS			:=
+LIBS			:=
+LIBS_DEV		:=
+
+CFLAGS_OPT		:= -O3 -DNDEBUG
+CFLAGS_DEV		:= -g -fsanitize=address
+ifneq ($(shell $(CC) --version | grep -i clang),)
+CFLAGS_DEV		+= -fstandalone-debug
+endif
+
+.PHONY: all clean fclean re
+
+all:
+	$(MAKE) $(NAME_A) -j $(shell nproc)
+
+$(NAME_A): CFLAGS += $(CFLAGS_OPT)
+$(NAME_A): $(OBJS)
+	$(AR) $(ARFLAGS) $@ $^
+
+$(NAME_SO): CFLAGS += $(CFLAGS_OPT)
+$(NAME_SO): $(OBJS)
+ifneq ($(UNAME_S),Darwin)
+	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS)
+else
+	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS) -install_name @rpath/$@
+endif
+
+$(OUTDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME_DEV_A): CFLAGS += $(CFLAGS_DEV)
+$(NAME_DEV_A): $(OBJS_DEV)
+	$(AR) $(ARFLAGS) $@ $^
+
+$(NAME_DEV_SO): CFLAGS += $(CFLAGS_DEV)
+$(NAME_DEV_SO): $(OBJS_DEV)
+ifneq ($(UNAME_S),Darwin)
+	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS_DEV)
+else
+	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $^ $(LIBS_DEV) -install_name @rpath/$@
+endif
+
+$(OUTDIR)/%_dev.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) -r $(OUTDIR)
+
+fclean: clean
+	$(RM) $(NAME_A) $(NAME_SO) $(NAME_DEV_A) $(NAME_DEV_SO)
+
+re:
+	$(MAKE) fclean
+	$(MAKE)
+
+-include $(DEPS) $(DEPS_DEV)
