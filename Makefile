@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/07/24 19:53:31 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/07/24 19:58:07 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ NAME_DEV 		:= $(NAME)_dev
 
 NAME_A			:= $(NAME).a
 NAME_DEV_A		:= $(NAME_DEV).a
-ifneq ($(UNAME_S),Darwin)
+ifeq ($(UNAME_S),Linux)
 NAME_SO			:= $(NAME).so
 NAME_DEV_SO		:= $(NAME_DEV).so
-else
+else ifeq ($(UNAME_S),Darwin)
 NAME_SO			:= $(NAME).dylib
 NAME_DEV_SO		:= $(NAME_DEV).dylib
 else
@@ -54,7 +54,7 @@ endif
 .PHONY: all clean fclean re
 
 all:
-	$(MAKE) $(NAME_A) -j $(shell nproc)
+	@$(MAKE) $(NAME_A) -j $(shell nproc)
 
 $(NAME_A): CFLAGS += $(CFLAGS_OPT)
 $(NAME_A): $(OBJS)
@@ -62,10 +62,12 @@ $(NAME_A): $(OBJS)
 
 $(NAME_SO): CFLAGS += $(CFLAGS_OPT)
 $(NAME_SO): $(OBJS)
-ifneq ($(UNAME_S),Darwin)
+ifeq ($(UNAME_S),Linux)
 	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS)
-else
+else ifeq ($(UNAME_S),Darwin)
 	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS) -install_name @rpath/$@
+else
+	$(error Unsupported OS: $(UNAME_S))
 endif
 
 $(OUTDIR)/%.o: %.c
@@ -78,10 +80,12 @@ $(NAME_DEV_A): $(OBJS_DEV)
 
 $(NAME_DEV_SO): CFLAGS += $(CFLAGS_DEV)
 $(NAME_DEV_SO): $(OBJS_DEV)
-ifneq ($(UNAME_S),Darwin)
+ifeq ($(UNAME_S),Linux)
 	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS_DEV)
-else
+else ifeq ($(UNAME_S),Darwin)
 	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $^ $(LIBS_DEV) -install_name @rpath/$@
+else
+	$(error Unsupported OS: $(UNAME_S))
 endif
 
 $(OUTDIR)/%_dev.o: %.c
@@ -95,7 +99,7 @@ fclean: clean
 	$(RM) $(NAME_A) $(NAME_SO) $(NAME_DEV_A) $(NAME_DEV_SO)
 
 re:
-	$(MAKE) fclean
-	$(MAKE)
+	@$(MAKE) fclean
+	@$(MAKE)
 
 -include $(DEPS) $(DEPS_DEV)
