@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/07/24 22:21:41 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/07/24 22:28:10 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,11 @@ SRCS			:= \
 	ft_isascii.c \
 	ft_isprint.c \
 	ft_toupper.c \
-	ft_tolower.c
+	ft_tolower.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c
 
 OUTDIR			:= .out
 OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
