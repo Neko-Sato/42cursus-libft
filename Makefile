@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/07/24 19:58:07 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/07/24 22:21:41 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,14 @@ else
 $(error Unsupported OS: $(UNAME_S))
 endif
 
-SRCS			:=
+SRCS			:= \
+	ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_toupper.c \
+	ft_tolower.c
 
 OUTDIR			:= .out
 OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
@@ -51,10 +58,12 @@ ifneq ($(shell $(CC) --version | grep -i clang),)
 CFLAGS_DEV		+= -fstandalone-debug
 endif
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 all:
 	@$(MAKE) $(NAME_A) -j $(shell nproc)
+
+bonus: all
 
 $(NAME_A): CFLAGS += $(CFLAGS_OPT)
 $(NAME_A): $(OBJS)
