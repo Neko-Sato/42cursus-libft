@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:24:43 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:14:51 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/25 18:15:00 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
+#include <stddef.h>
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	while (*s && *s != (char)c)
+		s++;
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
 }

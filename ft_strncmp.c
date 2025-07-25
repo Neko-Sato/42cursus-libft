@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:24:43 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:16:37 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/25 18:16:51 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
+#include <stddef.h>
 
-int	ft_toupper(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	while (n && *s1 && *s2 && *s1 == *s2)
+		(void)(n--, s1++, s2++);
+	if (!n)
+		return (0);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

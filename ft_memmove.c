@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:24:43 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:12:11 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/25 18:13:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
+#include <stddef.h>
 
-int	ft_toupper(int c)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	unsigned char		*udst;
+	const unsigned char	*usrc;
+
+	udst = dst;
+	usrc = src;
+	if (dst < src)
+	{
+		while (n)
+			*udst++ = (n--, *usrc++);
+	}
+	else
+	{
+		udst += n;
+		usrc += n;
+		while (n)
+			*--udst = (n--, *--usrc);
+	}
+	return (dst);
 }

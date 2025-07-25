@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:24:43 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:16:05 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/25 18:16:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 # include <libft.h>
 #endif
 
-int	ft_toupper(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	size_t	ret;
+
+	ret = ft_strlen(src);
+	while (1 < dstsize && *src)
+		*dst++ = (dstsize--, *src++);
+	if (dstsize)
+		*dst = '\0';
+	return (ret);
 }

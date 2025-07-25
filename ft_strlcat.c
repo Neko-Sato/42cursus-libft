@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:24:43 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:15:15 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/25 18:15:59 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,27 @@
 # include <libft.h>
 #endif
 
-int	ft_toupper(int c)
+static size_t	ft_strnlen(const char *s, size_t n)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	const char *const	h = s;
+
+	while (n && *s)
+		(void)(n--, s++);
+	return (s - h);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	dstcnt;
+	size_t	srccnt;
+
+	dstcnt = ft_strnlen(dst, dstsize);
+	srccnt = ft_strlen(src);
+	dst += dstcnt;
+	dstsize -= dstcnt;
+	while (1 < dstsize && *src)
+		*dst++ = (dstsize--, *src++);
+	if (dstsize)
+		*dst = 0;
+	return (dstcnt + srccnt);
 }
