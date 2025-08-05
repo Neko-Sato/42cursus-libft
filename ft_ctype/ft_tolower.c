@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 20:40:23 by uakizuki          #+#    #+#             */
-/*   Updated: 2025/08/05 19:13:09 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:06:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_ctype/ft_ctype.h>
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_tolower(int c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	if (ft_isalpha(c))
+		c |= 32u;
+	return (c);
 }

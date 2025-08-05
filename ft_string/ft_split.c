@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:07:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 01:27:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 06:20:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_string/ft_string.h>
 #include <stdlib.h>
 
 static inline size_t	__count_words(const char *s, int c)

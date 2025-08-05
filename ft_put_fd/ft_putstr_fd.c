@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/05 19:17:28 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/24 22:26:42 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:18:59 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_string/ft_string.h>
+#include <unistd.h>
 
-int	ft_toupper(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (ft_isalpha(c))
-		c &= ~32u;
-	return (c);
+	write(fd, s, ft_strlen(s));
 }

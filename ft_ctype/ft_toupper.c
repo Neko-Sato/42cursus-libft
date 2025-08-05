@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 20:29:22 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 05:26:56 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/24 22:19:49 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:06:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_ctype/ft_ctype.h>
 
-int	ft_lstsize(t_list *lst)
+int	ft_toupper(int c)
 {
-	size_t	cnt;
-
-	cnt = 0;
-	while (lst)
-	{
-		cnt++;
-		lst = lst->next;
-	}
-	return ((int)cnt);
+	if (ft_isalpha(c))
+		c &= ~32u;
+	return (c);
 }

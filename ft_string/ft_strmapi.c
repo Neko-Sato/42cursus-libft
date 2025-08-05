@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 18:17:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/05 19:14:56 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/05 19:21:02 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:21:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_string/ft_string.h>
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	size_t	needle_size;
+	char	*ret;
+	char	*tmp;
 
-	needle_size = ft_strlen(needle);
-	while (needle_size <= len)
+	ret = malloc(ft_strlen(s) + 1);
+	if (!ret)
+		return (NULL);
+	tmp = ret;
+	while (*s)
 	{
-		if (!ft_strncmp(haystack, needle, needle_size))
-			return ((char *)haystack);
-		if (!*haystack)
-			break ;
-		(void)(haystack++, len--);
+		*tmp = f(tmp - ret, *s);
+		(void)(s++, tmp++);
 	}
-	return (NULL);
+	*tmp = '\0';
+	return (ret);
 }

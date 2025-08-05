@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 19:21:02 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 01:37:25 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/05 19:30:37 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:19:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_string/ft_string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ret;
-	char	*tmp;
+	size_t	total;
+	void	*ptr;
 
-	ret = malloc(ft_strlen(s) + 1);
-	if (!ret)
+	if (count && SIZE_MAX / count < size)
 		return (NULL);
-	tmp = ret;
-	while (*s)
-	{
-		*tmp = f(tmp - ret, *s);
-		(void)(s++, tmp++);
-	}
-	*tmp = '\0';
-	return (ret);
+	total = count * size;
+	ptr = malloc(total);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, total);
+	return (ptr);
 }

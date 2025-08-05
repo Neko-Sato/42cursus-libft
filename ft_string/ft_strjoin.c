@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 19:59:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/05 20:13:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 06:20:53 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_string/ft_string.h>
 #include <stdlib.h>
 
 static char	*ft_strcpy(char *dst, const char *src)

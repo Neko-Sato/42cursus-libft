@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 19:57:18 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 00:19:33 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 06:05:10 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:05:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_CTYPE_H
+# define FT_CTYPE_H
 
-char	*ft_strtrim(const char *s1, const char *set)
-{
-	const char	*start;
-	const char	*end;
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 
-	start = s1;
-	end = s1 + ft_strlen(s1);
-	while (start < end && ft_strchr(set, *start))
-		start++;
-	while (start < end && ft_strchr(set, *(end - 1)))
-		end--;
-	return (ft_substr(start, 0, (end - start)));
-}
+#endif

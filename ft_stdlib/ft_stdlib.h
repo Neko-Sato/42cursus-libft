@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:12:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 06:09:43 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:10:25 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_STDLIB_H
+# define FT_STDLIB_H
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_lst/ft_lst.h>
+# include <stddef.h>
+
+void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *nptr);
+char	*ft_itoa(int n);
 
 #endif

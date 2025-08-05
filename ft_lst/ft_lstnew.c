@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 20:14:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 05:24:34 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 06:04:22 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_lst/ft_lst.h>
 #include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)

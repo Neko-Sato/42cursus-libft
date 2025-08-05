@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 20:24:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 01:44:26 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/06/30 20:40:23 by uakizuki          #+#    #+#             */
+/*   Updated: 2025/08/06 06:18:41 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_put_fd/ft_put_fd.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_putendl_fd(char *s, int fd)
 {
-	ft_lstlast(new)->next = *lst;
-	*lst = new;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
