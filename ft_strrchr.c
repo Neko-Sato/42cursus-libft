@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 18:17:33 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:17:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/05 19:15:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)ret);
 }
-
-/*
-int	main(void)
-{
-	const char	*s = "tripouille";
-	int			c;
-
-	c = 0;
-	printf("strrchr = %s\n", strrchr(s, c));
-	printf("ft_strrchr = %s\n", ft_strrchr(s, c));
-	return (0);
-}
-*/

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
+#    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/07/25 18:27:25 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/06 00:34:14 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,29 +28,40 @@ $(error Unsupported OS: $(UNAME_S))
 endif
 
 SRCS			:= \
-	ft_isalpha.c \
-	ft_isdigit.c \
+	ft_atoi.c \
+	ft_bzero.c \
+	ft_calloc.c \
 	ft_isalnum.c \
+	ft_isalpha.c \
 	ft_isascii.c \
+	ft_isdigit.c \
 	ft_isprint.c \
-	ft_toupper.c \
-	ft_tolower.c \
-	ft_putchar_fd.c \
-	ft_putstr_fd.c \
-	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
-	ft_strlen.c \
+	ft_itoa.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_putstr_fd.c \
+	ft_split.c \
 	ft_strchr.c \
+	ft_strdup.c \
+	ft_striteri.c \
+	ft_strjoin.c \
 	ft_strlcat.c \
 	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strmapi.c \
 	ft_strncmp.c \
 	ft_strnstr.c \
-	ft_strrchr.c
+	ft_strrchr.c \
+	ft_strtrim.c \
+	ft_substr.c \
+	ft_tolower.c \
+	ft_toupper.c
 
 OUTDIR			:= .out
 OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
@@ -91,8 +102,6 @@ ifeq ($(UNAME_S),Linux)
 	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS)
 else ifeq ($(UNAME_S),Darwin)
 	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS) -install_name @rpath/$@
-else
-	$(error Unsupported OS: $(UNAME_S))
 endif
 
 $(OUTDIR)/%.o: %.c
@@ -108,9 +117,7 @@ $(NAME_DEV_SO): $(OBJS_DEV)
 ifeq ($(UNAME_S),Linux)
 	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS_DEV)
 else ifeq ($(UNAME_S),Darwin)
-	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $^ $(LIBS_DEV) -install_name @rpath/$@
-else
-	$(error Unsupported OS: $(UNAME_S))
+	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS_DEV) -install_name @rpath/$@
 endif
 
 $(OUTDIR)/%_dev.o: %.c
@@ -128,6 +135,6 @@ re:
 	@$(MAKE)
 
 test: test.c $(NAME_A)
-	$(CC) -g -o $@ $< -DNOT_LOCAL_LIBFT -I. -L. -lft
+	$(CC) -g -o $@ $< -I. -L. -lft
 
 -include $(DEPS) $(DEPS_DEV)

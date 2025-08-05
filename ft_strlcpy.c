@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 18:16:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 18:16:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/05 19:14:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

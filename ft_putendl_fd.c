@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:40:23 by uakizuki          #+#    #+#             */
-/*   Updated: 2025/07/24 22:26:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/05 19:13:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

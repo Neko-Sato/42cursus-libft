@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 18:13:44 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/25 19:13:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/05 21:06:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t n)
 {
-	unsigned char	*ptr;
-	unsigned long	*word_ptr;
-	unsigned long	c_long;
+	static const size_t	word_size = sizeof(unsigned long);
+	unsigned char		*ptr;
+	unsigned long		*word_ptr;
+	unsigned long		c_long;
 
 	ptr = b;
-	while (n && (unsigned long)ptr % sizeof(unsigned long))
+	while (n && (n < word_size || (unsigned long)ptr % word_size))
 		*ptr++ = (n--, c);
 	if (!n)
 		return (b);
@@ -27,12 +28,12 @@ void	*ft_memset(void *b, int c, size_t n)
 	c_long = (unsigned char)c;
 	c_long |= c_long << 8u;
 	c_long |= c_long << 16u;
-	if (sizeof(*word_ptr) >= 8)
+	if (word_size >= 8)
 		c_long |= c_long << 32u;
-	while (sizeof(*word_ptr) <= n)
+	while (word_size <= n)
 	{
 		*word_ptr++ = c_long;
-		n -= sizeof(*word_ptr);
+		n -= word_size;
 	}
 	ptr = (unsigned char *)word_ptr;
 	while (n)

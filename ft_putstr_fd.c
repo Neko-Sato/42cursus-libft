@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:26:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/24 22:27:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/05 19:13:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOT_LOCAL_LIBFT
-# include "libft.h"
-#else
-# include <libft.h>
-#endif
-
+#include "libft.h"
 #include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
