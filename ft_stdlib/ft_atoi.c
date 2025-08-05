@@ -6,18 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:28:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:19:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 06:49:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ctype/ft_ctype.h>
 #include <ft_string/ft_string.h>
 #include <limits.h>
-
-static int	ft_isspace(int c)
-{
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
 
 static inline unsigned long	__internal2(
 	const char **nptr, unsigned int base,

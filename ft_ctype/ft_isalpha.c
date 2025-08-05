@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:05:57 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/24 22:06:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 06:38:53 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_ctype/ft_ctype.h"
+
 int	ft_isalpha(int c)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
+	return (ft_isupper(c) || ft_islower(c));
 }

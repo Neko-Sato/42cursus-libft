@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 06:29:31 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/06 06:48:36 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,16 @@ SRCS			:= \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
+		ft_isblank.c \
+		ft_iscntrl.c \
 		ft_isdigit.c \
+		ft_isgraph.c \
+		ft_islower.c \
 		ft_isprint.c \
+		ft_ispunct.c \
+		ft_isspace.c \
+		ft_isupper.c \
+		ft_isxdigit.c \
 		ft_tolower.c \
 		ft_toupper.c \
 	) \
