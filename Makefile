@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
+#    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 01:46:22 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/06 06:27:51 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,7 +115,7 @@ endif
 
 $(OUTDIR)/%.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(IDFLAGS) -c $< -o $@
 
 $(NAME_DEV_A): CFLAGS += $(CFLAGS_DEV)
 $(NAME_DEV_A): $(OBJS_DEV)
@@ -131,7 +131,7 @@ endif
 
 $(OUTDIR)/%_dev.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(IDFLAGS) -c $< -o $@
 
 clean:
 	$(RM) -r $(OUTDIR)
