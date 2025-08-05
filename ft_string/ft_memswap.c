@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:50:26 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:10:02 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 07:13:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
+void	ft_memswap(void *a, void *b, size_t n)
+{
+	unsigned char	tmp;
+	unsigned char	*ua;
+	unsigned char	*ub;
 
-#endif
+	ua = a;
+	ub = b;
+	while (n)
+	{
+		tmp = *ua;
+		*ua = *ub;
+		*ub = tmp;
+		(void)(n--, ua++, ub++);
+	}
+}

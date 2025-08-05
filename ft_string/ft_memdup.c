@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 21:15:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:04:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:08:41 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 07:25:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_lst/ft_lst.h>
+#include <ft_string/ft_string.h>
+#include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	*ft_memdup(const void *src, size_t n)
 {
-	t_list	*tmp;
+	void *dst;
 
-	while (*lst)
-	{
-		tmp = *lst;
-		*lst = tmp->next;
-		ft_lstdelone(tmp, del);
-	}
+	dst = malloc(n);
+	if (!dst)
+		return (NULL);
+	return (ft_memcpy(dst, src, n));
 }

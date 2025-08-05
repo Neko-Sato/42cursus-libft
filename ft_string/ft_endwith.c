@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_endwith.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:50:26 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:17:52 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 07:19:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <ft_string/ft_string.h>
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
+int	ft_endwith(char *str, char *suffix)
+{
+	size_t	str_len;
+	size_t	suffix_len;
 
-#endif
+	str_len = ft_strlen(str);
+	suffix_len = ft_strlen(suffix);
+	if (suffix_len > str_len)
+		return (0);
+	return (!ft_strcmp(str + str_len - suffix_len, suffix));
+}

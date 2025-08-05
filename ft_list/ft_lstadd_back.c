@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:50:26 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/21 20:58:20 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:49:51 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <ft_list/ft_list.h>
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-
-#endif
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	if (*lst)
+		ft_lstlast(*lst)->next = new;
+	else
+		*lst = new;
+}

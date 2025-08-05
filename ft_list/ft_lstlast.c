@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 20:24:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:03:53 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/21 20:43:13 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:50:11 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_lst/ft_lst.h>
+#include <ft_list/ft_list.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_lstlast(new)->next = *lst;
-	*lst = new;
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 06:11:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:11:37 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 07:21:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,34 @@ char	**ft_split(const char *s, char c);
 void	ft_bzero(void *s, size_t n);
 void	*ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strncpy(char *dst, const char *src, size_t n);
+char	*ft_strnchr(const char *s, int c, size_t n);
+char	*ft_strcat(char *dst, const char *src);
+char	*ft_strncat(char *dst, const char *src, size_t n);
+char	*ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcspn(const char *s, const char *reject);
+char	*ft_strspn(const char *s, const char *accept);
+char	*ft_strpbrk(const char *s, const char *accept);
+char	*ft_strstr(const char *haystack, const char *needle);
+char	*ft_strtok(char *str, const char *delim);
+char	*ft_strtok_r(char *str, const char *delim, char **saveptr);
+char	*ft_strsep(char **stringp, const char *delim);
+char	*ft_strset(char *s, int c);
+char	*ft_strnset(char *s, int c, size_t n);
+char	*ft_strndup(const char *s, size_t n);
+size_t	ft_strnlen(const char *s, size_t maxlen);
+void	*ft_memmem(const void *haystack, size_t haystacklen, const void *needle,
+			size_t needlelen);
+void	*ft_mempbrk(const void *s, const void *accept, size_t n);
+void	*ft_memfrob(void *s, size_t n);
+
+void	*ft_memdup(const void *src, size_t n);
+void	ft_memswap(void *a, void *b, size_t n);
+int		ft_strcasecmp(const char *s1, const char *s2);
+int		ft_strncasecmp(const char *s1, const char *s2, size_t n);
+int		ft_startwith(char *str, char *prefix);
+int		ft_endwith(char *str, char *suffix);
 
 #endif

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 21:30:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:04:08 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:13:23 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 07:25:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_lst/ft_lst.h>
+#include <ft_ctype/ft_ctype.h>
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_strcasecmp(const char *s1, const char *s2)
 {
-	while (lst)
+	while (1)
 	{
-		f(lst->content);
-		lst = lst->next;
+		if (ft_tolower(*s1) != ft_tolower(*s2))
+			return (ft_tolower(*s1) - ft_tolower(*s2));
+		if (!*s1)
+			break ;
+		(void)(s1++, s2++);
 	}
+	return (0);
 }

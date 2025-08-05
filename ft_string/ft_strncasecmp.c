@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncasecmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:50:26 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:13:23 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 07:25:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <ft_ctype/ft_ctype.h>
+#include <stddef.h>
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-
-#endif
+int	ft_strncasecmp(const char *s1, const char *s2, size_t n)
+{
+	while (n)
+	{
+		if (ft_tolower(*s1) != ft_tolower(*s2))
+			return (ft_tolower(*s1) - ft_tolower(*s2));
+		if (!*s1)
+			break ;
+		(void)(n--, s1++, s2++);
+	}
+	return (0);
+}

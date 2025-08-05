@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 20:29:22 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:04:28 by hshimizu         ###   ########.fr       */
+/*   Created: 2023/05/21 21:49:25 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/06 06:50:11 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_lst/ft_lst.h>
+#include <ft_list/ft_list.h>
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	cnt;
+	t_list	*new_lst;
+	t_list	*node;
+	void	*content;
 
-	cnt = 0;
+	new_lst = NULL;
 	while (lst)
 	{
-		cnt++;
+		content = f(lst->content);
+		if (!content)
+			return (ft_lstclear(&new_lst, del), NULL);
+		node = ft_lstnew(content);
+		if (!node)
+			return (del(content), ft_lstclear(&new_lst, del), NULL);
+		ft_lstadd_back(&new_lst, node);
 		lst = lst->next;
 	}
-	return ((int)cnt);
+	return (new_lst);
 }
