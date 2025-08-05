@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 19:37:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 00:26:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/06 01:13:52 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static char	*ft_strndup(const char *src, size_t n)
 	ret = malloc(size);
 	if (!ret)
 		return (NULL);
-	ft_strlcpy(ret, src, size);
+	ft_memcpy(ret, src, size - 1);
+	ret[size - 1] = '\0';
 	return (ret);
 }
 

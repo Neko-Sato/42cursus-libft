@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
+#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 00:34:14 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/06 01:01:26 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,7 +134,7 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE)
 
-test: test.c $(NAME_A)
-	$(CC) -g -o $@ $< -I. -L. -lft
+test: test.c $(NAME_DEV_A)
+	$(CC) $(CFLAGS_DEV) -o $@ $< -I. -L. -lft_dev
 
 -include $(DEPS) $(DEPS_DEV)
