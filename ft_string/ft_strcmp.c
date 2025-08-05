@@ -1,26 +1,27 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 19:59:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 07:26:54 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:16:37 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/07/28 11:07:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string/ft_string.h>
-#include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strjoin(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	size;
-	char	*ret;
-
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	ret = malloc(size);
-	if (!ret)
-		return (NULL);
-	return (ft_strcat(ft_strcpy(ret, s1), s2));
+	while (1)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		if (!*s1)
+			break ;
+		(void)(s1++, s2++);
+	}
+	return (0);
 }

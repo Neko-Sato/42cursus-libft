@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 06:48:36 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/06 07:39:02 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,19 +66,31 @@ SRCS			:= \
 		ft_strrchr.c \
 		ft_strtrim.c \
 		ft_substr.c \
+		ft_memdup.c \
+		ft_memswap.c \
+		ft_strcasecmp.c \
+		ft_strncasecmp.c \
+		ft_startwith.c \
+		ft_endwith.c \
+		ft_strcat.c \
+		ft_strcmp.c \
+		ft_strcpy.c \
+		ft_strndup.c \
+		ft_strnlen.c \
 	) \
 	$(addprefix ft_put_fd/, \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c \
+		ft_putstrs_fd.c \
 	) \
 	$(addprefix ft_stdlib/, \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_itoa.c \
 	) \
-	$(addprefix ft_lst/, \
+	$(addprefix ft_list/, \
 		ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstclear.c \
@@ -126,9 +138,9 @@ $(NAME_A): $(OBJS)
 $(NAME_SO): CFLAGS += $(CFLAGS_OPT)
 $(NAME_SO): $(OBJS)
 ifeq ($(UNAME_S),Linux)
-	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -shared -o $@ $^ $(LIBS)
 else ifeq ($(UNAME_S),Darwin)
-	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS) -install_name @rpath/$@
+	$(CC) $(CFLAGS) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS) -install_name @rpath/$@
 endif
 
 $(OUTDIR)/%.o: %.c
@@ -142,9 +154,9 @@ $(NAME_DEV_A): $(OBJS_DEV)
 $(NAME_DEV_SO): CFLAGS += $(CFLAGS_DEV)
 $(NAME_DEV_SO): $(OBJS_DEV)
 ifeq ($(UNAME_S),Linux)
-	$(CC) $(LDFLAGS) -shared -o $@ $^ $(LIBS_DEV)
+	$(CC) $(CFLAGS) $(LDFLAGS) -shared -o $@ $^ $(LIBS_DEV)
 else ifeq ($(UNAME_S),Darwin)
-	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS_DEV) -install_name @rpath/$@
+	$(CC) $(CFLAGS) $(LDFLAGS) -dynamiclib -o $@ $^ $(LIBS_DEV) -install_name @rpath/$@
 endif
 
 $(OUTDIR)/%_dev.o: %.c
