@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_xlist.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:23:17 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/08 05:28:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_XLIST_H
+# define FT_XLIST_H
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-# include <ft_utils/ft_utils.h>
-# include <ft_vector/ft_vector.h>
-# include <ft_xlist/ft_xlist.h>
-# include <ft_btree/ft_btree.h>
+# include <stddef.h>
+
+typedef struct s_xlist_node
+{
+	struct s_xlist	*next;
+	char			data[];
+}					t_xlist_node;
+
+typedef struct s_xlist
+{
+	size_t			_type;
+	t_xlist_node	*_head;
+}					t_xlist;
 
 #endif

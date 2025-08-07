@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:23:17 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/08 05:28:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-# include <ft_utils/ft_utils.h>
-# include <ft_vector/ft_vector.h>
-# include <ft_xlist/ft_xlist.h>
-# include <ft_btree/ft_btree.h>
+# include <stddef.h>
+
+typedef struct s_btree_node
+{
+	struct s_btree_node	*left;
+	struct s_btree_node	*right;
+	char				data[];
+}						t_btree_node;
+
+typedef struct s_btree
+{
+	size_t				_type;
+	t_btree_node		*_root;
+}						t_btree;
 
 #endif

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_vector.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:23:17 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/08 05:27:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_VECTOR_H
+# define FT_VECTOR_H
 
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-# include <ft_utils/ft_utils.h>
-# include <ft_vector/ft_vector.h>
-# include <ft_xlist/ft_xlist.h>
-# include <ft_btree/ft_btree.h>
+# include <stddef.h>
+
+typedef struct s_vector
+{
+	size_t	_type;
+	char	*_data;
+	size_t	_size;
+	size_t	_capa;
+}			t_vector;
 
 #endif
