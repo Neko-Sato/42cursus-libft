@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/07 20:17:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/08 05:18:06 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,6 @@ SRCS			:= \
 	) \
 	$(addprefix ft_string/, \
 		ft_bzero.c \
-		ft_endwith.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
@@ -58,7 +57,6 @@ SRCS			:= \
 		ft_memset.c \
 		ft_memswap.c \
 		ft_split.c \
-		ft_startwith.c \
 		ft_strcasecmp.c \
 		ft_strcat.c \
 		ft_strchr.c \
@@ -100,9 +98,20 @@ SRCS			:= \
 		ft_putstrs_fd.c \
 	) \
 	$(addprefix ft_stdlib/, \
+		ft_abs.c \
+		ft_atof.c \
 		ft_atoi.c \
+		ft_atol.c \
+		ft_bsearch.c \
 		ft_calloc.c \
+		ft_div.c \
 		ft_itoa.c \
+		ft_labs.c \
+		ft_ldiv.c \
+		ft_qsort.c \
+		ft_qsort_r.c \
+		ft_strtod.c \
+		ft_strtof.c \
 	) \
 	$(addprefix ft_list/, \
 		ft_lstadd_back.c \
@@ -114,6 +123,12 @@ SRCS			:= \
 		ft_lstmap.c \
 		ft_lstnew.c \
 		ft_lstsize.c \
+	) \
+	$(addprefix ft_utils/, \
+		ft_startwith.c \
+		ft_endwith.c \
+		ft_intcmp.c \
+		ft_strptrcmp.c \
 	)
 
 OUTDIR			:= .out

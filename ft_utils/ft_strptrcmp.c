@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_endwith.c                                       :+:      :+:    :+:   */
+/*   ft_strptrcmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 07:17:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 07:19:09 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/08 05:00:52 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/08 05:01:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string/ft_string.h>
 
-int	ft_endwith(char *str, char *suffix)
+int	ft_strptrcmp(const char **ptr1, const char **ptr2)
 {
-	size_t	str_len;
-	size_t	suffix_len;
-
-	str_len = ft_strlen(str);
-	suffix_len = ft_strlen(suffix);
-	if (suffix_len > str_len)
-		return (0);
-	return (!ft_strcmp(str + str_len - suffix_len, suffix));
+	return (ft_strcmp(*ptr1, *ptr2));
 }

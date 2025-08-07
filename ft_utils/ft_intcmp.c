@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_intcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:16:19 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/08 05:00:52 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/08 05:16:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <ft_ctype/ft_ctype.h>
-# include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
-# include <ft_stdlib/ft_stdlib.h>
-# include <ft_list/ft_list.h>
-# include <ft_utils/ft_utils.h>
-
-#endif
+int	ft_intcmp(const int *ptr1, const int *ptr2)
+{
+	return (*ptr1 - *ptr2);
+}
