@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/07 19:55:02 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 19:56:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strsep(char **stringp, const char *delim)
 {
-	while (1)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
-			break ;
-		(void)(s1++, s2++);
-	}
-	return (0);
+	char	*token;
+
+	if (!*stringp)
+		return (NULL);
+	token = *stringp;
+	*stringp += ft_strcspn(*stringp, delim);
+	if (**stringp)
+		*(*stringp)++ = '\0';
+	else
+		*stringp = NULL;
+	return (token);
 }

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 07:08:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 07:25:05 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/07 20:19:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memdup(const void *src, size_t n)
 {
-	void *dst;
+	void	*dst;
 
 	dst = malloc(n);
 	if (!dst)

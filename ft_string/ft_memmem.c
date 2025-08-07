@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:17:01 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 20:17:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_memmem(const void *haystack, size_t haystacklen, const void *needle,
+		size_t needlelen)
 {
-	while (1)
+	const unsigned char	*haystack_ptr;
+
+	haystack_ptr = haystack;
+	while (needlelen <= haystacklen)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
-			break ;
-		(void)(s1++, s2++);
+		if (!ft_memcmp(haystack_ptr, needle, needlelen))
+			return ((void *)haystack_ptr);
+		(void)(haystack_ptr++, haystacklen--);
 	}
-	return (0);
+	return (NULL);
 }

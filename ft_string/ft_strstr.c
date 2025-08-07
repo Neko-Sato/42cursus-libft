@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/07/25 18:17:01 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 19:45:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
+	size_t	needle_size;
+
+	needle_size = ft_strlen(needle);
 	while (1)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
+		if (!ft_strncmp(haystack, needle, needle_size))
+			return ((char *)haystack);
+		if (!*haystack)
 			break ;
-		(void)(s1++, s2++);
+		haystack++;
 	}
-	return (0);
+	return (NULL);
 }

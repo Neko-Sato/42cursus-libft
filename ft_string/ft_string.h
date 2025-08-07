@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 06:11:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 07:21:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/07 20:11:11 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ char	*ft_strncpy(char *dst, const char *src, size_t n);
 char	*ft_strnchr(const char *s, int c, size_t n);
 char	*ft_strcat(char *dst, const char *src);
 char	*ft_strncat(char *dst, const char *src, size_t n);
-char	*ft_strcmp(const char *s1, const char *s2);
-char	*ft_strcspn(const char *s, const char *reject);
-char	*ft_strspn(const char *s, const char *accept);
+int		ft_strcmp(const char *s1, const char *s2);
+size_t	ft_strcspn(const char *s, const char *reject);
+size_t	ft_strspn(const char *s, const char *accept);
 char	*ft_strpbrk(const char *s, const char *accept);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strtok(char *str, const char *delim);
@@ -55,7 +55,6 @@ char	*ft_strndup(const char *s, size_t n);
 size_t	ft_strnlen(const char *s, size_t maxlen);
 void	*ft_memmem(const void *haystack, size_t haystacklen, const void *needle,
 			size_t needlelen);
-void	*ft_mempbrk(const void *s, const void *accept, size_t n);
 void	*ft_memfrob(void *s, size_t n);
 
 void	*ft_memdup(const void *src, size_t n);

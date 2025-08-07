@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtok_r.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/07 19:46:42 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 20:12:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strtok_r(char *str, const char *delim, char **saveptr)
 {
-	while (1)
+	char	*end;
+
+	if (!str)
+		str = *saveptr;
+	str += ft_strspn(str, delim);
+	if (!*str)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
-			break ;
-		(void)(s1++, s2++);
+		*saveptr = str;
+		return (NULL);
 	}
-	return (0);
+	end = str + ft_strcspn(str, delim);
+	if (*end)
+		*end++ = '\0';
+	*saveptr = end;
+	return (str);
 }

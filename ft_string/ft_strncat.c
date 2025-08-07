@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 07:27:04 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 19:43:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	while (1)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
-			break ;
-		(void)(s1++, s2++);
-	}
-	return (0);
+	size_t	dst_len;
+	size_t	src_len;
+
+	dst_len = ft_strlen(dst);
+	src_len = ft_strnlen(src, n);
+	ft_strncpy(dst + dst_len, src, src_len);
+	dst[dst_len + src_len] = '\0';
+	return (dst);
 }

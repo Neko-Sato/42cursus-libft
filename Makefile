@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 07:39:02 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/07 20:17:19 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,24 @@ SRCS			:= \
 	) \
 	$(addprefix ft_string/, \
 		ft_bzero.c \
+		ft_endwith.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
+		ft_memdup.c \
+		ft_memfrob.c \
+		ft_memmem.c \
 		ft_memmove.c \
 		ft_memset.c \
+		ft_memswap.c \
 		ft_split.c \
+		ft_startwith.c \
+		ft_strcasecmp.c \
+		ft_strcat.c \
 		ft_strchr.c \
+		ft_strcmp.c \
+		ft_strcpy.c \
+		ft_strcspn.c \
 		ft_strdup.c \
 		ft_striteri.c \
 		ft_strjoin.c \
@@ -61,22 +72,25 @@ SRCS			:= \
 		ft_strlcpy.c \
 		ft_strlen.c \
 		ft_strmapi.c \
-		ft_strncmp.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strtrim.c \
-		ft_substr.c \
-		ft_memdup.c \
-		ft_memswap.c \
-		ft_strcasecmp.c \
 		ft_strncasecmp.c \
-		ft_startwith.c \
-		ft_endwith.c \
-		ft_strcat.c \
-		ft_strcmp.c \
-		ft_strcpy.c \
+		ft_strncat.c \
+		ft_strnchr.c \
+		ft_strncmp.c \
+		ft_strncpy.c \
 		ft_strndup.c \
 		ft_strnlen.c \
+		ft_strnset.c \
+		ft_strnstr.c \
+		ft_strpbrk.c \
+		ft_strrchr.c \
+		ft_strsep.c \
+		ft_strset.c \
+		ft_strspn.c \
+		ft_strstr.c \
+		ft_strtok.c \
+		ft_strtok_r.c \
+		ft_strtrim.c \
+		ft_substr.c \
 	) \
 	$(addprefix ft_put_fd/, \
 		ft_putchar_fd.c \

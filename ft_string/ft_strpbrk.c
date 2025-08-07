@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 20:19:36 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 20:20:04 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/07 19:35:26 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/07 19:41:26 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strpbrk(const char *s, const char *accept)
 {
+	size_t	accept_len;
+
+	accept_len = ft_strlen(accept);
 	while (1)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (!*s1)
+		if (ft_memchr(accept, *s, accept_len))
+			return ((char *)s);
+		if (!*s)
 			break ;
-		(void)(s1++, s2++);
+		s++;
 	}
-	return (0);
+	return (NULL);
 }
