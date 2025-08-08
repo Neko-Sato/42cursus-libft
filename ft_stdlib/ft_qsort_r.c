@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 16:18:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:23:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	ft_qsort_r(t_qsort_r *args)
 	size_t	pi;
 
 	if (args->nmemb == 0)
-		return ;
-	if (args->nmemb < 3)
+		;
+	else if (args->nmemb < 3)
 		__case_pair(args);
 	else
 	{
