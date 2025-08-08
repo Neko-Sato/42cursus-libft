@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/08 05:18:06 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/08 15:43:29 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,6 +112,9 @@ SRCS			:= \
 		ft_qsort_r.c \
 		ft_strtod.c \
 		ft_strtof.c \
+		ft_strtol.c \
+		ft_strtoul.c \
+		ft_strtold.c \
 	) \
 	$(addprefix ft_list/, \
 		ft_lstadd_back.c \
