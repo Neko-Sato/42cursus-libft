@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:44:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:22:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/09 07:24:39 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static inline int	__special(const char **nptr, long double *acc, int *any)
 {
 	static const char			*specials[] = {"infinity", "inf", "nan"};
 	static const int			specials_len[] = {8, 3, 3};
-	static const long double	specials_val[] = {INFINITY, INFINITY, NAN};
+	static const float			specials_val[] = {INFINITY, INFINITY, NAN};
 	size_t						i;
 	const char					*tmp;
 
