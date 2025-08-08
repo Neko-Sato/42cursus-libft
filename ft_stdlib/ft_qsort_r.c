@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 04:56:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:18:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib/ft_stdlib.h>
 #include <ft_string/ft_string.h>
 
-static void	case_pair(t_qsort_r *args)
+static inline void	__case_pair(t_qsort_r *args)
 {
 	void	*obj[2];
 
@@ -23,7 +23,7 @@ static void	case_pair(t_qsort_r *args)
 		ft_memswap(obj[0], obj[1], args->size);
 }
 
-static size_t	partition(t_qsort_r *args)
+static inline size_t	__partition(t_qsort_r *args)
 {
 	void	*current;
 	void	*pivot;
@@ -52,10 +52,10 @@ void	ft_qsort_r(t_qsort_r *args)
 	if (args->nmemb == 0)
 		return ;
 	if (args->nmemb < 3)
-		case_pair(args);
+		__case_pair(args);
 	else
 	{
-		pi = partition(args);
+		pi = __partition(args);
 		ft_qsort_r(&(t_qsort_r){args->base, pi, args->size, args->compar,
 			args->arg});
 		ft_qsort_r(&(t_qsort_r){(char *)args->base + (pi + 1) * args->size,
