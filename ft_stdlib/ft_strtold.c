@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:44:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:14:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/09 07:22:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ static inline void	__fraction(const char **nptr, long double *acc,
 static inline void	__exponent(const char **nptr, long double *acc,
 	int base, int any)
 {
-	static const long double	factors[] = {10.l, .1l, 2.l, .5l};
 	long						exp;
 	int							neg;
 	unsigned long				count;
@@ -104,8 +103,12 @@ static inline void	__exponent(const char **nptr, long double *acc,
 	neg = exp < 0;
 	count = ft_labs(exp);
 	while (count--)
-		*acc *= factors[(base == 16) << 1 | neg];
-	return ;
+	{
+		if (neg)
+			*acc /= base;
+		else
+			*acc *= base;
+	}
 }
 
 long double	ft_strtold(const char *nptr, char **endptr)
