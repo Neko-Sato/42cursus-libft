@@ -6,89 +6,77 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 15:33:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/09 07:14:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ctype/ft_ctype.h>
 #include <ft_string/ft_string.h>
+#include <ft_utils/ft_utils.h>
 #include <limits.h>
 
-static inline int	digitval(int c)
+static inline int	__check_sign(const char **nptr)
 {
-	static const char	digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	static const size_t	digits_len = sizeof(digits) - 1;
-	const char			*match;
+	int	neg;
 
-	match = ft_memchr(digits, ft_tolower(c), digits_len);
-	if (!match)
-		return (-1);
-	return (match - digits);
+	neg = 0;
+	if (**nptr == '-' || **nptr == '+')
+		neg = *(*nptr)++ == '-';
+	return (neg);
 }
 
-static inline void	__pre(const char **nptr, int *base, int *neg)
+static inline int	__check_base(const char **nptr, int base)
 {
-	while (ft_isspace(*(*nptr)))
-		(*nptr)++;
-	*neg = 0;
-	if (*(*nptr) == '-' || *(*nptr) == '+')
-		*neg = *(*nptr)++ == '-';
-	if ((*base == 0 || *base == 16) && ((*nptr)[0] == '0'
-		&& ft_tolower((*nptr)[1]) == 'x'))
+	if ((base == 0 || base == 16) && !ft_strncasecmp(*nptr, "0x", 2))
 	{
-		(*nptr) += 2;
-		*base = 16;
+		*nptr += 2;
+		base = 16;
 	}
-	else if (*base == 0)
+	else if ((base == 0 || base == 8) && **nptr == '0')
 	{
-		*base = (int []){8, 10}[(*nptr)[0] != '0'];
 		(*nptr)++;
+		base = 8;
 	}
+	else if (base == 0)
+		base = 10;
+	return (base);
 }
 
-static inline void	__set_cutoff_cutlim(unsigned long *cutoff,
-		unsigned int *cutlim, int base, int neg)
+static inline int	__convert(const char **nptr, int base, unsigned long *acc)
 {
-	(void)neg;
-	*cutoff = ULONG_MAX;
-	*cutlim = *cutoff % base;
-	*cutoff /= base;
-}
-
-static inline unsigned long	__internal(const char **nptr, int base, int neg,
-		int *any)
-{
-	unsigned long	acc;
+	int				any;
 	int				n;
 	unsigned long	cutoff;
 	unsigned int	cutlim;
 
-	__set_cutoff_cutlim(&cutoff, &cutlim, base, neg);
-	acc = 0;
-	while (*(*nptr))
+	any = 0;
+	cutoff = ULONG_MAX;
+	cutlim = cutoff % base;
+	cutoff /= base;
+	while (**nptr)
 	{
-		n = digitval(*(*nptr));
+		n = ft_digitval(**nptr);
 		if (n == -1 || n >= base)
 			break ;
-		if (*any < 0 || cutoff < acc || (acc == cutoff
-				&& cutlim < (unsigned int)n))
-			*any = -1;
+		if (any < 0 || cutoff < *acc
+			|| (*acc == cutoff && cutlim < (unsigned int)n))
+			any = -1;
 		else
 		{
-			*any = 1;
-			acc = acc * base + n;
+			any = 1;
+			*acc = *acc * base + n;
 		}
 		(*nptr)++;
 	}
-	return (acc);
+	return (any);
 }
 
 unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
 {
-	unsigned long	acc;
+	const char		*s;
 	int				neg;
 	int				any;
-	const char		*s;
+	unsigned long	acc;
 
 	if (base != 0 && (base < 2 || base > 36))
 	{
@@ -96,10 +84,12 @@ unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
 			*endptr = (char *)nptr;
 		return (0);
 	}
-	__pre(&nptr, &base, &neg);
-	any = 0;
+	nptr = ft_skip_whitespace(nptr);
 	s = nptr;
-	acc = __internal(&nptr, base, neg, &any);
+	neg = __check_sign(&nptr);
+	base = __check_base(&nptr, base);
+	acc = 0;
+	any = __convert(&nptr, base, &acc);
 	if (any == -1)
 		acc = ULONG_MAX;
 	else if (neg)

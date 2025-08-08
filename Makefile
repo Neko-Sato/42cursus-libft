@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/08 15:43:29 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/09 07:17:10 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,8 @@ SRCS			:= \
 		ft_endwith.c \
 		ft_intcmp.c \
 		ft_strptrcmp.c \
+		ft_digitval.c \
+		ft_skip_whitespace.c \
 	)
 
 OUTDIR			:= .out
