@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 04:31:31 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:24:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	wrapper_cmp(const void *v1, const void *v2, void *cmp)
 {
-	return ((int (*)(const void *, const void *))cmp)(v1, v2);
+	return (((int (*)(const void *, const void *))cmp)(v1, v2));
 }
 
 void	ft_qsort(t_qsort *args)
