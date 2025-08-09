@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:28:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 00:17:19 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/09 18:58:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,90 +18,48 @@ static int	ft_isspace(int c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-static inline unsigned long	__internal2(
-	const char **nptr, unsigned int base,
-	int *any, unsigned long (*cutofflim)[2])
+static inline unsigned long	__internal(
+	char const *nptr, int neg, int *any)
 {
-	static const char	digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	unsigned long		acc;
-	const char			*c;
-	unsigned int		n;
+	static const unsigned long	boundary[] = {
+		LONG_MAX, -(unsigned long)LONG_MIN};
+	const unsigned long			cutoff = boundary[neg] / 10;
+	const unsigned int			cutlim = boundary[neg] % 10;
+	unsigned long				acc;
+	int							n;
 
 	acc = 0;
-	while (**nptr)
+	while (ft_isdigit(*nptr))
 	{
-		c = ft_strchr(digits, ft_tolower(**nptr));
-		if (!c)
-			break ;
-		n = c - digits;
-		if (base <= n)
-			break ;
-		if (*any < 0 || (*cutofflim)[0] < acc
-			|| (acc == (*cutofflim)[0] && (*cutofflim)[1] < n))
-			*any = -1;
-		else
+		n = *nptr++ - '0';
+		if (acc > cutoff || (acc == cutoff && n > cutlim))
 		{
-			*any = 1;
-			acc = acc * base + n;
+			*any = -1;
+			return (0);
 		}
-		(*nptr)++;
+		acc = acc * 10 + n;
 	}
 	return (acc);
 }
 
-static inline unsigned long	__internal1(
-	const char *nptr, char **endptr, unsigned int base, int neg)
+int	ft_atoi(const char *nptr)
 {
+	static const long	boundary[] = {
+		LONG_MAX, LONG_MIN};
+	int					neg;
 	unsigned long		acc;
-	const char			*s;
 	int					any;
-	unsigned long		cutofflim[2];
 
-	cutofflim[0] = (unsigned long []){LONG_MAX, -(unsigned long)LONG_MIN}[neg];
-	cutofflim[1] = (unsigned long)(LONG_MAX % base);
-	cutofflim[0] /= base;
-	any = 0;
-	s = nptr;
-	acc = __internal2(&s, base, &any, &cutofflim);
-	if (any == -1)
-		acc = (long []){LONG_MAX, LONG_MIN}[neg];
-	else if (neg)
-		acc = -acc;
-	if (endptr)
-		*endptr = (char *)(const char *[]){s, nptr}[!any];
-	return (acc);
-}
-
-static long	ft_strtol(const char *nptr, char **endptr, int base)
-{
-	int	neg;
-
-	if (base != 0 && (base < 2 || base > 36))
-	{
-		if (endptr)
-			*endptr = (char *)nptr;
-		return (0);
-	}
 	while (ft_isspace(*nptr))
 		nptr++;
 	neg = 0;
 	if (*nptr == '-' || *nptr == '+')
 		neg = *nptr++ == '-';
-	if ((base == 0 || base == 16)
-		&& (nptr[0] == '0' && ft_tolower(nptr[1]) == 'x'))
-	{
-		nptr += 2;
-		base = 16;
-	}
-	else if (base == 0)
-	{
-		base = (int []){8, 10}[nptr[0] != '0'];
-		nptr++;
-	}
-	return (__internal1(nptr, endptr, base, neg));
-}
-
-int	ft_atoi(const char *nptr)
-{
-	return ((int)ft_strtol(nptr, NULL, 10));
+	any = 0;
+	acc = __internal(nptr, neg, &any);
+	if (any)
+		return (boundary[neg]);
+	if (neg)
+		acc = -acc;
+	return (acc);
 }
