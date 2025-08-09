@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:28:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 18:58:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/09 18:59:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static inline unsigned long	__internal(
 	const unsigned long			cutoff = boundary[neg] / 10;
 	const unsigned int			cutlim = boundary[neg] % 10;
 	unsigned long				acc;
-	int							n;
+	unsigned int				n;
 
 	acc = 0;
 	while (ft_isdigit(*nptr))
