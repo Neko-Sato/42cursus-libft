@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree.h                                         :+:      :+:    :+:   */
+/*   ft_slist_node_new.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:26:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 04:56:05 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 04:56:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+#include <ft_slist/ft_slist.h>
+#include <stdlib.h>
 
-# include <stddef.h>
-
-typedef struct s_btree_node
+t_slist_node	*ft_slist_node_new(size_t size)
 {
-	struct s_btree_node	*left;
-	struct s_btree_node	*right;
-	char				data[];
-}						t_btree_node;
+	t_slist_node	*node;
 
-typedef struct s_btree
-{
-	t_btree_node		*_root;
-}						t_btree;
-
-#endif
+	node = malloc(sizeof(t_slist_node) + size);
+	if (!node)
+		return (NULL);
+	node->next = NULL;
+	return (node);
+}

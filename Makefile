@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/09 07:17:10 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/11 05:45:54 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,6 +134,37 @@ SRCS			:= \
 		ft_strptrcmp.c \
 		ft_digitval.c \
 		ft_skip_whitespace.c \
+	) \
+	$(addprefix ft_vector/, \
+		ft_vector_data.c \
+		ft_vector_destroy.c \
+		ft_vector_init.c \
+		ft_vector_reserve.c \
+		ft_vector_resize.c \
+		ft_vector_size.c \
+	) \
+	$(addprefix ft_slist/, \
+		ft_slist_destroy.c \
+		ft_slist_erase.c \
+		ft_slist_head.c \
+		ft_slist_init.c \
+		ft_slist_insert.c \
+		ft_slist_node_delete.c \
+		ft_slist_node_new.c \
+		ft_slist_size.c \
+	) \
+	$(addprefix ft_dlist/, \
+		ft_dlist_destroy.c \
+		ft_dlist_erase.c \
+		ft_dlist_head.c \
+		ft_dlist_init.c \
+		ft_dlist_insert.c \
+		ft_dlist_node_delete.c \
+		ft_dlist_node_new.c \
+		ft_dlist_size.c \
+		ft_dlist_tail.c \
+	) \
+	$(addprefix ft_btree/, \
 	)
 
 OUTDIR			:= .out

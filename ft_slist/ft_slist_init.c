@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_xlist.h                                         :+:      :+:    :+:   */
+/*   ft_slist_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:28:29 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 04:57:39 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 04:58:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_XLIST_H
-# define FT_XLIST_H
+#include <ft_slist/ft_slist.h>
 
-# include <stddef.h>
-
-typedef struct s_xlist_node
+int	ft_slist_init(t_slist *slist)
 {
-	struct s_xlist	*next;
-	char			data[];
-}					t_xlist_node;
-
-typedef struct s_xlist
-{
-	size_t			_type;
-	t_xlist_node	*_head;
-}					t_xlist;
-
-#endif
+	slist->_head = NULL;
+	slist->_size = 0;
+	return (0);
+}

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree.h                                         :+:      :+:    :+:   */
+/*   ft_dlist_erase.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:26:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 05:10:00 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 05:40:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+#include <ft_dlist/ft_dlist.h>
 
-# include <stddef.h>
-
-typedef struct s_btree_node
+void	ft_dlist_erase(t_dlist *dlist, t_dlist_node *pos)
 {
-	struct s_btree_node	*left;
-	struct s_btree_node	*right;
-	char				data[];
-}						t_btree_node;
-
-typedef struct s_btree
-{
-	t_btree_node		*_root;
-}						t_btree;
-
-#endif
+	if (pos->prev)
+		pos->prev->next = pos->next;
+	else
+		dlist->_head = pos->next;
+	if (pos->next)
+		pos->next->prev = pos->prev;
+	else
+		dlist->_tail = pos->prev;
+	ft_dlist_node_delete(pos);
+	dlist->_size--;
+}

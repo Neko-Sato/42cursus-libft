@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree.h                                         :+:      :+:    :+:   */
+/*   ft_dlist_node_delete.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:26:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 04:57:08 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 05:47:11 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+#include <ft_dlist/ft_dlist.h>
+#include <stdlib.h>
 
-# include <stddef.h>
-
-typedef struct s_btree_node
+void	ft_dlist_node_delete(t_dlist_node *node)
 {
-	struct s_btree_node	*left;
-	struct s_btree_node	*right;
-	char				data[];
-}						t_btree_node;
-
-typedef struct s_btree
-{
-	t_btree_node		*_root;
-}						t_btree;
-
-#endif
+	free(node);
+}

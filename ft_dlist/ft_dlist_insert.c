@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree.h                                         :+:      :+:    :+:   */
+/*   ft_dlist_insert.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:26:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 05:04:37 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 05:37:52 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+#include <ft_dlist/ft_dlist.h>
 
-# include <stddef.h>
-
-typedef struct s_btree_node
+void	ft_dlist_insert(t_dlist *dlist, t_dlist_node *pos, t_dlist_node *node)
 {
-	struct s_btree_node	*left;
-	struct s_btree_node	*right;
-	char				data[];
-}						t_btree_node;
-
-typedef struct s_btree
-{
-	t_btree_node		*_root;
-}						t_btree;
-
-#endif
+	node->prev = pos->prev;
+	node->next = pos->next;
+	if (pos->prev)
+		pos->prev->next = node;
+	else
+		dlist->_head = node;
+	if (pos->next)
+		pos->next->prev = node;
+	else
+		dlist->_tail = node;
+	dlist->_size++;
+}

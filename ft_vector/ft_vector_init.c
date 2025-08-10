@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree.h                                         :+:      :+:    :+:   */
+/*   ft_vector_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:26:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 04:22:46 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 05:47:22 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+#include <ft_vector/ft_vector.h>
+#include <ft_string/ft_string.h>
+#include <stdlib.h>
 
-# include <stddef.h>
-
-typedef struct s_btree_node
+int	ft_vector_init(t_vector *vector, void *data, size_t size)
 {
-	struct s_btree_node	*left;
-	struct s_btree_node	*right;
-	char				data[];
-}						t_btree_node;
+	void	*tmp;
 
-typedef struct s_btree
-{
-	t_btree_node		*_root;
-}						t_btree;
-
-#endif
+	tmp = NULL;
+	if (size)
+	{
+		tmp = malloc(size);
+		if (!tmp)
+			return (1);
+	}
+	if (data)
+		ft_memcpy(tmp, data, size);
+	vector->_data = tmp;
+	vector->_size = size;
+	vector->_capa = size;
+	return (0);
+}
