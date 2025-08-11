@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:20:14 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:44:45 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,5 @@ t_btree_node			*ft_btree_head(t_btree *btree);
 t_btree_node			*ft_btree_find(t_btree *btree, const void *data);
 t_btree_node			*ft_btree_lower_bound(t_btree *btree, const void *data);
 t_btree_node			*ft_btree_upper_bound(t_btree *btree, const void *data);
-void					ft_btree_equal_range(t_btree *btree, const void *data,
-							t_btree_node **first, t_btree_node **last);
 
 #endif

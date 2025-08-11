@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_find.c                                    :+:      :+:    :+:   */
+/*   ft_btree_node_prev.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 11:49:08 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:43:17 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 16:35:05 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 16:35:59 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_btree/ft_btree.h>
+#include <ft_btree.h>
 
-t_btree_node	*ft_btree_find(t_btree *btree, const void *data)
+t_btree_node	*ft_btree_node_prev(t_btree_node *node)
 {
-	t_btree_node	*current;
-	int				cmp;
+	t_btree_node	*prev;
 
-	current = btree->_root;
-	while (current)
+	prev = NULL;
+	if (node->_left)
 	{
-		cmp = btree->_compar(data, current->data);
-		if (cmp == 0)
-			return (current);
-		else if (cmp < 0)
-			current = current->_left;
-		else
-			current = current->_right;
+		prev = node->_left;
+		while (prev->_right)
+			prev = prev->_right;
 	}
-	return (NULL);
+	else
+	{
+		prev = node->_parent;
+		while (prev && prev->_left == node)
+		{
+			node = prev;
+			prev = prev->_parent;
+		}
+	}
+	return (prev);
 }

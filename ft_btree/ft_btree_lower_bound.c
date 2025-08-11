@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_find.c                                    :+:      :+:    :+:   */
+/*   ft_btree_lower_bound.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 11:49:08 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:43:17 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 16:36:34 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 16:38:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_btree/ft_btree.h>
+#include <ft_btree.h>
 
-t_btree_node	*ft_btree_find(t_btree *btree, const void *data)
+t_btree_node	*ft_btree_lower_bound(t_btree *btree, const void *data)
 {
-	t_btree_node	*current;
-	int				cmp;
+	t_btree_node	*node;
+	t_btree_node	*lower_bound;
 
-	current = btree->_root;
-	while (current)
+	node = btree->_root;
+	lower_bound = NULL;
+	while (node)
 	{
-		cmp = btree->_compar(data, current->data);
-		if (cmp == 0)
-			return (current);
-		else if (cmp < 0)
-			current = current->_left;
+		if (btree->_compar(data, node->data) <= 0)
+		{
+			lower_bound = node;
+			node = node->_left;
+		}
 		else
-			current = current->_right;
+			node = node->_right;
 	}
-	return (NULL);
+	return (lower_bound);
 }
