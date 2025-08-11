@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 05:46:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:37:06 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 
 typedef struct s_slist_node
 {
-	struct s_slist_node	*next;
+	struct s_slist_node	*_next;
 	char				data[];
 }						t_slist_node;
 
 t_slist_node			*ft_slist_node_new(size_t size);
 void					ft_slist_node_delete(t_slist_node *node);
+t_slist_node			*ft_slist_node_next(t_slist_node *node);
 
 typedef struct s_slist
 {
@@ -37,6 +38,6 @@ size_t					ft_slist_size(t_slist *slist);
 t_slist_node			*ft_slist_head(t_slist *slist);
 void					ft_slist_insert(t_slist *slist, t_slist_node *pos,
 							t_slist_node *node);
-void					ft_slist_erase(t_slist *slist, t_slist_node *pos);
+t_slist_node			*ft_slist_erase(t_slist *slist, t_slist_node *pos);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 04:56:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 04:56:50 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:27:54 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_slist_node	*ft_slist_node_new(size_t size)
 	node = malloc(sizeof(t_slist_node) + size);
 	if (!node)
 		return (NULL);
-	node->next = NULL;
+	node->_next = NULL;
 	return (node);
 }

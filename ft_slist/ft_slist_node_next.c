@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlist_destroy.c                                 :+:      :+:    :+:   */
+/*   ft_slist_node_next.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 04:58:25 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 11:44:10 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 11:26:13 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 11:26:46 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_dlist/ft_dlist.h>
+#include <ft_slist/ft_slist.h>
 
-void	ft_dlist_destroy(t_dlist *dlist)
+t_slist_node	*ft_slist_node_next(t_slist_node *node)
 {
-	t_dlist_node	*tmp;
-
-	tmp = ft_dlist_head(dlist);
-	while (tmp)
-		tmp = ft_dlist_erase(dlist, tmp);
+	if (node)
+		return (node->_next);
+	return (NULL);
 }

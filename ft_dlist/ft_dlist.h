@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 05:37:19 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:38:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 typedef struct s_dlist_node
 {
-	struct s_dlist_node	*next;
-	struct s_dlist_node	*prev;
+	struct s_dlist_node	*_next;
+	struct s_dlist_node	*_prev;
 	char				data[];
 }						t_dlist_node;
 
 t_dlist_node			*ft_dlist_node_new(size_t size);
 void					ft_dlist_node_delete(t_dlist_node *node);
+t_dlist_node			*ft_dlist_node_next(t_dlist_node *node);
+t_dlist_node			*ft_dlist_node_prev(t_dlist_node *node);
 
 typedef struct s_dlist
 {
@@ -40,6 +42,6 @@ t_dlist_node			*ft_dlist_head(t_dlist *dlist);
 t_dlist_node			*ft_dlist_tail(t_dlist *dlist);
 void					ft_dlist_insert(t_dlist *dlist, t_dlist_node *pos,
 							t_dlist_node *node);
-void					ft_dlist_erase(t_dlist *dlist, t_dlist_node *pos);
+t_dlist_node			*ft_dlist_erase(t_dlist *dlist, t_dlist_node *pos);
 
 #endif

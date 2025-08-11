@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlist_destroy.c                                 :+:      :+:    :+:   */
+/*   ft_btree_head.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 04:58:25 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 11:44:10 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/11 11:45:39 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/11 11:48:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_dlist/ft_dlist.h>
+#include <ft_btree/ft_btree.h>
 
-void	ft_dlist_destroy(t_dlist *dlist)
+t_btree_node	*ft_btree_head(t_btree *btree)
 {
-	t_dlist_node	*tmp;
+	t_btree_node	*tmp;
 
-	tmp = ft_dlist_head(dlist);
-	while (tmp)
-		tmp = ft_dlist_erase(dlist, tmp);
+	tmp = btree->_root;
+	if (!tmp)
+		return (NULL);
+	while (tmp->_left)
+		tmp = tmp->_left;
+	return (tmp);
 }
