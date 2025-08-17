@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/06 07:41:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/17 19:25:47 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ DEPS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.d))
 DEPS_DEV		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=_dev.d))
 
 CC				:= cc
-CFLAGS			:= -Wall -Wextra -Werror -pedantic -fno-builtin
+CFLAGS			:= -Wall -Wextra -Werror -std=c99 -pedantic
+CFLAGS			+= -fno-builtin -fno-common
 CFLAGS			+= -fPIC -MMD -MP
 AR				:= ar
 ARFLAGS			:= rcs
