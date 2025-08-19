@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/19 19:14:24 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/19 19:44:02 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -144,8 +144,7 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE)
 
-test: test.c
-	$(MAKE) $(NAME_DEV_A) -j $(shell nproc)
+test: test.c $(NAME_DEV_A)
 	$(CC) $(CFLAGS_DEV) -o $@ $< -I. -L. -lft_dev
 
 -include $(DEPS) $(DEPS_DEV)
