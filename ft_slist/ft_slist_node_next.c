@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:26:13 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:54:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/19 20:50:43 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 t_slist_node	*ft_slist_node_next(t_slist_node *node)
 {
-	if (node)
-		return (node->_next);
-	return (NULL);
+	return (node->_next);
 }

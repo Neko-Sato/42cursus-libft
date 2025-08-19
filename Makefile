@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/19 19:41:39 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/19 20:46:26 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,6 +160,7 @@ SRCS			:= \
 		ft_slist_insert.c \
 		ft_slist_node_delete.c \
 		ft_slist_node_new.c \
+		ft_slist_node_next.c \
 		ft_slist_size.c \
 	) \
 	$(addprefix ft_dlist/, \
