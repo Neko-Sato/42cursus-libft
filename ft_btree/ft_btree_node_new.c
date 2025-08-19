@@ -6,11 +6,12 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:23:03 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 11:32:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:48:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_btree/ft_btree.h>
+#include <stdlib.h>
 
 t_btree_node	*ft_btree_node_new(size_t size)
 {

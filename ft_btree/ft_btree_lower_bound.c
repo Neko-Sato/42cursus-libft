@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:36:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:38:57 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:48:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_btree.h>
+#include <ft_btree/ft_btree.h>
 
 t_btree_node	*ft_btree_lower_bound(t_btree *btree, const void *data)
 {

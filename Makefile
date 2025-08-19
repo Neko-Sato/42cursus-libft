@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/11 05:45:54 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/19 19:13:18 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,9 +139,18 @@ SRCS			:= \
 		ft_vector_data.c \
 		ft_vector_destroy.c \
 		ft_vector_init.c \
-		ft_vector_reserve.c \
 		ft_vector_resize.c \
 		ft_vector_size.c \
+	) \
+	$(addprefix ft_deque/, \
+		ft_deque_at.c \
+		ft_deque_destroy.c \
+		ft_deque_expand_back.c \
+		ft_deque_expand_front.c \
+		ft_deque_init.c \
+		ft_deque_shrink_back.c \
+		ft_deque_shrink_front.c \
+		ft_deque_size.c \
 	) \
 	$(addprefix ft_slist/, \
 		ft_slist_destroy.c \
@@ -165,6 +174,15 @@ SRCS			:= \
 		ft_dlist_tail.c \
 	) \
 	$(addprefix ft_btree/, \
+		ft_btree_destroy.c \
+		ft_btree_find.c \
+		ft_btree_head.c \
+		ft_btree_init.c \
+		ft_btree_lower_bound.c \
+		ft_btree_node_delete.c \
+		ft_btree_node_new.c \
+		ft_btree_node_next.c \
+		ft_btree_upper_bound.c \
 	)
 
 OUTDIR			:= .out
@@ -174,7 +192,8 @@ DEPS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.d))
 DEPS_DEV		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=_dev.d))
 
 CC				:= cc
-CFLAGS			:= -Wall -Wextra -Werror -pedantic -fno-builtin
+CFLAGS			:= -Wall -Wextra -Werror -std=c99 -pedantic
+CFLAGS			+= -fno-builtin -fno-common
 CFLAGS			+= -fPIC -MMD -MP
 AR				:= ar
 ARFLAGS			:= rcs
@@ -238,7 +257,8 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE)
 
-test: test.c $(NAME_DEV_A)
-	$(CC) $(CFLAGS_DEV) -o $@ $< -I. -L. -lft_dev
+test: test.c
+	$(MAKE) $(NAME_DEV_A) -j $(shell nproc)
+	$(CC) $(CFLAGS_DEV) -o $@ $^ -I. -L. -lft_dev
 
 -include $(DEPS) $(DEPS_DEV)
