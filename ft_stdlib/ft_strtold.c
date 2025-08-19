@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:44:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:24:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/20 01:51:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,29 +46,29 @@ static inline int	__special(const char **nptr, long double *acc, int *any)
 }
 
 static inline void	__integer(const char **nptr, long double *acc,
-	int *base, int *any)
+	int *hex, int *any)
 {
 	int	n;
 
-	*base = 10;
+	*hex = 0;
 	if (!ft_strncasecmp(*nptr, "0x", 2))
 	{
 		*nptr += 2;
-		*base = 16;
+		*hex = 1;
 	}
 	while (1)
 	{
 		n = ft_digitval(**nptr);
-		if (n == -1 || n >= *base)
+		if (n == -1 || n >= (int []){10, 16}[*hex])
 			break ;
 		*any = 1;
-		*acc = *acc * *base + n;
+		*acc = *acc * (int []){10, 16}[*hex] + n;
 		(*nptr)++;
 	}
 }
 
 static inline void	__fraction(const char **nptr, long double *acc,
-	int base, int *any)
+	int hex, int *any)
 {
 	int				n;
 	long double		fraction;
@@ -80,35 +80,30 @@ static inline void	__fraction(const char **nptr, long double *acc,
 	while (1)
 	{
 		n = ft_digitval(**nptr);
-		if (n == -1 || n >= base)
+		if (n == -1 || n >= (int []){10, 16}[hex])
 			break ;
 		*any = 1;
-		fraction /= base;
+		fraction /= (int []){10, 16}[hex];
 		*acc += n * fraction;
 		(*nptr)++;
 	}
 }
 
 static inline void	__exponent(const char **nptr, long double *acc,
-	int base, int any)
+	int hex, int any)
 {
-	long						exp;
-	int							neg;
-	unsigned long				count;
+	long			exp;
+	int				neg;
+	unsigned long	count;
 
-	if (any && ft_tolower(**nptr) != "ep"[base == 16])
+	if (any && ft_tolower(**nptr) != "ep"[hex])
 		return ;
 	(*nptr)++;
 	exp = ft_strtol(*nptr, (char **)nptr, 10);
 	neg = exp < 0;
 	count = ft_labs(exp);
 	while (count--)
-	{
-		if (neg)
-			*acc /= base;
-		else
-			*acc *= base;
-	}
+		*acc *= (long double []){10., .1, 2., .5}[neg | hex << 1];
 }
 
 long double	ft_strtold(const char *nptr, char **endptr)
@@ -117,7 +112,7 @@ long double	ft_strtold(const char *nptr, char **endptr)
 	const char	*s;
 	int			neg;
 	int			any;
-	int			base;
+	int			hex;
 
 	acc = 0;
 	nptr = ft_skip_whitespace(nptr);
@@ -128,9 +123,9 @@ long double	ft_strtold(const char *nptr, char **endptr)
 	any = 0;
 	if (!__special(&nptr, &acc, &any))
 	{
-		__integer(&nptr, &acc, &base, &any);
-		__fraction(&nptr, &acc, base, &any);
-		__exponent(&nptr, &acc, base, any);
+		__integer(&nptr, &acc, &hex, &any);
+		__fraction(&nptr, &acc, hex, &any);
+		__exponent(&nptr, &acc, hex, any);
 	}
 	if (neg)
 		acc = -acc;
