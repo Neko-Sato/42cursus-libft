@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 03:49:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:47:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/19 20:06:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 static inline void	__erase_chank_front(t_deque *deque, size_t n)
 {
-	while (0 < n)
-		free(deque->_map[deque->_start_index + --n]);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+		free(deque->_map[deque->_start_index + i++]);
 }
 
 void	ft_deque_shrink_front(t_deque *deque, size_t size)

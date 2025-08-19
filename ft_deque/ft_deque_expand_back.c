@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:47:11 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/19 20:34:02 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,14 @@ static inline int	__reserve_chank_back(t_deque *deque, size_t n)
 
 int	ft_deque_expand_back(t_deque *deque, size_t size)
 {
+	size_t	slack;
 	size_t	required_size;
 	size_t	required_chanks;
 
-	if (deque->_chanksize - deque->_finish_index < size)
+	slack = deque->_chanksize - deque->_finish_offset;
+	if (slack < size)
 	{
-		required_size = size - deque->_finish_offset;
+		required_size = size - slack;
 		required_chanks = (required_size + deque->_chanksize - 1)
 			/ deque->_chanksize;
 		if (__reserve_chank_back(deque, required_chanks))
