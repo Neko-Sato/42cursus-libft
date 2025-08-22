@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:26:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:48:32 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 14:31:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_btree_node	*ft_btree_node_next(t_btree_node *node)
 {
 	t_btree_node	*next;
 
-	next = NULL;
 	if (node->_right)
 	{
 		next = node->_right;
@@ -26,7 +25,7 @@ t_btree_node	*ft_btree_node_next(t_btree_node *node)
 	else
 	{
 		next = node->_parent;
-		while (next && next->_right == node)
+		while (next->_left != node)
 		{
 			node = next;
 			next = next->_parent;

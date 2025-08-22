@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_deque_destroy.c                                 :+:      :+:    :+:   */
+/*   ft_btree_end.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 02:32:10 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 14:24:37 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/22 14:19:43 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/22 14:20:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_deque/ft_deque.h>
-#include <stdlib.h>
+#include <ft_btree/ft_btree.h>
 
-void	ft_deque_destroy(t_deque *deque)
+t_btree_node	*ft_btree_end(t_btree *btree)
 {
-	size_t	i;
-
-	i = deque->_finish_index - deque->_start_index + 1;
-	while (0 < i)
-		free(deque->_map[deque->_start_index + --i]);
-	free(deque->_map);
+	return ((void *)btree);
 }

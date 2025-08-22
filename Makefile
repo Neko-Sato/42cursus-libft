@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/22 09:13:09 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/22 14:46:05 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,7 +154,7 @@ SRCS			:= \
 	) \
 	$(addprefix ft_slist/, \
 		ft_slist_destroy.c \
-		ft_slist_erase.c \
+		ft_slist_extract.c \
 		ft_slist_head.c \
 		ft_slist_init.c \
 		ft_slist_insert.c \
@@ -166,7 +166,7 @@ SRCS			:= \
 	$(addprefix ft_dlist/, \
 		ft_dlist_destroy.c \
 		ft_dlist_end.c \
-		ft_dlist_erase.c \
+		ft_dlist_extract.c \
 		ft_dlist_head.c \
 		ft_dlist_init.c \
 		ft_dlist_insert.c \
@@ -179,6 +179,7 @@ SRCS			:= \
 	) \
 	$(addprefix ft_btree/, \
 		ft_btree_destroy.c \
+		ft_btree_end.c \
 		ft_btree_find.c \
 		ft_btree_head.c \
 		ft_btree_init.c \

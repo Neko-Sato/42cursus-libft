@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:23:03 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:48:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 14:39:21 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ t_btree_node	*ft_btree_node_new(size_t size)
 	node->_parent = NULL;
 	node->_left = NULL;
 	node->_right = NULL;
-	node->_color = FT_BTREE_COLOR_RED;
+	node->_color = FT_BTREE_RED;
 	return (node);
 }
