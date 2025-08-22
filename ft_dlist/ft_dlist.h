@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 11:38:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:04:11 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void					ft_dlist_destroy(t_dlist *dlist);
 size_t					ft_dlist_size(t_dlist *dlist);
 t_dlist_node			*ft_dlist_head(t_dlist *dlist);
 t_dlist_node			*ft_dlist_tail(t_dlist *dlist);
+t_dlist_node			*ft_dlist_end(t_dlist *dlist);
 void					ft_dlist_insert(t_dlist *dlist, t_dlist_node *pos,
 							t_dlist_node *node);
 t_dlist_node			*ft_dlist_erase(t_dlist *dlist, t_dlist_node *pos);

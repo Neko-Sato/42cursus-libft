@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/19 21:13:21 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/22 09:13:09 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -165,6 +165,7 @@ SRCS			:= \
 	) \
 	$(addprefix ft_dlist/, \
 		ft_dlist_destroy.c \
+		ft_dlist_end.c \
 		ft_dlist_erase.c \
 		ft_dlist_head.c \
 		ft_dlist_init.c \

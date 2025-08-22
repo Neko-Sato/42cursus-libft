@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlist_init.c                                    :+:      :+:    :+:   */
+/*   ft_dlist_end.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 04:57:39 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 09:03:39 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/22 09:04:22 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/22 09:04:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_dlist/ft_dlist.h>
 
-int	ft_dlist_init(t_dlist *dlist)
+t_dlist_node	*ft_dlist_end(t_dlist *dlist)
 {
-	dlist->_head = (void *)dlist;
-	dlist->_tail = (void *)dlist;
-	dlist->_size = 0;
-	return (0);
+	return ((void *)dlist);
 }

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:36:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:48:05 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 08:41:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ t_btree_node	*ft_btree_lower_bound(t_btree *btree, const void *data)
 	lower_bound = NULL;
 	while (node)
 	{
-		if (btree->_compar(data, node->data) <= 0)
+		if (btree->_compar(data, node->data) > 0)
+			node = node->_right;
+		else
 		{
 			lower_bound = node;
 			node = node->_left;
 		}
-		else
-			node = node->_right;
 	}
 	return (lower_bound);
 }
