@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:58:59 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:34:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ t_btree_node			*ft_btree_node_next(t_btree_node *node);
 typedef struct s_btree
 {
 	t_btree_node		*_root;
+	t_btree_node		*_head;
+	t_btree_node		*_tail;
 	int					(*_compar)(const void *, const void *);
 	size_t				_size;
 }						t_btree;
@@ -51,7 +53,7 @@ t_btree_node			*ft_btree_insert_replace(t_btree *btree,
 							t_btree_node *node);
 void					ft_btree_insert_multi(t_btree *btree,
 							t_btree_node *node);
-t_btree_node			*ft_btree_erase(t_btree *btree, t_btree_node *node);
+t_btree_node			*ft_btree_extract(t_btree *btree, t_btree_node *node);
 
 t_btree_node			*ft_btree_head(t_btree *btree);
 t_btree_node			*ft_btree_find(t_btree *btree, const void *data);

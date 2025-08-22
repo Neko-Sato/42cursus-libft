@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 11:37:06 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:26:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ size_t					ft_slist_size(t_slist *slist);
 t_slist_node			*ft_slist_head(t_slist *slist);
 void					ft_slist_insert(t_slist *slist, t_slist_node *pos,
 							t_slist_node *node);
-t_slist_node			*ft_slist_erase(t_slist *slist, t_slist_node *pos);
+t_slist_node			*ft_slist_extract(t_slist *slist, t_slist_node *pos);
 
 #endif
