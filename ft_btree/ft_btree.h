@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 14:27:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/22 15:01:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_btree_node
 t_btree_node			*ft_btree_node_new(size_t size);
 void					ft_btree_node_delete(t_btree_node *node);
 t_btree_node			*ft_btree_node_next(t_btree_node *node);
+t_btree_node			*ft_btree_node_prev(t_btree_node *node);
 
 typedef struct s_btree
 {
