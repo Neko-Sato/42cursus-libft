@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 00:05:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 19:28:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 20:10:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static void	_rotate_right(t_btree_node *y)
 	y->_parent = x;
 }
 
-static inline void	_black_uncle(t_btree_node *node, t_btree_node *parent,
-		t_btree_node *grandparent, t_btree_node *uncle)
+static inline void	_black_uncle(t_btree_node **node, t_btree_node **parent,
+		t_btree_node **grandparent)
 {
 	static void (*const	rotate[])(t_btree_node *node) = {
 		_rotate_left, _rotate_right
@@ -55,17 +55,17 @@ static inline void	_black_uncle(t_btree_node *node, t_btree_node *parent,
 	int					zig;
 	int					zag;
 
-	zig = grandparent->_left == parent;
-	zag = parent->_left == node;
+	zig = (*grandparent)->_left == *parent;
+	zag = (*parent)->_left == *node;
 	if (zig != zag)
 	{
-		rotate[zag](parent);
-		node = parent;
-		parent = node->_parent;
+		rotate[zag](*parent);
+		*node = *parent;
+		(*parent) = (*node)->_parent;
 	}
-	rotate[zig](grandparent);
-	parent->_color = _BTREE_BLACK;
-	grandparent->_color = _BTREE_RED;
+	rotate[zig](*grandparent);
+	(*parent)->_color = _BTREE_BLACK;
+	(*grandparent)->_color = _BTREE_RED;
 }
 
 void	ft__btree_fixup(t_btree *btree, t_btree_node *node)
@@ -84,7 +84,7 @@ void	ft__btree_fixup(t_btree *btree, t_btree_node *node)
 			uncle = grandparent->_left;
 		if (!uncle || uncle->_color == _BTREE_BLACK)
 		{
-			_black_uncle(node, parent, grandparent, uncle);
+			_black_uncle(&node, &parent, &grandparent);
 			break ;
 		}
 		parent->_color = _BTREE_BLACK;
