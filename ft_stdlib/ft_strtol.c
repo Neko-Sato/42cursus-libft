@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 07:14:04 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:44:06 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ft_utils/ft_utils.h>
 #include <limits.h>
 
-static inline int	__check_sign(const char **nptr)
+static inline int	_check_sign(const char **nptr)
 {
 	int	neg;
 
@@ -25,7 +25,7 @@ static inline int	__check_sign(const char **nptr)
 	return (neg);
 }
 
-static inline int	__check_base(const char **nptr, int base)
+static inline int	_check_base(const char **nptr, int base)
 {
 	if ((base == 0 || base == 16) && !ft_strncasecmp(*nptr, "0x", 2))
 	{
@@ -42,7 +42,7 @@ static inline int	__check_base(const char **nptr, int base)
 	return (base);
 }
 
-static inline int	__convert(const char **nptr, int base,
+static inline int	_convert(const char **nptr, int base,
 		unsigned long *acc, int neg)
 {
 	int				any;
@@ -87,10 +87,10 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	}
 	nptr = ft_skip_whitespace(nptr);
 	s = nptr;
-	neg = __check_sign(&nptr);
-	base = __check_base(&nptr, base);
+	neg = _check_sign(&nptr);
+	base = _check_base(&nptr, base);
 	acc = 0;
-	any = __convert(&nptr, base, &acc, neg);
+	any = _convert(&nptr, base, &acc, neg);
 	if (any == -1)
 		acc = (long []){LONG_MAX, LONG_MIN}[neg];
 	else if (neg)
