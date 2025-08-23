@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 10:26:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 22:14:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_slist
 
 int						ft_slist_init(t_slist *slist);
 void					ft_slist_destroy(t_slist *slist);
+void					ft_slist_move(t_slist *dst, t_slist *src);
 
 size_t					ft_slist_size(t_slist *slist);
 t_slist_node			*ft_slist_head(t_slist *slist);

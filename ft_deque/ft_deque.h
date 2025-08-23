@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:51:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:46:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 22:11:42 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_deque
 
 int			ft_deque_init(t_deque *deque, size_t elemsize);
 void		ft_deque_destroy(t_deque *deque);
+void		ft_deque_move(t_deque *dst, t_deque *src);
 
 size_t		ft_deque_size(t_deque *deque);
 void		*ft_deque_at(t_deque *deque, size_t n);

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 10:28:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 22:16:02 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_dlist
 
 int						ft_dlist_init(t_dlist *dlist);
 void					ft_dlist_destroy(t_dlist *dlist);
+void					ft_dlist_move(t_dlist *dst, t_dlist *src);
 
 size_t					ft_dlist_size(t_dlist *dlist);
 t_dlist_node			*ft_dlist_head(t_dlist *dlist);
