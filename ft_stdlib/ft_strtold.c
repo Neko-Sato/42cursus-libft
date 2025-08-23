@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:44:06 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/20 01:51:07 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:38:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <ft_utils/ft_utils.h>
 #include <math.h>
 
-static inline int	__special(const char **nptr, long double *acc, int *any)
+static inline int	_special(const char **nptr, long double *acc, int *any)
 {
 	static const char			*specials[] = {"infinity", "inf", "nan"};
 	static const int			specials_len[] = {8, 3, 3};
@@ -45,7 +45,7 @@ static inline int	__special(const char **nptr, long double *acc, int *any)
 	return (0);
 }
 
-static inline void	__integer(const char **nptr, long double *acc,
+static inline void	_integer(const char **nptr, long double *acc,
 	int *hex, int *any)
 {
 	int	n;
@@ -67,7 +67,7 @@ static inline void	__integer(const char **nptr, long double *acc,
 	}
 }
 
-static inline void	__fraction(const char **nptr, long double *acc,
+static inline void	_fraction(const char **nptr, long double *acc,
 	int hex, int *any)
 {
 	int				n;
@@ -89,7 +89,7 @@ static inline void	__fraction(const char **nptr, long double *acc,
 	}
 }
 
-static inline void	__exponent(const char **nptr, long double *acc,
+static inline void	_exponent(const char **nptr, long double *acc,
 	int hex, int any)
 {
 	long			exp;
@@ -121,11 +121,11 @@ long double	ft_strtold(const char *nptr, char **endptr)
 	if (*nptr == '-' || *nptr == '+')
 		neg = *nptr++ == '-';
 	any = 0;
-	if (!__special(&nptr, &acc, &any))
+	if (!_special(&nptr, &acc, &any))
 	{
-		__integer(&nptr, &acc, &hex, &any);
-		__fraction(&nptr, &acc, hex, &any);
-		__exponent(&nptr, &acc, hex, any);
+		_integer(&nptr, &acc, &hex, &any);
+		_fraction(&nptr, &acc, hex, &any);
+		_exponent(&nptr, &acc, hex, any);
 	}
 	if (neg)
 		acc = -acc;

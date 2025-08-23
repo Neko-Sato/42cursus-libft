@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:07:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:20:35 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:38:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string/ft_string.h>
 #include <stdlib.h>
 
-static inline size_t	__count_words(const char *s, int c)
+static inline size_t	_count_words(const char *s, int c)
 {
 	int		in_words;
 	size_t	cnt;
@@ -31,13 +31,13 @@ static inline size_t	__count_words(const char *s, int c)
 	return (cnt);
 }
 
-static inline void	__assign_error(char **head, char **tmp)
+static inline void	_assign_error(char **head, char **tmp)
 {
 	while (head != tmp)
 		free(*--tmp);
 }
 
-static inline int	__assign_words(const char *s, int c, char **ret)
+static inline int	_assign_words(const char *s, int c, char **ret)
 {
 	char **const		head = ret;
 	int					in_words;
@@ -52,7 +52,7 @@ static inline int	__assign_words(const char *s, int c, char **ret)
 		{
 			*ret = ft_substr(start, 0, s - start);
 			if (!*ret)
-				return (__assign_error(head, ret), 1);
+				return (_assign_error(head, ret), 1);
 			ret++;
 		}
 		else
@@ -68,11 +68,11 @@ char	**ft_split(const char *s, char c)
 	char	**ret;
 	size_t	size;
 
-	size = __count_words(s, c) + 1;
+	size = _count_words(s, c) + 1;
 	ret = malloc(sizeof(char *) * size);
 	if (!ret)
 		return (NULL);
-	if (__assign_words(s, c, ret))
+	if (_assign_words(s, c, ret))
 	{
 		free(ret);
 		return (NULL);

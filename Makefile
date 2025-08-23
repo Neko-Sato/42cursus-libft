@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/22 16:01:35 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/23 14:27:04 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -178,9 +178,12 @@ SRCS			:= \
 		ft_dlist_tail.c \
 	) \
 	$(addprefix ft_btree/, \
-		__ft_btree_insert.c \
+		ft__btree_fixup.c \
+		ft__btree_insert.c \
+		ft__btree_replace.c \
 		ft_btree_destroy.c \
 		ft_btree_end.c \
+		ft_btree_extract.c \
 		ft_btree_find.c \
 		ft_btree_head.c \
 		ft_btree_init.c \

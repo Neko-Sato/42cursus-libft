@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 04:22:46 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:47:01 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:38:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft_string/ft_string.h>
 #include <stdlib.h>
 
-static inline int	__reserve(t_vector *vector, size_t n)
+static inline int	_reserve(t_vector *vector, size_t n)
 {
 	void	*tmp;
 	size_t	capa;
@@ -37,7 +37,7 @@ static inline int	__reserve(t_vector *vector, size_t n)
 
 int	ft_vector_resize(t_vector *vector, size_t n)
 {
-	if (__reserve(vector, n))
+	if (_reserve(vector, n))
 		return (1);
 	vector->_size = n;
 	return (0);

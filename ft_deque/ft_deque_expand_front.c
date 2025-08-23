@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 18:47:20 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:34:41 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft_string/ft_string.h>
 #include <stdlib.h>
 
-static inline int	__reserve_map_front_internal(t_deque *deque, size_t n,
+static inline int	_reserve_map_front_internal(t_deque *deque, size_t n,
 		void ***map, size_t *mapsize)
 {
 	void	**new_map;
@@ -39,7 +39,7 @@ static inline int	__reserve_map_front_internal(t_deque *deque, size_t n,
 	return (0);
 }
 
-static inline int	__reserve_map_front(t_deque *deque, size_t n)
+static inline int	_reserve_map_front(t_deque *deque, size_t n)
 {
 	size_t	chank_cnt;
 	void	**new_map;
@@ -47,7 +47,7 @@ static inline int	__reserve_map_front(t_deque *deque, size_t n)
 	size_t	new_start_index;
 
 	chank_cnt = deque->_finish_index - deque->_start_index + 1;
-	if (__reserve_map_front_internal(deque, chank_cnt + n, &new_map,
+	if (_reserve_map_front_internal(deque, chank_cnt + n, &new_map,
 			&new_mapsize))
 		return (1);
 	new_start_index = (new_mapsize - chank_cnt + n) / 2;
@@ -62,11 +62,11 @@ static inline int	__reserve_map_front(t_deque *deque, size_t n)
 	return (0);
 }
 
-static inline int	__reserve_chank_front(t_deque *deque, size_t n)
+static inline int	_reserve_chank_front(t_deque *deque, size_t n)
 {
 	size_t	i;
 
-	if (deque->_start_index < n && __reserve_map_front(deque, n))
+	if (deque->_start_index < n && _reserve_map_front(deque, n))
 		return (1);
 	i = n;
 	while (0 < i)
@@ -94,7 +94,7 @@ int	ft_deque_expand_front(t_deque *deque, size_t size)
 		required_size = size - deque->_start_offset;
 		required_chanks = (required_size + deque->_chanksize - 1)
 			/ deque->_chanksize;
-		if (__reserve_chank_front(deque, required_chanks))
+		if (_reserve_chank_front(deque, required_chanks))
 			return (1);
 		deque->_start_index -= required_chanks;
 		deque->_start_offset = deque->_chanksize - ((required_size - 1)

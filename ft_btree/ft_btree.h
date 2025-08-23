@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 15:01:04 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:28:05 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 # include <stddef.h>
 
-typedef enum e_btree_color
+typedef enum e__btree_color
 {
-	FT_BTREE_RED,
-	FT_BTREE_BLACK
-}						t_btree_color;
+	_BTREE_RED,
+	_BTREE_BLACK
+}						t__btree_color;
 
 typedef struct s_btree_node
 {
 	struct s_btree_node	*_left;
 	struct s_btree_node	*_parent;
 	struct s_btree_node	*_right;
-	t_btree_color		_color;
+	t__btree_color		_color;
 	char				data[];
 }						t_btree_node;
 
@@ -60,5 +60,11 @@ t_btree_node			*ft_btree_end(t_btree *btree);
 t_btree_node			*ft_btree_find(t_btree *btree, const void *data);
 t_btree_node			*ft_btree_lower_bound(t_btree *btree, const void *data);
 t_btree_node			*ft_btree_upper_bound(t_btree *btree, const void *data);
+
+void					ft__btree_insert(t_btree *btree, t_btree_node *pos,
+							t_btree_node *node);
+void					ft__btree_replace(t_btree_node *pos,
+							t_btree_node *node);
+void					ft__btree_fixup(t_btree *btree, t_btree_node *node);
 
 #endif

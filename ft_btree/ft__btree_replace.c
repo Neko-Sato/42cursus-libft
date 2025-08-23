@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_node_new.c                                :+:      :+:    :+:   */
+/*   ft__btree_replace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 11:23:03 by hshimizu          #+#    #+#             */
+/*   Created: 2025/08/22 23:56:01 by hshimizu          #+#    #+#             */
 /*   Updated: 2025/08/23 14:29:09 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_btree/ft_btree.h>
-#include <stdlib.h>
 
-t_btree_node	*ft_btree_node_new(size_t size)
+void	ft__btree_replace(t_btree_node *pos, t_btree_node *node)
 {
-	t_btree_node	*node;
-
-	node = malloc(sizeof(t_btree_node) + size);
-	if (!node)
-		return (NULL);
-	node->_parent = NULL;
-	node->_left = NULL;
-	node->_right = NULL;
-	node->_color = _BTREE_RED;
-	return (node);
+	node->_parent = pos->_parent;
+	node->_left = pos->_left;
+	node->_right = pos->_right;
+	node->_color = pos->_color;
+	if (pos->_parent->_left == pos)
+		pos->_parent->_left = node;
+	else
+		pos->_parent->_right = node;
+	if (pos->_left)
+		pos->_left->_parent = node;
+	if (pos->_right)
+		pos->_right->_parent = node;
+	pos->_parent = NULL;
+	pos->_left = NULL;
+	pos->_right = NULL;
+	pos->_color = _BTREE_RED;
 }
