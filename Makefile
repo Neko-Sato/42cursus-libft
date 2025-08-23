@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/23 21:13:17 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/24 01:40:41 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,7 @@ else ifeq ($(UNAME_S),Darwin)
 endif
 
 $(OUTDIR)/%.o: %.c
-	@mkdir -p $(dir $@)
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(IDFLAGS) -c $< -o $@
 
 $(NAME_DEV_A): CFLAGS += $(CFLAGS_DEV)
@@ -135,7 +135,7 @@ else ifeq ($(UNAME_S),Darwin)
 endif
 
 $(OUTDIR)/%_dev.o: %.c
-	@mkdir -p $(dir $@)
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(IDFLAGS) -c $< -o $@
 
 clean:
