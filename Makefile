@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/23 14:27:04 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/23 21:10:59 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -224,7 +224,11 @@ endif
 .PHONY: all clean fclean re bonus
 
 all:
+ifeq ($(UNAME_S),Linux)
 	@$(MAKE) $(NAME_A) -j $(shell nproc)
+else ifeq ($(UNAME_S),Darwin)
+	@$(MAKE) $(NAME_A) -j $(shell sysctl -n hw.ncpu)
+endif
 
 bonus: all
 
