@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/24 01:38:20 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/08/27 12:18:28 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,6 +134,7 @@ SRCS			:= \
 		ft_strptrcmp.c \
 		ft_digitval.c \
 		ft_skip_whitespace.c \
+		ft_reverse.c \
 	) \
 	$(addprefix ft_vector/, \
 		ft_vector_data.c \

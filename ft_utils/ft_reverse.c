@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_reverse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 04:59:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/27 12:12:47 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/27 12:13:03 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/27 12:16:52 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#include <ft_string/ft_string.h>
+#include <ft_utils/ft_utils.h>
 
-# include <stddef.h>
+void	*ft_reverse(void *base, size_t nmemb, size_t size)
+{
+	size_t	i;
+	size_t	j;
 
-int		ft_startwith(char *str, char *prefix);
-int		ft_endwith(char *str, char *suffix);
-
-int		ft_intcmp(const int *ptr1, const int *ptr2);
-int		ft_strptrcmp(const char **ptr1, const char **ptr2);
-
-int		ft_digitval(int c);
-char	*ft_skip_whitespace(const char *str);
-
-void	*ft_reverse(void *base, size_t nmemb, size_t size);
-
-#endif
+	i = 0;
+	j = nmemb;
+	while (i < j)
+		ft_memswap((char *)base + size * i++, (char *)base + size * --j, size);
+	return (base);
+}

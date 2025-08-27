@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 00:05:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 20:10:47 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/26 19:09:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	_rotate_right(t_btree_node *y)
 static inline void	_black_uncle(t_btree_node **node, t_btree_node **parent,
 		t_btree_node **grandparent)
 {
-	static void (*const	rotate[])(t_btree_node *node) = {
+	static void (*const	rotate[])(t_btree_node *) = {
 		_rotate_left, _rotate_right
 	};
 	int					zig;
