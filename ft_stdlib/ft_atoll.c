@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/07 21:24:33 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/31 19:12:46 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+long long	ft_atoll(const char *nptr)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (ft_strtoll(nptr, NULL, 10));
 }

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:51:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 22:11:42 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:31:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <stddef.h>
 
-# define FT_DEQUE_CHANK_BYTES 512
-# define FT_DEQUE_CHANK_SIZE_MIN 8
-# define FT_DEQUE_DEFAULT_MAP_SIZE 8
-# define FT_DEQUE_MAP_GROWTH_FACTOR 2
+# define _DEQUE_CHANK_BYTES 512
+# define _DEQUE_CHANK_SIZE_MIN 8
+# define _DEQUE_DEFAULT_MAP_SIZE 8
+# define _DEQUE_MAP_GROWTH_FACTOR 2
 
 typedef struct s_deque
 {

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 04:22:46 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 14:38:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:30:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static inline int	_reserve(t_vector *vector, size_t n)
 
 	if (vector->_capa < n)
 	{
-		capa = vector->_capa * FT_VECTOR_GROWTH_FACTOR;
+		capa = vector->_capa * _VECTOR_GROWTH_FACTOR;
 		if (capa < n)
 			capa = n;
 		tmp = malloc(capa * vector->_elemsize);

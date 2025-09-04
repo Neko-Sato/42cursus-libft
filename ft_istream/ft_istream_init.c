@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft_istream_init.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/27 10:36:29 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/04 23:39:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_istream/ft_istream.h>
+#include <stdlib.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+int	ft_istream_init(t_istream *is, ssize_t (*read_fn)(void *, size_t, void *),
+		void *arg)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	char	*buf;
+	size_t	bufsize;
+
+	buf = malloc(_ISTREAM_BUFSIZ);
+	if (!buf)
+		return (1);
+	bufsize = _ISTREAM_BUFSIZ;
+	is->_read_fn = read_fn;
+	is->_arg = arg;
+	is->_flags = 0;
+	is->_buf = buf;
+	is->_bufsize = bufsize;
+	is->_pos = buf;
+	is->_end = buf;
+	return (0);
 }

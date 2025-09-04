@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft_istream_eof.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/09/02 23:01:47 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/02 23:01:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_istream/ft_istream.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+int	ft_istream_eof(t_istream *is)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (!!(is->_flags & _ISTREAM_FLAGS_EOF));
 }

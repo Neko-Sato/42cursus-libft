@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft__write_buffer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 20:15:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 10:33:23 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/30 20:04:56 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/02 08:43:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
 #include <ft_string/ft_string.h>
 
-char	*ft_itoa(int n)
+ssize_t	ft__write_buffer(const void *buf, size_t n, t__write_buffer *buffer)
 {
-	char			buf[12];
-	t_ostream		os;
-	t__write_buffer	wb;
-	t__iniprint_opt	opt;
+	size_t	size;
 
-	wb.buf = buf;
-	wb.pos = 0;
-	wb.size = sizeof(buf);
-	os._write_fn = (ssize_t (*)(const void *, size_t, void *))ft__write_buffer;
-	os._arg = &buf;
-	opt.width = -1;
-	opt.prec = -1;
-	opt.flag = _INTPRINT_FLAG_SIGNED;
-	ft__intprint(&os, n, 10, &opt);
-	return (ft_memdup(buf, wb.size));
+	if (!buffer->buf && !buffer->size)
+		return (n);
+	if (buffer->pos >= buffer->size)
+		return (n);
+	size = buffer->size - buffer->pos;
+	if (n < size)
+		size = n;
+	ft_memcpy(buffer->buf + buffer->pos, buf, size);
+	buffer->pos += size;
+	if (buffer->pos < buffer->size)
+		buffer->buf[buffer->pos] = '\0';
+	return (n);
 }

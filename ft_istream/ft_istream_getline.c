@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft_istream_getline.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/26 13:34:10 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/03 17:40:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_istream/ft_istream.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+ssize_t	ft_istream_getline(char **lineptr, size_t *n, t_istream *is)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (ft_istream_getdelim(lineptr, n, is, '\n'));
 }

@@ -6,31 +6,26 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:27:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/05 19:13:41 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:34:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_ostream/ft_ostream.h>
 #include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char			buf[11];
-	char			*tmp;
-	unsigned int	un;
+	t_ostream		os;
+	t__iniprint_opt	opt;
 
-	tmp = &buf[11];
-	if (n < 0)
-		un = -n;
-	else
-		un = n;
-	while (1)
-	{
-		*--tmp = '0' + un % 10;
-		un /= 10;
-		if (!un)
-			break ;
-	}
-	if (n < 0)
-		*--tmp = '-';
-	write(fd, tmp, &buf[11] - tmp);
+	os._write_fn = (ssize_t(*)(const void *, size_t, void *))ft__write_fd;
+	os._arg = &fd;
+	os._lbf = OSTREAM_UNBUF;
+	os._buf = NULL;
+	os._pos = NULL;
+	os._end = NULL;
+	opt.width = -1;
+	opt.prec = -1;
+	opt.flag = _INTPRINT_FLAG_SIGNED;
+	ft__intprint(&os, n, 10, &opt);
 }

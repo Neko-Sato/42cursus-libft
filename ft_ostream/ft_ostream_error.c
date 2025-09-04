@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft_ostream_error.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/09/02 08:18:48 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/04 23:39:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_ostream/ft_ostream.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+int	ft_ostream_error(const t_ostream *os)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (!!(os->_flags & _OSTREAM_FLAGS_ERROR));
 }

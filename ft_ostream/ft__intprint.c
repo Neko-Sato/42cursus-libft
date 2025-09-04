@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft__intprint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/09/05 00:32:23 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/05 00:32:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_ostream/ft_ostream.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
-{
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
-}
+ssize_t	ft__intprint(t_ostream *os, unsigned long long n, unsigned int base,
+			const t__iniprint_opt *opt);

@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/08/27 12:18:28 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/09/05 00:30:38 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,23 +98,30 @@ SRCS			:= \
 		ft_putstrs_fd.c \
 	) \
 	$(addprefix ft_stdlib/, \
+		ft__strtointeger.c \
+		ft__strtofloat.c \
 		ft_abs.c \
 		ft_atof.c \
 		ft_atoi.c \
 		ft_atol.c \
+		ft_atoll.c \
 		ft_bsearch.c \
 		ft_calloc.c \
 		ft_div.c \
 		ft_itoa.c \
 		ft_labs.c \
 		ft_ldiv.c \
+		ft_llabs.c \
+		ft_lldiv.c \
 		ft_qsort.c \
 		ft_qsort_r.c \
 		ft_strtod.c \
 		ft_strtof.c \
 		ft_strtol.c \
-		ft_strtoul.c \
 		ft_strtold.c \
+		ft_strtoll.c \
+		ft_strtoul.c \
+		ft_strtoull.c \
 	) \
 	$(addprefix ft_list/, \
 		ft_lstadd_back.c \
@@ -128,13 +135,14 @@ SRCS			:= \
 		ft_lstsize.c \
 	) \
 	$(addprefix ft_utils/, \
-		ft_startwith.c \
+		ft_digitval.c \
 		ft_endwith.c \
 		ft_intcmp.c \
-		ft_strptrcmp.c \
-		ft_digitval.c \
-		ft_skip_whitespace.c \
+		ft_literals.c \
 		ft_reverse.c \
+		ft_skip_whitespace.c \
+		ft_startwith.c \
+		ft_strptrcmp.c \
 	) \
 	$(addprefix ft_vector/, \
 		ft_vector_data.c \
@@ -202,6 +210,25 @@ SRCS			:= \
 		ft_btree_node_next.c \
 		ft_btree_node_prev.c \
 		ft_btree_upper_bound.c \
+	) \
+	$(addprefix ft_istream/, \
+		ft__read_fd.c \
+		ft_istream_destroy.c \
+		ft_istream_eof.c \
+		ft_istream_error.c \
+		ft_istream_getdelim.c \
+		ft_istream_getline.c \
+		ft_istream_init.c \
+		ft_istream_read.c \
+	) \
+	$(addprefix ft_ostream/, \
+		ft__write_buffer.c \
+		ft__write_fd.c \
+		ft_ostream_destroy.c \
+		ft_ostream_error.c \
+		ft_ostream_flush.c \
+		ft_ostream_init.c \
+		ft_ostream_write.c \
 	)
 
 OUTDIR			:= .out

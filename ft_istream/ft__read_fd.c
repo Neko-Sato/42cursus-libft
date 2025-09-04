@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft__read_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/30 20:43:31 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/09/04 23:37:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_istream/ft_istream.h>
+#include <unistd.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+ssize_t	ft__read_fd(void *buf, size_t n, int *fd)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (read(*fd, buf, n));
 }

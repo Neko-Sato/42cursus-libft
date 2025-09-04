@@ -6,11 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:46:37 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/07/28 10:57:05 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 00:38:41 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string/ft_string.h>
+
+#if defined(NDEBUG)
 
 size_t	ft_strlen(const char *s)
 {
@@ -33,3 +35,10 @@ size_t	ft_strlen(const char *s)
 		ptr++;
 	return (ptr - s);
 }
+#else
+
+size_t	ft_strlen(const char *s)
+{
+	return ((const char *)ft_memchr(s, '\0', -1) - s);
+}
+#endif

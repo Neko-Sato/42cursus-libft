@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 22:10:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:30:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-# define FT_VECTOR_GROWTH_FACTOR 2
+# define _VECTOR_GROWTH_FACTOR 2
 
 typedef struct s_vector
 {

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 14:34:41 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:31:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static inline int	_reserve_map_front_internal(t_deque *deque, size_t n,
 	}
 	else
 	{
-		new_mapsize = deque->_mapsize * FT_DEQUE_MAP_GROWTH_FACTOR;
+		new_mapsize = deque->_mapsize * _DEQUE_MAP_GROWTH_FACTOR;
 		if (new_mapsize < n)
 			new_mapsize = n;
 		new_map = malloc(new_mapsize * sizeof(void *));

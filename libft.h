@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/17 19:41:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/08/30 20:20:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
 # include <ft_slist/ft_slist.h>
 # include <ft_dlist/ft_dlist.h>
 # include <ft_btree/ft_btree.h>
+# include <ft_istream/ft_istream.h>
+# include <ft_ostream/ft_ostream.h>
 
 #endif

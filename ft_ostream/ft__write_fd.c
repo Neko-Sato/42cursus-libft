@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoul.c                                       :+:      :+:    :+:   */
+/*   ft__write_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/30 21:07:49 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/30 20:04:27 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/08/30 20:38:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdlib/ft_stdlib.h>
-#include <limits.h>
+#include <ft_ostream/ft_ostream.h>
+#include <unistd.h>
 
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base)
+ssize_t	ft__write_fd(const void *buf, size_t n, int *fd)
 {
-	return (ft__strtointeger(nptr, endptr, base, ULONG_MAX));
+	return (write(*fd, buf, n));
 }
