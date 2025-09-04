@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/09/05 00:30:38 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/09/05 00:46:31 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -222,6 +222,7 @@ SRCS			:= \
 		ft_istream_read.c \
 	) \
 	$(addprefix ft_ostream/, \
+		ft__intprint.c \
 		ft__write_buffer.c \
 		ft__write_fd.c \
 		ft_ostream_destroy.c \
@@ -311,3 +312,6 @@ test: test.c $(NAME_DEV_A)
 	$(CC) $(CFLAGS_DEV) -o $@ $< -I. -L. -lft_dev
 
 -include $(DEPS) $(DEPS_DEV)
+
+a:
+	@echo $(SRCS)
