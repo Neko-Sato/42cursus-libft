@@ -6,13 +6,10 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:30:50 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/05 00:41:00 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 09:26:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long double	ft__strtofloat(const char *nptr, char **endptr, int prec);
-
-/*
 #include <ft_ctype/ft_ctype.h>
 #include <ft_stdlib/ft_stdlib.h>
 #include <ft_string/ft_string.h>
@@ -21,11 +18,11 @@ long double	ft__strtofloat(const char *nptr, char **endptr, int prec);
 
 static inline int	_special(const char **nptr, long double *acc, int *any)
 {
-	static const char			*specials[] = {"infinity", "inf", "nan"};
-	static const int			specials_len[] = {8, 3, 3};
-	static const float			specials_val[] = {INFINITY, INFINITY, NAN};
-	size_t						i;
-	const char					*tmp;
+	static const char	*specials[] = {"infinity", "inf", "nan"};
+	static const int	specials_len[] = {8, 3, 3};
+	static const float	specials_val[] = {INFINITY, INFINITY, NAN};
+	size_t				i;
+	const char			*tmp;
 
 	i = 0;
 	while (i < sizeof(specials) / sizeof(specials[0]))
@@ -48,8 +45,8 @@ static inline int	_special(const char **nptr, long double *acc, int *any)
 	return (0);
 }
 
-static inline void	_integer(const char **nptr, long double *acc,
-	int *hex, int *any)
+static inline void	_integer(const char **nptr, long double *acc, int *hex,
+		int *any)
 {
 	int	n;
 
@@ -70,11 +67,11 @@ static inline void	_integer(const char **nptr, long double *acc,
 	}
 }
 
-static inline void	_fraction(const char **nptr, long double *acc,
-	int hex, int *any)
+static inline void	_fraction(const char **nptr, long double *acc, int hex,
+		int *any)
 {
-	int				n;
-	long double		fraction;
+	int			n;
+	long double	fraction;
 
 	if (**nptr != '.')
 		return ;
@@ -92,8 +89,8 @@ static inline void	_fraction(const char **nptr, long double *acc,
 	}
 }
 
-static inline void	_exponent(const char **nptr, long double *acc,
-	int hex, int any)
+static inline void	_exponent(const char **nptr, long double *acc, int hex,
+		int any)
 {
 	long			exp;
 	int				neg;
@@ -109,7 +106,7 @@ static inline void	_exponent(const char **nptr, long double *acc,
 		*acc *= (long double []){10., .1, 2., .5}[neg | hex << 1];
 }
 
-long double	ft_strtold(const char *nptr, char **endptr)
+long double	ft__strtofloat(const char *nptr, char **endptr, int prec)
 {
 	long double	acc;
 	const char	*s;
@@ -117,6 +114,7 @@ long double	ft_strtold(const char *nptr, char **endptr)
 	int			any;
 	int			hex;
 
+	(void)prec;
 	acc = 0;
 	nptr = ft_skip_whitespace(nptr);
 	s = nptr;
@@ -136,4 +134,3 @@ long double	ft_strtold(const char *nptr, char **endptr)
 		*endptr = (char *)(const char *[]){nptr, s}[!any];
 	return (acc);
 }
-*/
