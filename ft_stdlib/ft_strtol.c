@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 14:29:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/31 19:09:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 08:23:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
 {
-	return (ft__strtointeger(nptr, endptr, base, LONG_MAX));
+	return (ft__strtointeger(nptr, endptr, base, LONG_MIN));
 }
