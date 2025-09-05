@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:30:50 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/05 09:26:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 10:38:32 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 #include <ft_string/ft_string.h>
 #include <ft_utils/ft_utils.h>
 #include <math.h>
+
+/*
+	Not necessary, so accuracy is not guaranteed.
+*/
 
 static inline int	_special(const char **nptr, long double *acc, int *any)
 {
