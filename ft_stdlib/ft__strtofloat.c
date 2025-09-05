@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:30:50 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/05 10:40:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 22:14:00 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,8 @@ long double	ft__strtofloat(const char *nptr, char **endptr, int prec)
 
 	(void)prec;
 	acc = 0;
-	nptr = ft_skip_whitespace(nptr);
 	s = nptr;
+	nptr = ft_skip_whitespace(nptr);
 	neg = 0;
 	if (*nptr == '-' || *nptr == '+')
 		neg = *nptr++ == '-';
