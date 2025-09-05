@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 20:15:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 10:33:23 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/05 23:14:59 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_itoa(int n)
 {
-	char			buf[12];
+	char			buf[1024];
 	t_ostream		os;
 	t__write_buffer	wb;
 	t__iniprint_opt	opt;
@@ -29,5 +29,5 @@ char	*ft_itoa(int n)
 	opt.prec = -1;
 	opt.flag = _INTPRINT_FLAG_SIGNED;
 	ft__intprint(&os, n, 10, &opt);
-	return (ft_memdup(buf, wb.size));
+	return (ft_memdup(buf, wb.pos + 1));
 }
