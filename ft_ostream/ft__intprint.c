@@ -6,19 +6,29 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:32:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 11:10:45 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 14:41:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
 #include <limits.h>
 
+static void	_numeric(unsigned long long n, t__iniprint_var *var,
+		unsigned int base, int isupper)
+{
+	while (n)
+	{
+		*--var->pos = "0123456789abcdef0123456789ABCDEF"[n
+			% base | (isupper << 4)];
+		n /= base;
+	}
+}
+
 static void	_internal(unsigned long long n, const t__iniprint_args *args,
 		t__iniprint_var *var)
 {
 	var->prec = 1;
-	if (args->prec != -1 && !(args->base == 8 && n == 0
-			&& args->flags & _INTPRINT_FLAG_ALT_FORM))
+	if (args->prec != -1)
 		var->prec = args->prec;
 	if (var->prec < var->digit)
 		var->prec = var->digit;
@@ -26,11 +36,22 @@ static void	_internal(unsigned long long n, const t__iniprint_args *args,
 	if (var->neg
 		|| (args->flags & (_INTPRINT_FLAG_MARK_POS | _INTPRINT_FLAG_PAD_POS)))
 		var->size++;
-	if (args->base == 16 && n != 0 && args->flags & _INTPRINT_FLAG_ALT_FORM)
-		var->size += 2;
+	if (n != 0 && args->flags & _INTPRINT_FLAG_ALT_FORM)
+	{
+		if (args->base == 16)
+			var->size += 2;
+		else if (args->base == 8)
+			var->size++;
+	}
 	var->pad = 0;
 	if (args->width != -1 && var->size < (size_t)args->width)
 		var->pad = args->width - var->size;
+	if (!(args->flags & _INTPRINT_FLAG_LEFT_ADJ)
+		&& args->flags & _INTPRINT_FLAG_ZERO_PAD)
+	{
+		var->prec += var->pad;
+		var->pad = 0;
+	}
 }
 
 static inline size_t	_out(t_ostream *os, unsigned long long n,
@@ -48,9 +69,11 @@ static inline size_t	_out(t_ostream *os, unsigned long long n,
 		ret += ft_ostream_write(os, "+", 1);
 	else if (args->flags & _INTPRINT_FLAG_PAD_POS)
 		ret += ft_ostream_write(os, " ", 1);
-	if (args->base == 16 && n != 0 && args->flags & _INTPRINT_FLAG_ALT_FORM)
+	if ((args->base == 16 || args->base == 8) && n != 0
+		&& args->flags & _INTPRINT_FLAG_ALT_FORM)
 		ret += ft_ostream_write(os,
-				&"0x0X"[!!(args->flags & _INTPRINT_FLAG_UPPER) << 1], 2);
+				&"0x0X"[!!(args->flags & _INTPRINT_FLAG_UPPER) << 1], 1
+				<< (args->base == 16));
 	while (var->prec > var->digit)
 		ret += (var->prec--, ft_ostream_write(os, "0", 1));
 	ret += ft_ostream_write(os, var->pos, var->digit);
@@ -70,12 +93,7 @@ size_t	ft__intprint(t_ostream *os, unsigned long long n,
 	if (var.neg)
 		n = -(long long)n;
 	var.pos = &buf[sizeof(buf)];
-	while (n)
-	{
-		*--var.pos = "0123456789abcdef0123456789ABCDEF"[n
-			% args->base | (!!(args->flags & _INTPRINT_FLAG_UPPER) << 4)];
-		n /= args->base;
-	}
+	_numeric(n, &var, args->base, !!(args->flags & _INTPRINT_FLAG_UPPER));
 	var.digit = &buf[sizeof(buf)] - var.pos;
 	_internal(n, args, &var);
 	return (_out(os, n, args, &var));
