@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/09/07 13:48:45 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/09/08 03:49:54 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -259,9 +259,9 @@ endif
 
 all:
 ifeq ($(UNAME_S),Linux)
-	@$(MAKE) $(NAME_A) -j $(shell nproc)
+	@$(MAKE) $(NAME_A) $(NAME_SO) $(NAME_DEV_A) $(NAME_DEV_SO)  -j $(shell nproc)
 else ifeq ($(UNAME_S),Darwin)
-	@$(MAKE) $(NAME_A) -j $(shell sysctl -n hw.ncpu)
+	@$(MAKE) $(NAME_A) $(NAME_SO) $(NAME_DEV_A) $(NAME_DEV_SO) -j $(shell sysctl -n hw.ncpu)
 endif
 
 bonus: all
