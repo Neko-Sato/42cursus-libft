@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:32:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 16:14:14 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 16:28:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	_internal(unsigned long long n, const t__iniprint_args *args,
 	if (args->width != -1 && var->size < (size_t)args->width)
 		var->pad = args->width - var->size;
 	if (!(args->flags & _INTPRINT_FLAG_LEFT_ADJ)
-		&& args->flags & _INTPRINT_FLAG_ZERO_PAD)
+		&& args->flags & _INTPRINT_FLAG_ZERO_PAD && args->prec == -1)
 	{
 		var->prec += var->pad;
 		var->pad = 0;
