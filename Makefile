@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/09/05 00:46:31 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/09/07 13:23:57 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -309,9 +309,6 @@ re:
 	@$(MAKE)
 
 test: test.c $(NAME_DEV_A)
-	$(CC) $(CFLAGS_DEV) -o $@ $< -I. -L. -lft_dev
+	$(CC) $(CFLAGS_DEV) -o $@ $^ $(IDFLAGS)
 
 -include $(DEPS) $(DEPS_DEV)
-
-a:
-	@echo $(SRCS)
