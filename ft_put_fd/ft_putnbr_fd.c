@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:27:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 11:32:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 12:30:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 	t_ostream			os;
 	t__iniprint_args	args;
 
-	os._write_fn = (ssize_t(*)(const void *, size_t, void *))ft__write_fd;
+	os._write_fn = ft__write_fd;
 	os._arg = &fd;
 	os._lbf = OSTREAM_UNBUF;
 	os._flags = 0;

@@ -6,16 +6,17 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 20:04:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 08:43:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 12:29:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
 #include <ft_string/ft_string.h>
 
-ssize_t	ft__write_buffer(const void *buf, size_t n, t__write_buffer *buffer)
+ssize_t	ft__write_buffer(const void *buf, size_t n, void *arg)
 {
-	size_t	size;
+	t__write_buffer *const	buffer = arg;
+	size_t					size;
 
 	if (!buffer->buf && !buffer->size)
 		return (n);

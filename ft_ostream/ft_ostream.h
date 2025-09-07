@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 10:59:35 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 12:28:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,8 @@ typedef struct s__write_buffer
 	size_t			pos;
 }					t__write_buffer;
 
-ssize_t				ft__write_fd(const void *buf, size_t n, int *fd);
-ssize_t				ft__write_buffer(const void *buf, size_t n,
-						t__write_buffer *buffer);
+ssize_t				ft__write_fd(const void *buf, size_t n, void *arg);
+ssize_t				ft__write_buffer(const void *buf, size_t n, void *arg);
 
 # define _INTPRINT_FLAG_LEFT_ADJ 0x1
 # define _INTPRINT_FLAG_ZERO_PAD 0x2

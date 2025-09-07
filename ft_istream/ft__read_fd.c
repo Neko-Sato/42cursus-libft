@@ -6,14 +6,14 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 20:43:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/04 23:37:47 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 12:28:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_istream/ft_istream.h>
 #include <unistd.h>
 
-ssize_t	ft__read_fd(void *buf, size_t n, int *fd)
+ssize_t	ft__read_fd(void *buf, size_t n, void *arg)
 {
-	return (read(*fd, buf, n));
+	return (read(*(int *)arg, buf, n));
 }

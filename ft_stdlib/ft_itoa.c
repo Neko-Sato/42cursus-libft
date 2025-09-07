@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 20:15:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 11:36:06 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 12:30:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_itoa(int n)
 	wb.buf = buf;
 	wb.pos = 0;
 	wb.size = sizeof(buf);
-	os._write_fn = (ssize_t (*)(const void *, size_t, void *))ft__write_buffer;
+	os._write_fn = ft__write_buffer;
 	os._arg = &wb;
 	os._lbf = OSTREAM_UNBUF;
 	os._flags = 0;
