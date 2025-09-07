@@ -6,12 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:32:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 14:41:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 16:14:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
-#include <limits.h>
 
 static void	_numeric(unsigned long long n, t__iniprint_var *var,
 		unsigned int base, int isupper)
@@ -86,7 +85,7 @@ static inline size_t	_out(t_ostream *os, unsigned long long n,
 size_t	ft__intprint(t_ostream *os, unsigned long long n,
 		const t__iniprint_args *args)
 {
-	char			buf[sizeof(unsigned long long) * CHAR_BIT];
+	char			buf[1024];
 	t__iniprint_var	var;
 
 	var.neg = args->flags & _INTPRINT_FLAG_SIGNED && (long long)n < 0;
