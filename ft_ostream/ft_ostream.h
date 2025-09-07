@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/03 00:07:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/07 10:59:35 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,25 @@ ssize_t				ft__write_buffer(const void *buf, size_t n,
 # define _INTPRINT_FLAG_SIGNED 0x20
 # define _INTPRINT_FLAG_UPPER 0x40
 
-typedef struct s__iniprint_opt
+typedef struct s__iniprint_args
 {
-	int				flag;
+	unsigned int	base;
+	int				flags;
 	int				width;
 	int				prec;
-}					t__iniprint_opt;
+}					t__iniprint_args;
 
-ssize_t				ft__intprint(t_ostream *os, unsigned long long n,
-						unsigned int base, const t__iniprint_opt *opt);
+typedef struct s__iniprint_var
+{
+	int				neg;
+	char			*pos;
+	size_t			digit;
+	size_t			prec;
+	size_t			size;
+	size_t			pad;
+}					t__iniprint_var;
+
+size_t				ft__intprint(t_ostream *os, unsigned long long n,
+						const t__iniprint_args *args);
 
 #endif
