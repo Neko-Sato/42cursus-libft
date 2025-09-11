@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 10:30:15 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/11 20:39:26 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void		ft_vector_move(t_vector *dst, t_vector *src);
 void		*ft_vector_data(t_vector *vector);
 size_t		ft_vector_size(t_vector *vector);
 int			ft_vector_resize(t_vector *vector, size_t n);
+int			ft_vector_push_back(t_vector *vector, void *elem);
 
 #endif

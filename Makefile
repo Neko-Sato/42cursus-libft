@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/09/08 03:49:54 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/09/11 20:41:15 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,6 +151,7 @@ SRCS			:= \
 		ft_vector_move.c \
 		ft_vector_resize.c \
 		ft_vector_size.c \
+		ft_vector_push_back.c \
 	) \
 	$(addprefix ft_deque/, \
 		ft_deque_at.c \
