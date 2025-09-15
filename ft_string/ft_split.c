@@ -6,53 +6,76 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:07:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/11 21:41:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/15 09:06:48 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string/ft_string.h>
-#include <ft_vector/ft_vector.h>
 #include <stdlib.h>
 
-static inline int	_internal(t_vector *res, const char *s, char c)
+static inline size_t	_count_words(const char *s, int c)
 {
-	const char	delim[] = {c, '\0'};
-	char		*copy;
-	char		*save;
-	char		*tmp;
+	int		in_words;
+	size_t	cnt;
 
-	copy = ft_strdup(s);
-	if (!copy)
-		return (1);
-	tmp = ft_strtok_r(copy, delim, &save);
-	while (tmp)
+	in_words = 0;
+	cnt = 0;
+	while (*s)
 	{
-		tmp = ft_strdup(tmp);
-		if (!tmp || ft_vector_push_back(res, &tmp))
-			return (free(tmp), free(copy), 1);
-		tmp = ft_strtok_r(NULL, delim, &save);
+		while (*s && (*s != (char)c) == in_words)
+			s++;
+		if (in_words)
+			cnt++;
+		in_words = !in_words;
 	}
-	return (free(copy), ft_vector_push_back(res, &(char *){NULL}));
+	return (cnt);
 }
 
-static inline void	_release(t_vector *res)
+static inline void	_assign_error(char **head, char **tmp)
 {
-	char	**data;
-	size_t	i;
+	while (head != tmp)
+		free(*--tmp);
+}
 
-	data = ft_vector_data(res);
-	i = ft_vector_size(res);
-	while (i)
-		free(data[--i]);
-	ft_vector_destroy(res);
+static inline int	_assign_words(const char *s, int c, char **ret)
+{
+	char **const		head = ret;
+	int					in_words;
+	const char			*start;
+
+	in_words = 0;
+	while (*s)
+	{
+		while (*s && (*s != (char)c) == in_words)
+			s++;
+		if (in_words)
+		{
+			*ret = ft_strdup(start, s - start);
+			if (!*ret)
+				return (_assign_error(head, ret), 1);
+			ret++;
+		}
+		else
+			start = s;
+		in_words = !in_words;
+	}
+	*ret = NULL;
+	return (0);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	t_vector	res;
+	char	**ret;
+	size_t	size;
 
-	ft_vector_init(&res, sizeof(char *));
-	if (_internal(&res, s, c))
-		return (_release(&res), NULL);
-	return (ft_vector_data(&res));
+	size = _count_words(s, c) + 1;
+	ret = malloc(sizeof(char *) * size);
+	if (!ret)
+		return (NULL);
+	if (_assign_words(s, c, ret))
+	{
+		free(ret);
+		return (NULL);
+	}
+	return (ret);
 }

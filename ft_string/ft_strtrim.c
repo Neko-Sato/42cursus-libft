@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 19:57:18 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 06:21:31 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/15 09:07:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strtrim(const char *s1, const char *set)
 		start++;
 	while (start < end && ft_strchr(set, *(end - 1)))
 		end--;
-	return (ft_substr(start, 0, (end - start)));
+	return (ft_strndup(start, end - start));
 }
