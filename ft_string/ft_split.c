@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:07:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/15 09:06:48 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/15 09:08:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static inline int	_assign_words(const char *s, int c, char **ret)
 			s++;
 		if (in_words)
 		{
-			*ret = ft_strdup(start, s - start);
+			*ret = ft_strndup(start, s - start);
 			if (!*ret)
 				return (_assign_error(head, ret), 1);
 			ret++;
