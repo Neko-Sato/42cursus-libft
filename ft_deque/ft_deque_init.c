@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:30:48 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 10:31:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/16 18:18:01 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_deque_init(t_deque *deque, size_t elemsize)
 	void	**map;
 
 	chanksize = _DEQUE_CHANK_BYTES / elemsize;
-	if (chanksize < _DEQUE_CHANK_SIZE_MIN)
-		chanksize = _DEQUE_CHANK_SIZE_MIN;
+	if (!chanksize)
+		chanksize = 1;
 	chank = malloc(chanksize * elemsize);
 	if (!chank)
 		return (1);
