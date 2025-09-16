@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/16 17:18:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:18:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ typedef struct s_vector
 {
 	char	*_data;
 	size_t	_elemsize;
+	void	(*_move)(void *dst, void *src);
 	size_t	_size;
 	size_t	_capa;
 }			t_vector;
 
-int			ft_vector_init(t_vector *vector, size_t elemsize);
+int			ft_vector_init(t_vector *vector, size_t elemsize,
+				void (*move)(void *dst, void *src));
 void		ft_vector_destroy(t_vector *vector);
 void		ft_vector_move(t_vector *dst, t_vector *src);
 

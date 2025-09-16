@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:34:10 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/04 23:33:22 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:26:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ ssize_t	ft_istream_getdelim(char **lineptr, size_t *n, t_istream *is,
 	vec._size = 0;
 	vec._capa = *n;
 	vec._elemsize = sizeof(char);
+	vec._move = NULL;
 	ret = _internal(&vec, is, delim);
 	if (ret != -1)
 	{
