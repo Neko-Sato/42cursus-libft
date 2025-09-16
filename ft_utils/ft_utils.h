@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 04:59:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/11 04:08:21 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 06:54:39 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stddef.h>
 
-int					ft_startwith(char *str, char *prefix);
-int					ft_endwith(char *str, char *suffix);
+int					ft_starts_with(char *str, char *prefix);
+int					ft_ends_with(char *str, char *suffix);
 
 int					ft_intcmp(const int *ptr1, const int *ptr2);
 int					ft_strptrcmp(const char **ptr1, const char **ptr2);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_endwith.c                                       :+:      :+:    :+:   */
+/*   ft_ends_with.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 07:17:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 04:59:20 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 06:54:29 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string/ft_string.h>
 
-int	ft_endwith(char *str, char *suffix)
+int	ft_ends_with(char *str, char *suffix)
 {
 	size_t	str_len;
 	size_t	suffix_len;
