@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:26:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 14:31:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:46:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_btree/ft_btree.h>
 
-t_btree_node	*ft_btree_node_next(t_btree_node *node)
+t_btree_node	*ft_btree_node_next(const t_btree_node *node)
 {
 	t_btree_node	*next;
 

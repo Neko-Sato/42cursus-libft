@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:26:13 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/19 20:50:43 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:41:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_slist/ft_slist.h>
 
-t_slist_node	*ft_slist_node_next(t_slist_node *node)
+t_slist_node	*ft_slist_node_next(const t_slist_node *node)
 {
 	return (node->_next);
 }

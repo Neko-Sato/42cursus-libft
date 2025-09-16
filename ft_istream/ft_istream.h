@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:09:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 12:28:23 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:40:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ size_t		ft_istream_read(t_istream *is, void *buf, size_t n);
 ssize_t		ft_istream_getdelim(char **lineptr, size_t *n, t_istream *is,
 				char delim);
 ssize_t		ft_istream_getline(char **lineptr, size_t *n, t_istream *is);
-int			ft_istream_error(t_istream *is);
-int			ft_istream_eof(t_istream *is);
+int			ft_istream_error(const t_istream *is);
+int			ft_istream_eof(const t_istream *is);
 
 ssize_t		ft__read_fd(void *buf, size_t n, void *arg);
 

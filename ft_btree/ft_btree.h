@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 22:17:59 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:45:38 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ typedef struct s_btree_node
 
 t_btree_node			*ft_btree_node_new(size_t size);
 void					ft_btree_node_delete(t_btree_node *node);
-t_btree_node			*ft_btree_node_next(t_btree_node *node);
-t_btree_node			*ft_btree_node_prev(t_btree_node *node);
+t_btree_node			*ft_btree_node_next(const t_btree_node *node);
+t_btree_node			*ft_btree_node_prev(const t_btree_node *node);
 
 typedef struct s_btree
 {
@@ -56,11 +56,13 @@ void					ft_btree_insert_multi(t_btree *btree,
 							t_btree_node *node);
 t_btree_node			*ft_btree_extract(t_btree *btree, t_btree_node *node);
 
-t_btree_node			*ft_btree_head(t_btree *btree);
-t_btree_node			*ft_btree_end(t_btree *btree);
-t_btree_node			*ft_btree_find(t_btree *btree, const void *data);
-t_btree_node			*ft_btree_lower_bound(t_btree *btree, const void *data);
-t_btree_node			*ft_btree_upper_bound(t_btree *btree, const void *data);
+t_btree_node			*ft_btree_head(const t_btree *btree);
+t_btree_node			*ft_btree_end(const t_btree *btree);
+t_btree_node			*ft_btree_find(const t_btree *btree, const void *data);
+t_btree_node			*ft_btree_lower_bound(const t_btree *btree,
+							const void *data);
+t_btree_node			*ft_btree_upper_bound(const t_btree *btree,
+							const void *data);
 
 void					ft__btree_insert(t_btree *btree, t_btree_node *pos,
 							t_btree_node *node);

@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:49:08 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/11 16:43:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:46:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_btree/ft_btree.h>
 
-t_btree_node	*ft_btree_find(t_btree *btree, const void *data)
+t_btree_node	*ft_btree_find(const t_btree *btree, const void *data)
 {
 	t_btree_node	*current;
 	int				cmp;

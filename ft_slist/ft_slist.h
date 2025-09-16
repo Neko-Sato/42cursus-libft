@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:24:49 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/23 22:14:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:41:25 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_slist_node
 
 t_slist_node			*ft_slist_node_new(size_t size);
 void					ft_slist_node_delete(t_slist_node *node);
-t_slist_node			*ft_slist_node_next(t_slist_node *node);
+t_slist_node			*ft_slist_node_next(const t_slist_node *node);
 
 typedef struct s_slist
 {
@@ -35,8 +35,8 @@ int						ft_slist_init(t_slist *slist);
 void					ft_slist_destroy(t_slist *slist);
 void					ft_slist_move(t_slist *dst, t_slist *src);
 
-size_t					ft_slist_size(t_slist *slist);
-t_slist_node			*ft_slist_head(t_slist *slist);
+size_t					ft_slist_size(const t_slist *slist);
+t_slist_node			*ft_slist_head(const t_slist *slist);
 void					ft_slist_insert(t_slist *slist, t_slist_node *pos,
 							t_slist_node *node);
 t_slist_node			*ft_slist_extract(t_slist *slist, t_slist_node *pos);

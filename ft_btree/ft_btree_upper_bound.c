@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:40:54 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/22 14:37:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:46:48 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_btree/ft_btree.h>
 
-t_btree_node	*ft_btree_upper_bound(t_btree *btree, const void *data)
+t_btree_node	*ft_btree_upper_bound(const t_btree *btree, const void *data)
 {
 	t_btree_node	*node;
 	t_btree_node	*upper_bound;

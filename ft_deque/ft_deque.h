@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:51:20 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/16 18:17:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/17 02:44:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int			ft_deque_init(t_deque *deque, size_t elemsize);
 void		ft_deque_destroy(t_deque *deque);
 void		ft_deque_move(t_deque *dst, t_deque *src);
 
-size_t		ft_deque_size(t_deque *deque);
-void		*ft_deque_at(t_deque *deque, size_t n);
+size_t		ft_deque_size(const t_deque *deque);
+void		*ft_deque_at(const t_deque *deque, size_t n);
 int			ft_deque_expand_front(t_deque *deque, size_t size);
 int			ft_deque_expand_back(t_deque *deque, size_t size);
 void		ft_deque_shrink_front(t_deque *deque, size_t size);
