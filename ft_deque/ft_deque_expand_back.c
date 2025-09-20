@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/02 10:31:38 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/20 22:10:18 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_deque_expand_back(t_deque *deque, size_t size)
 		required_chanks = (required_size + deque->_chanksize - 1)
 			/ deque->_chanksize;
 		if (_reserve_chank_back(deque, required_chanks))
-			return (1);
+			return (-1);
 		deque->_finish_index += required_chanks;
 		deque->_finish_offset = (required_size - 1) % deque->_chanksize + 1;
 	}

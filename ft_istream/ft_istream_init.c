@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:36:29 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/04 23:39:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/20 22:11:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_istream_init(t_istream *is, ssize_t (*read_fn)(void *, size_t, void *),
 
 	buf = malloc(_ISTREAM_BUFSIZ);
 	if (!buf)
-		return (1);
+		return (-1);
 	bufsize = _ISTREAM_BUFSIZ;
 	is->_read_fn = read_fn;
 	is->_arg = arg;

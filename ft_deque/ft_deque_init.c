@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:30:48 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/16 18:18:01 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/20 22:10:37 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_deque_init(t_deque *deque, size_t elemsize)
 		chanksize = 1;
 	chank = malloc(chanksize * elemsize);
 	if (!chank)
-		return (1);
+		return (-1);
 	map = malloc(_DEQUE_DEFAULT_MAP_SIZE * sizeof(void *));
 	if (!map)
-		return (free(chank), 1);
+		return (free(chank), -1);
 	deque->_map = map;
 	deque->_mapsize = _DEQUE_DEFAULT_MAP_SIZE;
 	deque->_chanksize = chanksize;

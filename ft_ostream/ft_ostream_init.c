@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:37:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/03 00:08:07 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/09/20 22:11:28 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_ostream_init(t_ostream *os, ssize_t (*write_fn)(const void *, size_t,
 	{
 		buf = malloc(_OSTREAM_BUFSIZ);
 		if (!buf)
-			return (1);
+			return (-1);
 		bufsize = _OSTREAM_BUFSIZ;
 	}
 	else
