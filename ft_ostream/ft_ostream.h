@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/16 17:38:25 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:19:13 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <stddef.h>
 # include <sys/types.h>
 
+# define _OSTREAM_DEFAULT_BUFSIZE 1024
 # define _OSTREAM_FLAGS_ERROR 0x1
+# define _OSTREAM_OWNS_BUF 0x100
 
 typedef enum s_ostream_lbf
 {
