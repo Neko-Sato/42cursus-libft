@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:38:26 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/27 12:40:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:47:42 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,4 @@
 void	ft_ostream_destroy(t_ostream *os)
 {
 	ft_ostream_flush(os);
-	free(os->_buf);
 }
