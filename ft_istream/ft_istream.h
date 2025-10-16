@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:09:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/16 17:34:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:19:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <stddef.h>
 # include <sys/types.h>
 
+# define _ISTREAM_DEFAULT_BUFSIZE 1024
 # define _ISTREAM_FLAGS_ERROR 0x1
 # define _ISTREAM_FLAGS_EOF 0x2
+# define _ISTREAM_OWNS_BUF 0x100
 
 typedef struct s_istream
 {

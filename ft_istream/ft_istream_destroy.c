@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:37:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/16 17:47:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:18:28 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_istream_destroy(t_istream *is)
 {
-	(void)is;
+	if (is->_flags & _ISTREAM_OWNS_BUF)
+		free(is->_buf);
 }
