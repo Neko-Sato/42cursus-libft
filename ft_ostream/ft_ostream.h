@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 12:28:57 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:38:25 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stddef.h>
 # include <sys/types.h>
 
-# define _OSTREAM_BUFSIZ 1024
 # define _OSTREAM_FLAGS_ERROR 0x1
 
 typedef enum s_ostream_lbf
@@ -38,9 +37,17 @@ typedef struct s_ostream
 	char			*_end;
 }					t_ostream;
 
-int					ft_ostream_init(t_ostream *os,
-						ssize_t (*write_fn)(const void *, size_t, void *),
-						void *arg, t_ostream_lbf lbf);
+typedef struct s_ostream_init
+{
+	char			*buf;
+	size_t			bufsize;
+	ssize_t			(*write_fn)(const void *, size_t, void *);
+	void			*arg;
+	t_ostream_lbf	lbf;
+}					t_ostream_init;
+
+
+int					ft_ostream_init(t_ostream *os, t_ostream_init *args);
 void				ft_ostream_destroy(t_ostream *os);
 
 size_t				ft_ostream_write(t_ostream *os, const void *buf, size_t n);

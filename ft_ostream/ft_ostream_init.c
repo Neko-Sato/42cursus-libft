@@ -6,38 +6,22 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:37:59 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/20 22:11:28 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
 #include <stdlib.h>
 
-int	ft_ostream_init(t_ostream *os, ssize_t (*write_fn)(const void *, size_t,
-			void *), void *arg, t_ostream_lbf lbf)
+int	ft_ostream_init(t_ostream *os, t_ostream_init *args)
 {
-	char	*buf;
-	size_t	bufsize;
-
-	if (lbf != OSTREAM_UNBUF)
-	{
-		buf = malloc(_OSTREAM_BUFSIZ);
-		if (!buf)
-			return (-1);
-		bufsize = _OSTREAM_BUFSIZ;
-	}
-	else
-	{
-		buf = NULL;
-		bufsize = 0;
-	}
-	os->_write_fn = write_fn;
-	os->_arg = arg;
+	os->_write_fn = args->write_fn;
+	os->_arg = args->arg;
 	os->_flags = 0;
-	os->_lbf = lbf;
-	os->_buf = buf;
-	os->_bufsize = bufsize;
-	os->_pos = buf;
-	os->_end = buf + bufsize;
+	os->_lbf = args->lbf;
+	os->_buf = args->buf;
+	os->_bufsize = args->bufsize;
+	os->_pos = args->buf;
+	os->_end = args->buf + args->bufsize;
 	return (0);
 }

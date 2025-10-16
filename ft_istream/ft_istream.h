@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:09:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/17 02:40:36 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:34:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stddef.h>
 # include <sys/types.h>
 
-# define _ISTREAM_BUFSIZ 1024
 # define _ISTREAM_FLAGS_ERROR 0x1
 # define _ISTREAM_FLAGS_EOF 0x2
 
@@ -31,8 +30,15 @@ typedef struct s_istream
 	char	*_end;
 }			t_istream;
 
-int			ft_istream_init(t_istream *is, ssize_t (*read_fn)(void *, size_t,
-					void *), void *arg);
+typedef struct s_istream_init
+{
+	char	*buf;
+	size_t	bufsize;
+	ssize_t (*read_fn)(void *, size_t, void *);
+	void	*arg;
+}			t_istream_init;
+
+int			ft_istream_init(t_istream *is, t_istream_init *args);
 void		ft_istream_destroy(t_istream *is);
 
 size_t		ft_istream_read(t_istream *is, void *buf, size_t n);
