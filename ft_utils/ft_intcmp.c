@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:00:52 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 05:16:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/19 04:01:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_intcmp(const int *ptr1, const int *ptr2)
 {
-	return (*ptr1 - *ptr2);
+	return ((*ptr1 > *ptr2) - (*ptr1 < *ptr2));
 }
