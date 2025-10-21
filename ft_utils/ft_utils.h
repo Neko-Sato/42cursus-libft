@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 04:59:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/17 06:54:39 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/10/21 21:23:57 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char				*ft_skip_whitespace(const char *str);
 
 void				*ft_reverse(void *base, size_t nmemb, size_t size);
 
-extern const char	g_ascii_lowercase[27];
-extern const char	g_ascii_uppercase[27];
-extern const char	g_ascii_letter[53];
-extern const char	g_digits[11];
-extern const char	g_ascii_alunum[63];
-extern const char	g_whitespace[7];
+extern const char	*g_ascii_lowercase;
+extern const char	*g_ascii_uppercase;
+extern const char	*g_ascii_letter;
+extern const char	*g_digits;
+extern const char	*g_ascii_alunum;
+extern const char	*g_whitespace;
 
 #endif
