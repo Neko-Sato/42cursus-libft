@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/16 18:19:13 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 03:16:49 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_ostream_init
 	void			*arg;
 	t_ostream_lbf	lbf;
 }					t_ostream_init;
-
 
 int					ft_ostream_init(t_ostream *os, t_ostream_init *args);
 void				ft_ostream_destroy(t_ostream *os);
