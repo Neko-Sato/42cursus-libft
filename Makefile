@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/09/17 06:54:51 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/03 03:12:15 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -230,6 +230,13 @@ SRCS			:= \
 		ft_ostream_flush.c \
 		ft_ostream_init.c \
 		ft_ostream_write.c \
+	) \
+	$(addprefix ft_heap/, \
+		ft__heap_shiftdown.c \
+		ft__heap_shiftup.c \
+		ft_heapify.c \
+		ft_heap_push.c \
+		ft_heap_pop.c \
 	)
 
 OUTDIR			:= .out
