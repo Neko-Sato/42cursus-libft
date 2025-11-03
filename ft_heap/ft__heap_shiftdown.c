@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 02:31:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 02:54:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:21:20 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ft__heap_shiftdown(t_heap_args *args, size_t index)
 			largest = right;
 		if (largest == index)
 			break ;
-		args->swap((char *)args->base + args->size * largest, (char *)args->base
-			+ args->size * index);
+		ft__heap_swap(args, (char *)args->base + args->size * largest,
+			(char *)args->base + args->size * index);
 		index = largest;
 	}
 }

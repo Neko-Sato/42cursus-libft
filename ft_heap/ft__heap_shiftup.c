@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 02:31:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 03:12:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:27:47 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft__heap_shiftup(t_heap_args *args, size_t index)
 				(char *)args->base + args->size * parent,
 				(char *)args->base + args->size * index) >= 0)
 			break ;
-		args->swap(
+		ft__heap_swap(args,
 			(char *)args->base + args->size * parent,
 			(char *)args->base + args->size * index);
 		index = parent;

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 08:55:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/21 21:24:19 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:39:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ const char	*g_ascii_letter
 	= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const char	*g_digits
 	= "0123456789";
-const char	*g_ascii_alunum
+const char	*g_ascii_alnum
 	= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char	*g_whitespace
 	= " \t\n\v\f\r";

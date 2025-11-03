@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse.c                                       :+:      :+:    :+:   */
+/*   ft__heap_swap.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 12:13:03 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 13:16:21 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/11/03 13:19:46 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/11/03 13:20:56 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_heap/ft_heap.h>
 #include <ft_string/ft_string.h>
-#include <ft_utils/ft_utils.h>
 
-static void	_swap(t_reverse *args, void *a, void *b)
+void	ft__heap_swap(t_heap_args *args, void *a, void *b)
 {
 	if (args->swap)
 		args->swap(a, b);
 	else
 		ft_memswap(a, b, args->size);
-}
-
-void	*ft_reverse(t_reverse *args)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = args->nmemb;
-	while (i < j)
-		_swap(args, (char *)args->base + args->size * i++, (char *)args->base
-			+ args->size * --j);
-	return (args->base);
 }

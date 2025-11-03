@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 04:59:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/10/21 21:23:57 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:12:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,32 @@ int					ft_strptrcmp(const char **ptr1, const char **ptr2);
 int					ft_digitval(int c);
 char				*ft_skip_whitespace(const char *str);
 
-void				*ft_reverse(void *base, size_t nmemb, size_t size);
+typedef struct s_reverse
+{
+	void			*base;
+	size_t			nmemb;
+	size_t			size;
+	void			(*swap)(void *, void *);
+}					t_reverse;
+
+void				*ft_reverse(t_reverse *args);
+
+typedef struct s_sort
+{
+	void			*base;
+	size_t			nmemb;
+	size_t			size;
+	int				(*compar)(const void *, const void *);
+	void			(*swap)(void *, void *);
+}					t_sort;
+
+void				*ft_sort(t_sort *args);
 
 extern const char	*g_ascii_lowercase;
 extern const char	*g_ascii_uppercase;
 extern const char	*g_ascii_letter;
 extern const char	*g_digits;
-extern const char	*g_ascii_alunum;
+extern const char	*g_ascii_alnum;
 extern const char	*g_whitespace;
 
 #endif

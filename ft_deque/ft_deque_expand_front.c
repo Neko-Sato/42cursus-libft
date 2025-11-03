@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:44:23 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/20 22:10:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:49:07 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static inline int	_reserve_chank_front(t_deque *deque, size_t n)
 	while (0 < i)
 	{
 		deque->_map[deque->_start_index - i] = malloc(deque->_chanksize
-				* sizeof(void *));
+				* deque->_elemsize);
 		if (!deque->_map[deque->_start_index - i])
 		{
 			while (i < n)
