@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/03 03:12:15 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/03 13:33:07 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,6 @@ SRCS			:= \
 		ft_llabs.c \
 		ft_lldiv.c \
 		ft_qsort.c \
-		ft_qsort_r.c \
 		ft_strtod.c \
 		ft_strtof.c \
 		ft_strtol.c \
@@ -140,6 +139,7 @@ SRCS			:= \
 		ft_intcmp.c \
 		ft_literals.c \
 		ft_reverse.c \
+		ft_sort.c \
 		ft_skip_whitespace.c \
 		ft_starts_with.c \
 		ft_strptrcmp.c \
@@ -234,6 +234,7 @@ SRCS			:= \
 	$(addprefix ft_heap/, \
 		ft__heap_shiftdown.c \
 		ft__heap_shiftup.c \
+		ft__heap_swap.c \
 		ft_heapify.c \
 		ft_heap_push.c \
 		ft_heap_pop.c \

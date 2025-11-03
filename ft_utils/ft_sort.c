@@ -6,11 +6,12 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 13:31:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:34:23 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_utils/ft_utils.h>
+#include <ft_string/ft_string.h>
 
 static void	_swap(t_sort *args, void *a, void *b)
 {
@@ -62,9 +63,11 @@ void	*ft_sort(t_sort *args)
 	else
 	{
 		pi = _partition(args);
-		ft_sort(&(t_sort){args->base, pi, args->size, args->compar});
+		ft_sort(&(t_sort){args->base, pi, args->size,
+			args->compar, args->swap});
 		ft_sort(&(t_sort){(char *)args->base + (pi + 1) * args->size,
-			args->nmemb - (pi + 1), args->size, args->compar});
+			args->nmemb - (pi + 1), args->size,
+			args->compar, args->swap});
 	}
 	return (args->base);
 }
