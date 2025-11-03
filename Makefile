@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/03 13:33:07 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/03 13:39:49 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -148,7 +148,6 @@ SRCS			:= \
 		ft_vector_data.c \
 		ft_vector_destroy.c \
 		ft_vector_init.c \
-		ft_vector_move.c \
 		ft_vector_resize.c \
 		ft_vector_size.c \
 	) \
@@ -158,7 +157,6 @@ SRCS			:= \
 		ft_deque_expand_back.c \
 		ft_deque_expand_front.c \
 		ft_deque_init.c \
-		ft_deque_move.c \
 		ft_deque_shrink_back.c \
 		ft_deque_shrink_front.c \
 		ft_deque_size.c \
@@ -169,7 +167,6 @@ SRCS			:= \
 		ft_slist_head.c \
 		ft_slist_init.c \
 		ft_slist_insert.c \
-		ft_slist_move.c \
 		ft_slist_node_delete.c \
 		ft_slist_node_new.c \
 		ft_slist_node_next.c \
