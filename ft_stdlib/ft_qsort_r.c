@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_insert_unique.c                           :+:      :+:    :+:   */
+/*   ft_qsort_r.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/22 15:37:07 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/09 16:23:47 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/11/09 17:01:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_btree/ft_btree.h>
+#include <ft_stdlib/ft_stdlib.h>
+#include <ft_utils/ft_utils.h>
 
-int	ft_btree_insert_unique(t_btree *btree, t_btree_node *node)
+static int	_less(const void *a, const void *b, void *args)
 {
-	t_btree_node	*pos;
+	return (((t_qsort_r *)args)->compar(a, b, ((t_qsort_r *)args)->args) < 0);
+}
 
-	pos = ft_btree_lower_bound(btree, node->data);
-	if (pos != ft_btree_end(btree) && !btree->_less(node->data, pos->data)
-		&& !btree->_less(pos->data, node->data))
-		return (1);
-	else
-		ft__btree_insert(btree, pos, node);
-	return (0);
+void	ft_qsort_r(t_qsort_r *args)
+{
+	ft__sort(&(t__sort){
+		.base = args->base,
+		.nmemb = args->nmemb,
+		.size = args->size,
+		.less = _less,
+		.swap = NULL,
+		.args = args,
+	});
 }

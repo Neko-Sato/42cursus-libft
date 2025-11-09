@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/17 02:45:38 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:19:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ typedef struct s_btree
 {
 	t_btree_node		*_root;
 	t_btree_node		*_head;
-	int					(*_compar)(const void *, const void *);
+	int					(*_less)(const void *, const void *);
 	size_t				_size;
 }						t_btree;
 
-int						ft_btree_init(t_btree *btree,
-							int (*compar)(const void *, const void *));
+int						ft_btree_init(t_btree *btree, int (*less)(const void *,
+								const void *));
 void					ft_btree_destroy(t_btree *btree);
 void					ft_btree_move(t_btree *dst, t_btree *src);
 

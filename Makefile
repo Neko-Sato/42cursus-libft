@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/03 14:44:01 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/09 17:54:20 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,10 @@ SRCS			:= \
 		ft_strtok_r.c \
 		ft_strtrim.c \
 		ft_substr.c \
+		ft_substr.c \
+		ft_strequal.c \
+		ft_strless.c \
+		ft_strgreater.c \
 	) \
 	$(addprefix ft_put_fd/, \
 		ft_putchar_fd.c \
@@ -134,6 +138,7 @@ SRCS			:= \
 		ft_lstsize.c \
 	) \
 	$(addprefix ft_utils/, \
+		ft__sort.c \
 		ft_digitval.c \
 		ft_ends_with.c \
 		ft_intcmp.c \

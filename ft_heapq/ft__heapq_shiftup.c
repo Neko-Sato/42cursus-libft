@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 02:31:19 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 14:29:54 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:17:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft__heapq_shiftup(t_heapq *args, size_t index)
 		child = (char *)args->base + args->size * index;
 		index = (index - 1) / 2;
 		parent = (char *)args->base + args->size * index;
-		if (args->compar(parent, child) >= 0)
+		if (!args->less(parent, child))
 			break ;
 		ft__heapq_swap(args, parent, child);
 	}

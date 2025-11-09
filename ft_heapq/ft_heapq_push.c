@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 02:04:54 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 14:28:02 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:16:24 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_heapq_push(t_heapq *args)
 		args->base,
 		args->nmemb,
 		args->size,
-		args->compar,
+		args->less,
 		args->swap,
 	}, args->nmemb - 1);
 }

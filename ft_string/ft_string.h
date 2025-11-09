@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 06:11:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/08 04:59:37 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:30:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void	*ft_memdup(const void *src, size_t n);
 void	ft_memswap(void *a, void *b, size_t n);
 int		ft_strcasecmp(const char *s1, const char *s2);
 int		ft_strncasecmp(const char *s1, const char *s2, size_t n);
+int		ft_strequal(const char *s1, const char *s2);
+int		ft_strless(const char *s1, const char *s2);
+int		ft_strgreater(const char *s1, const char *s2);
 
 #endif

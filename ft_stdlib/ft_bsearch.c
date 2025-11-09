@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:30:11 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/07 21:58:52 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:56:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_bsearch(t_bsearch *args)
 	{
 		mid = low + (high - low) / 2;
 		element = (const unsigned char *)args->base + mid * args->size;
-		res = args->cmp(args->key, element);
+		res = args->compar(args->key, element);
 		if (res < 0)
 			high = mid - 1;
 		else if (res > 0)

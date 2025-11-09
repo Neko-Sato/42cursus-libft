@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 00:37:00 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 14:27:43 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:16:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_heapq
 	void	*base;
 	size_t	nmemb;
 	size_t	size;
-	int		(*compar)(const void *, const void *);
+	int		(*less)(const void *, const void *);
 	void	(*swap)(void *, void *);
 }			t_heapq;
 

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 06:09:43 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 13:12:26 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:56:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_bsearch
 	const void		*base;
 	size_t			n;
 	size_t			size;
-	int				(*cmp)(const void *, const void *);
+	int				(*compar)(const void *, const void *);
 }					t_bsearch;
 
 void				*ft_bsearch(t_bsearch *args);
@@ -59,6 +59,17 @@ typedef struct s_qsort
 }					t_qsort;
 
 void				ft_qsort(t_qsort *args);
+
+typedef struct s_qsort_r
+{
+	void			*base;
+	size_t			nmemb;
+	size_t			size;
+	int				(*compar)(const void *, const void *, void *);
+	void			*args;
+}					t_qsort_r;
+
+void				ft_qsort_r(t_qsort_r *args);
 
 unsigned long long	ft__strtointeger(const char *nptr, char **endptr,
 						unsigned int base, unsigned long long lim);
