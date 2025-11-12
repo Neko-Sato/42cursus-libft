@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:03:27 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/13 08:14:34 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:39:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_hashtable_node
 	char					data[];
 }							t_hashtable_node;
 
-t_hashtable_node			*hashtable_node_new(size_t size);
-void						hashtable_node_delete(t_hashtable_node *node);
-t_hashtable_node			*hashtable_node_next(t_hashtable_node *node);
+t_hashtable_node			*ft_hashtable_node_new(size_t size);
+void						ft_hashtable_node_delete(t_hashtable_node *node);
+t_hashtable_node			*ft_hashtable_node_next(t_hashtable_node *node);
 
 typedef struct s_hashtable
 {
