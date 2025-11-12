@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:03:27 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/09 17:38:20 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:14:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,18 @@
 
 # include <stddef.h>
 
+# define _HASHTABLE_MAX_LOAD_FACTOR 1.0
+# define _HASHTABLE_INITIAL_BUCKETS_SIZE 16
+
 typedef struct s_hashtable_node
 {
 	struct s_hashtable_node	*_next;
 	char					data[];
 }							t_hashtable_node;
+
+t_hashtable_node			*hashtable_node_new(size_t size);
+void						hashtable_node_delete(t_hashtable_node *node);
+t_hashtable_node			*hashtable_node_next(t_hashtable_node *node);
 
 typedef struct s_hashtable
 {
@@ -31,7 +38,7 @@ typedef struct s_hashtable
 }							t_hashtable;
 
 int							ft_hashtable_init(t_hashtable *hashtable,
-								int (*less)(const void *, const void *),
+								int (*equal)(const void *, const void *),
 								unsigned long (*hash)(const void *));
 void						ft_hashtable_destroy(t_hashtable *hashtable);
 
@@ -42,18 +49,19 @@ t_hashtable_node			*ft_hashtable_insert_replace(t_hashtable *hashtable,
 void						ft_hashtable_insert_multi(t_hashtable *hashtable,
 								t_hashtable_node *node);
 t_hashtable_node			*ft_hashtable_extract(t_hashtable *hashtable,
-								t_hashtable_node *node);
+								t_hashtable_node *node, size_t buckets_index);
 
-typedef struct s_hashtable_iterator
-{
-	t_hashtable			*_hashtable;
-	size_t				*_inedx;
-	t_hashtable_node	*_current;
-}	t_hashtable_iterator;
+size_t						ft_hashtable_size(const t_hashtable *hashtable);
+t_hashtable_node			*ft_hashtable_find(const t_hashtable *hashtable,
+								const void *data, size_t *buckets_index);
 
-
-t_hashtable_node			*ft_hashtable_head(const t_hashtable *hashtable);
-t_hashtable_node			*ft_hashtable_end(const t_hashtable *hashtable);
-t_hashtable_node			*ft_hashtable_find(const t_hashtable *hashtable, const void *data);
+t_hashtable_node			*ft_hashtable_buckets(t_hashtable *hashtable,
+								size_t index);
+size_t						ft_hashtable_buckets_size(
+								const t_hashtable *hashtable);
+float						ft_hashtable_load_factor(
+								const t_hashtable *hashtable);
+int							ft_hashtable_rehash(t_hashtable *hashtable,
+								size_t n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 05:27:42 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/09 16:19:30 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/13 07:53:42 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void					ft_btree_insert_multi(t_btree *btree,
 							t_btree_node *node);
 t_btree_node			*ft_btree_extract(t_btree *btree, t_btree_node *node);
 
+size_t					ft_btree_size(const t_btree *btree);
 t_btree_node			*ft_btree_head(const t_btree *btree);
 t_btree_node			*ft_btree_end(const t_btree *btree);
 t_btree_node			*ft_btree_find(const t_btree *btree, const void *data);
