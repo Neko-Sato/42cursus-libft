@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hashtable_node_next.c                           :+:      :+:    :+:   */
+/*   ft_hashtable_insert_multi.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 08:17:50 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 05:02:44 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/11/15 02:14:57 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/11/15 04:42:19 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hashtable/ft_hashtable.h>
 
-t_hashtable_node	*ft_hashtable_node_next(t_hashtable_node *node)
+void	ft_hashtable_insert_multi(t_hashtable *hashtable,
+		t_hashtable_node *node)
 {
-	return (node->_next);
+	unsigned long		hash;
+	t_hashtable_node	**bucket;
+
+	hash = hashtable->_hash(node->data);
+	bucket = &hashtable->_buckets[hash & (hashtable->_buckets_size - 1)];
+	node->_next = *bucket;
+	*bucket = node;
+	hashtable->_size++;
 }

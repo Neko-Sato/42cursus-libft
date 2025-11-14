@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/13 08:16:23 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/15 05:01:28 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -213,6 +213,23 @@ SRCS			:= \
 		ft_btree_node_next.c \
 		ft_btree_node_prev.c \
 		ft_btree_upper_bound.c \
+	) \
+	$(addprefix ft_hashtable/, \
+		ft_hashtable_buckets.c \
+		ft_hashtable_buckets_size.c \
+		ft_hashtable_destroy.c \
+		ft_hashtable_extract.c \
+		ft_hashtable_find.c \
+		ft_hashtable_init.c \
+		ft_hashtable_insert_multi.c \
+		ft_hashtable_insert_replace.c \
+		ft_hashtable_insert_unique.c \
+		ft_hashtable_load_factor.c \
+		ft_hashtable_node_delete.c \
+		ft_hashtable_node_new.c \
+		ft_hashtable_node_next.c \
+		ft_hashtable_rehash.c \
+		ft_hashtable_size.c \
 	) \
 	$(addprefix ft_istream/, \
 		ft__read_fd.c \

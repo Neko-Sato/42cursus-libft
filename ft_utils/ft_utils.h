@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 04:59:40 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/09 16:42:09 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 05:02:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ typedef struct s_sort
 }					t_sort;
 
 void				*ft_sort(t_sort *args);
-
 
 extern const char	*g_ascii_lowercase;
 extern const char	*g_ascii_uppercase;

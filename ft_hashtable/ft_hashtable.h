@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:03:27 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/13 08:39:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 02:36:58 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stddef.h>
 
-# define _HASHTABLE_MAX_LOAD_FACTOR 1.0
 # define _HASHTABLE_INITIAL_BUCKETS_SIZE 16
 
 typedef struct s_hashtable_node
@@ -62,6 +61,6 @@ size_t						ft_hashtable_buckets_size(
 float						ft_hashtable_load_factor(
 								const t_hashtable *hashtable);
 int							ft_hashtable_rehash(t_hashtable *hashtable,
-								size_t n);
+								size_t n, float load_factor);
 
 #endif
