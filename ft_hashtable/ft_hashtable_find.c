@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:21:54 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 05:34:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 13:57:12 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_hashtable_node	*ft_hashtable_find(const t_hashtable *hashtable,
 	size_t				index;
 	t_hashtable_node	*tmp;
 
-	index = hashtable->_hash(data) % hashtable->_buckets_size;
+	index = hashtable->_hash(data) & (hashtable->_buckets_size - 1);
 	tmp = hashtable->_buckets[index];
 	while (tmp)
 	{

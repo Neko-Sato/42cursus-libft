@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 02:14:57 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 04:52:44 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 13:55:54 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_hashtable_node	*ft_hashtable_insert_replace(t_hashtable *hashtable,
 	{
 		node->_next = tmp->_next;
 		tmp->_next = NULL;
+		hashtable->_size++;
 	}
 	else
 		node->_next = NULL;

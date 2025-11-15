@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:03:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 04:46:12 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 13:57:31 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_hashtable_rehash(t_hashtable *hashtable, size_t n, float load_factor)
 		return (0);
 	new_buckets = malloc(sizeof(t_hashtable_node *) * new_buckets_size);
 	if (!new_buckets)
-		return (1);
+		return (-1);
 	ft_memset(new_buckets, 0, sizeof(t_hashtable_node *) * new_buckets_size);
 	_internal(hashtable, new_buckets, new_buckets_size);
 	free(hashtable->_buckets);
