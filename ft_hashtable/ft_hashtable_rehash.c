@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:03:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 13:57:31 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:15:03 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static inline size_t	_next_size(size_t n, float f)
 {
 	size_t	q;
 
+	if (n > SIZE_MAX * f)
+		return (SIZE_MAX);
 	q = n / f;
 	if (q * f < (float)n)
 		q++;
@@ -61,6 +63,8 @@ int	ft_hashtable_rehash(t_hashtable *hashtable, size_t n, float load_factor)
 	t_hashtable_node	**new_buckets;
 	size_t				new_buckets_size;
 
+	if (load_factor <= 0.f)
+		return (-1);
 	new_buckets_size = _next_size(n, load_factor);
 	if (new_buckets_size < hashtable->_buckets_size)
 		return (0);
