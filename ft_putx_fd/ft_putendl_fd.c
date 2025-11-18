@@ -6,11 +6,11 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:40:23 by uakizuki          #+#    #+#             */
-/*   Updated: 2025/08/06 06:18:41 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:15:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_put_fd/ft_put_fd.h>
+#include <ft_putx_fd/ft_putx_fd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

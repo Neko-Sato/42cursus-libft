@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrs_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putx_fd.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 06:51:28 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/06 07:31:30 by hshimizu         ###   ########.fr       */
+/*   Created: 2025/08/06 06:07:18 by hshimizu          #+#    #+#             */
+/*   Updated: 2025/11/19 04:17:33 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_put_fd/ft_put_fd.h>
+#ifndef FT_PUTX_FD_H
+# define FT_PUTX_FD_H
 
-void	ft_putstrs_fd(char **strs, char *delim, int fd)
-{
-	while (*strs)
-	{
-		ft_putstr_fd(*(strs++), fd);
-		if (!*strs)
-			break ;
-		ft_putstr_fd(delim, fd);
-	}
-	ft_putstr_fd("\n", fd);
-}
+# include <stddef.h>
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
+void	ft_putstrs_fd(char **strs, char *delim, int fd);
+
+#endif

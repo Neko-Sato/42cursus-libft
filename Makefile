@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/19 01:46:16 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/19 04:14:44 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ SRCS			:= \
 		ft_strless.c \
 		ft_strgreater.c \
 	) \
-	$(addprefix ft_put_fd/, \
+	$(addprefix ft_putx_fd/, \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \

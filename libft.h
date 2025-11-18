@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/19 01:41:59 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:14:27 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <ft_ctype/ft_ctype.h>
 # include <ft_string/ft_string.h>
-# include <ft_put_fd/ft_put_fd.h>
+# include <ft_putx_fd/ft_putx_fd.h>
 # include <ft_stdlib/ft_stdlib.h>
 # include <ft_list/ft_list.h>
 # include <ft_utils/ft_utils.h>
