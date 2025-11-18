@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 06:07:18 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/19 04:17:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:20:54 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putbin_fd(int n, int fd);
+void	ft_putoct_fd(int n, int fd);
+void	ft_puthex_fd(int n, int fd);
 
 void	ft_putstrs_fd(char **strs, char *delim, int fd);
 

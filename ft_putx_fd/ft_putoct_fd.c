@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putoct_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:27:34 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/19 04:32:24 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:32:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ostream/ft_ostream.h>
 #include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putoct_fd(int n, int fd)
 {
 	t_ostream			os;
 	char				buf[1024];
@@ -22,8 +22,8 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_ostream_init(&os, &(t_ostream_init){
 		buf, sizeof(buf), ft__write_fd, &fd, OSTREAM_FULLBUF
 	});
-	args.base = 10;
-	args.flags = _INTPRINT_FLAG_SIGNED;
+	args.base = 010;
+	args.flags = _INTPRINT_FLAG_SIGNED | _INTPRINT_FLAG_ALT_FORM;
 	args.width = -1;
 	args.prec = -1;
 	ft__intprint(&os, n, &args);

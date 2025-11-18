@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/19 04:14:44 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/19 04:21:41 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,9 @@ SRCS			:= \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_putbin_fd.c \
+		ft_putoct_fd.c \
+		ft_puthex_fd.c \
 		ft_putstr_fd.c \
 		ft_putstrs_fd.c \
 	) \
