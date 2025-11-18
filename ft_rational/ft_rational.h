@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 00:38:41 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/19 01:47:38 by hshimizu         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:05:44 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,9 @@ typedef struct s_rational
 
 void		ft_rational_normalize(t_rational *n);
 
-void		ft_rational_add(const t_rational *a, const t_rational *b,
-				t_rational *res);
-void		ft_rational_sub(const t_rational *a, const t_rational *b,
-				t_rational *res);
-void		ft_rational_mul(const t_rational *a, const t_rational *b,
-				t_rational *res);
-void		ft_rational_div(const t_rational *a, const t_rational *b,
-				t_rational *res);
+t_rational	ft_rational_add(t_rational a, t_rational b);
+t_rational	ft_rational_sub(t_rational a, t_rational b);
+t_rational	ft_rational_mul(t_rational a, t_rational b);
+t_rational	ft_rational_div(t_rational a, t_rational b);
 
 #endif
