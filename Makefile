@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/15 05:01:28 by hshimizu         ###   ########.fr        #
+#    Updated: 2025/11/19 01:46:16 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -258,7 +258,14 @@ SRCS			:= \
 		ft_heapify.c \
 		ft_heapq_push.c \
 		ft_heapq_pop.c \
-	)
+	) \
+	$(addprefix ft_rational/, \
+		ft_rational_normalize.c \
+		ft_rational_add.c \
+		ft_rational_div.c \
+		ft_rational_mul.c \
+		ft_rational_sub.c \
+	) \
 
 OUTDIR			:= .out
 OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
