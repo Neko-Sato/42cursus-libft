@@ -281,7 +281,6 @@ CFLAGS			:= -Wall -Wextra -Werror -std=c99 -pedantic
 CFLAGS			+= -fno-builtin -fno-common
 CFLAGS			+= -fPIC -MMD -MP
 AR				:= ar
-ARFLAGS			:= rcs
 IDFLAGS			:= -I.
 LDFLAGS			:=
 LIBS			:=
@@ -306,7 +305,7 @@ bonus: all
 
 $(NAME_A): CFLAGS += $(CFLAGS_OPT)
 $(NAME_A): $(OBJS)
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) rcs $@ $^
 
 $(NAME_SO): CFLAGS += $(CFLAGS_OPT)
 $(NAME_SO): $(OBJS)
@@ -322,7 +321,7 @@ $(OUTDIR)/%.o: %.c
 
 $(NAME_DEV_A): CFLAGS += $(CFLAGS_DEV)
 $(NAME_DEV_A): $(OBJS_DEV)
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) rcs $@ $^
 
 $(NAME_DEV_SO): CFLAGS += $(CFLAGS_DEV)
 $(NAME_DEV_SO): $(OBJS_DEV)
