@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2025/11/19 04:21:41 by hshimizu         ###   ########.fr        #
+#    Updated: 2026/03/17 05:18:42 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -269,6 +269,9 @@ SRCS			:= \
 		ft_rational_mul.c \
 		ft_rational_sub.c \
 	) \
+	$(addprefix ft_getopt/, \
+		ft_getopt.c \
+	)
 
 OUTDIR			:= .out
 OBJS			:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))

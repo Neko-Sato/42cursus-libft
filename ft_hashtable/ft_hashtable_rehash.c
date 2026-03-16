@@ -6,13 +6,14 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:03:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/15 14:15:03 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/03/16 02:45:17 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hashtable/ft_hashtable.h>
 #include <ft_string/ft_string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 static inline void	_internal(t_hashtable *hashtable,
 		t_hashtable_node **new_buckets, size_t new_buckets_size)

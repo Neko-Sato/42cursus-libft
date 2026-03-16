@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:04:05 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/19 04:14:27 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/03/17 05:18:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@
 # include <ft_heapq/ft_heapq.h>
 # include <ft_hashtable/ft_hashtable.h>
 # include <ft_rational/ft_rational.h>
+# include <ft_getopt/ft_getopt.h>
 
 #endif
