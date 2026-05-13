@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 20:04:56 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/09/07 12:29:33 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/05/13 15:42:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ ssize_t	ft__write_buffer(const void *buf, size_t n, void *arg)
 
 	if (!buffer->buf && !buffer->size)
 		return (n);
-	if (buffer->pos >= buffer->size)
+	size = buffer->size - 1;
+	if (buffer->pos >= size)
 		return (n);
-	size = buffer->size - buffer->pos;
+	size -= buffer->pos;
 	if (n < size)
 		size = n;
 	ft_memcpy(buffer->buf + buffer->pos, buf, size);
 	buffer->pos += size;
-	if (buffer->pos < buffer->size)
-		buffer->buf[buffer->pos] = '\0';
+	buffer->buf[buffer->pos] = '\0';
 	return (n);
 }
