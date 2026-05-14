@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:28:31 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/08/09 18:59:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/05/14 22:27:15 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_isspace(int c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-static inline unsigned long	__internal(
+static inline unsigned long	_internal(
 	char const *nptr, int neg, int *any)
 {
 	static const unsigned long	boundary[] = {
@@ -56,7 +56,7 @@ int	ft_atoi(const char *nptr)
 	if (*nptr == '-' || *nptr == '+')
 		neg = *nptr++ == '-';
 	any = 0;
-	acc = __internal(nptr, neg, &any);
+	acc = _internal(nptr, neg, &any);
 	if (any)
 		return (boundary[neg]);
 	if (neg)
