@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:26:51 by hshimizu          #+#    #+#             */
-/*   Updated: 2025/11/03 03:16:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/05/20 06:13:41 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ ssize_t				ft__write_buffer(const void *buf, size_t n, void *arg);
 typedef struct s__iniprint_args
 {
 	unsigned int	base;
-	int				flags;
+	unsigned int	flags;
 	int				width;
 	int				prec;
 }					t__iniprint_args;
