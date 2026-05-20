@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hashtable_rehash.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+        */
+/*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:03:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2026/03/16 02:45:17 by hshimizu         ###   ########.fr       */
+/*   Updated: 2026/05/20 20:53:30 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ static inline size_t	_next_size(size_t n, float f)
 {
 	size_t	q;
 
-	if (n > SIZE_MAX * f)
+	if (n > (double)SIZE_MAX * f)
 		return (SIZE_MAX);
 	q = n / f;
-	if (q * f < (float)n)
+	if (q * f < (double)n)
 		q++;
 	if (q == 0)
 		return (1);
