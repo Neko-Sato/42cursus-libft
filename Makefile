@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hshimizu <hshimizu@42tokyo.student.jp>     +#+  +:+       +#+         #
+#    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/24 19:05:06 by hshimizu          #+#    #+#              #
-#    Updated: 2026/03/17 05:18:42 by hshimizu         ###   ########.fr        #
+#    Updated: 2026/05/29 17:13:28 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,6 @@ SRCS			:= \
 		ft_strtok_r.c \
 		ft_strtrim.c \
 		ft_substr.c \
-		ft_substr.c \
 		ft_strequal.c \
 		ft_strless.c \
 		ft_strgreater.c \
@@ -121,6 +120,7 @@ SRCS			:= \
 		ft_llabs.c \
 		ft_lldiv.c \
 		ft_qsort.c \
+		ft_qsort_r.c \
 		ft_strtod.c \
 		ft_strtof.c \
 		ft_strtol.c \
